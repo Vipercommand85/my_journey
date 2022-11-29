@@ -1,4 +1,4 @@
-#Functions
+# Functions
 	* Basic code to create a function
 	* no variables outside or inside the function are accessible to the opposite
 
@@ -14,7 +14,7 @@
 
 	```
 
-#Return Values
+# Return Values
 	* allows variable's values to be accessible outside of the function
 
 	```
@@ -33,7 +33,7 @@
 
 	```
 
-#Reserved Characters
+# Reserved Characters
 	
 	* &	==>	&amp;	interpreted as the beginning of an entity or character reference
 	* <	==>	&lt;	interpreted as the beginning of a tag
@@ -45,7 +45,7 @@
 		* very wise to use this fuction on any data that will be supplied by a user/or that is untrusted
 
 
-#Redirection
+# Redirection
 
 	* basic syntax for redirecting to another page:
 
@@ -243,7 +243,7 @@
 
 	```
 
-#Getter and Setter Methods
+# Getter and Setter Methods
 
 	* properties/objects are set as private
 	* a public method/function is created to set and get the properties
@@ -312,7 +312,7 @@
 	```
 
 
-	##Static Objects and Methods
+	## Static Objects and Methods
 
 	```
 	<?php
@@ -361,10 +361,10 @@
 	```
 
 
-	#Constants
+	## Constants
 		* once defined cannot be changed throughout a script, would need to hard code change its value
-		* when using the **define()** function, these variables are global
-		* **CONST** key word is used to define a constant inside of a class, defualt visibility of class constants is public
+		* when using the ** define() ** function, these variables are global
+		* ** CONST ** key word is used to define a constant inside of a class, defualt visibility of class constants is public
 		* naming convention is captilization with " _ " as the delimiter between words
 
 
@@ -387,7 +387,7 @@
 	```	
 
 
-	##utlizing the **CONST** key word in a class
+	## utlizing the **CONST** key word in a class
 
 	```
 	<?php
@@ -445,7 +445,7 @@
 	```	
 
 
-#Inheritance
+# Inheritance
 
 	* the file that is being extended (Item.php) is the parent class
 	* the file that is extending another file (Book.php) is the child class
@@ -514,13 +514,13 @@
 
 	```
 
-#Protected visibility of properties and methods
+# Protected visibility of properties and methods
 
 	* are not able to be directly accessed outside of the class file
 	* can be accessed by child classes
 
 
-#**PDO** = PHP Date Objects: allows you to interact with a databases with object orientented code
+# **PDO** = PHP Date Objects: allows you to interact with a databases with object orientented code
 	
 	* to utlize this feature creat a new dir and create a class file with the details to connect to the databas(s) from any script
 
