@@ -63,10 +63,10 @@ g++ -Wall -std=c++14 main.cpp -o main
  
  ### Comments
  * **//** starts a single line comment
- * **/ asterics asterics/** will creat a multi line comment
+ * **/ "asterics" "asterics" /** will creat a multi line comment
  
  ### The **main()** function
- * every C== program must have **exactly 1 main()** function
+ * every C++ program must have **exactly 1 main()** function
  * starting point of program execution
  * **return 0** idicates successfull program execution
  * 2 version that are both valid
