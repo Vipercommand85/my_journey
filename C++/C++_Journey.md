@@ -10,7 +10,6 @@ will need to use the **g++** compiler, gnu C++ compiler
 
 ```
 g++ -Wall -std=c++14 main.cpp
-
 ```
 
 will get a **a.out** file once the file has compiled
