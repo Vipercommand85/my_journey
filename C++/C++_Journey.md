@@ -9,11 +9,13 @@ will need to use the **g++** compiler, gnu C++ compiler
 **-o [FILE NAME]** ==> allows you to specify the name of the compiled file
 
 ```g++ -Wall -std=c++14 main.cpp
+
 ```
 
 will get a **a.out** file once the file has compiled
 
 ```g++ -Wall -std=c++14 main.cpp -o main
+
 ```
 * will give an executable named **main**
 
