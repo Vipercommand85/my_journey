@@ -1,6 +1,6 @@
 # C++ Journey
 
-**Running a C++ program from the command line**
+## Running a C++ program from the command line
 
 be sure to save file with a **.cpp** file extension so that the file will compile
 will need to use the **g++** compiler, gnu C++ compiler
