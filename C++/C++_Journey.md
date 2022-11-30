@@ -90,4 +90,21 @@ g++ -Wall -std=c++14 main.cpp -o main
  * program.exe argument1 argument2
 
  ### Namespaces
- * 
+ is a mechanism that allows you to utilize a specific library/project without conflicting operator names from one library/project to another
+ syntax for envoking an entire namespace, this must be placed at the beginning of the program before the main() call:
+ using namespace **[NAME OF NAME SPACE]**
+```c++
+using namespace std;
+```
+* alternative syntax that be used when calling a specific command:
+**[NAME OF NAMESPACE]::[COMMAND]**
+```c++
+std::cin >> variable1;
+```
+* third option to envoke only needed commands from a namespace which must also be placed before the main() call:
+**using [NAME OF NAMESPACE]::[COMMAND]**
+```c++
+using std:cin;
+using std::cout;
+using std::endl;
+```
