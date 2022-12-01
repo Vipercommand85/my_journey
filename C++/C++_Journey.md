@@ -108,3 +108,27 @@ using std::cin;
 using std::cout;
 using std::endl;
 ```
+### Basic Input and Output (I/O) with cin and cout 
+* must **include <iostream>** to utilize **cout, cin, cerr, clog**
+    * **cout** standard output stream that will send its output to the console by default
+    * **cin** standard input stream that reads input from the keyboard by default
+    * **<<** insertion operator that is used with **cout**
+    ```c++
+    cout << data;
+    ```
+    * **>>** extraction operator that is used with **cin**
+    ```c++
+    cin >> number;
+    ```
+    * insertion operators do not automatically add line breaks, they will need to be explicitly written in the code
+    ```c++
+    cout << "data 1 is" << data1 << endl; // end line command from std library
+    cout << "data 1 is" << data1 << "\n"; // "\n" is a new line character escape sequence
+    ```
+    * can chain extraction and insertion operators
+    ```c++
+    cin >> num1 >> num2;
+    cout << name1 >> name2;
+    ```
+    * cin extraction uses white space as the terminating point for reading in data, ie. spaces/tabs/new lines and will only be processed once the enter key is entered
+
