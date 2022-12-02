@@ -20,7 +20,7 @@ cat webserver.log | grep santa
 10.10.249.191 - - [18/Nov/2022:12:28:17 +0000] "GET /evilsanta HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
 10.10.249.191 - - [18/Nov/2022:12:28:18 +0000] "GET /santana HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
 10.10.249.191 - - [18/Nov/2022:12:28:18 +0000] "GET /santabarbara HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
-**10.10.249.191 - - [18/Nov/2022:12:34:39 +0000] "GET /santaslist.txt HTTP/1.1" 200 133872 "-" "Wget/1.19.4 (linux-gnu)"**
+10.10.249.191 - - [18/Nov/2022:12:34:39 +0000] "GET /santaslist.txt HTTP/1.1" 200 133872 "-" "Wget/1.19.4 (linux-gnu)"
 10.10.249.191 - - [18/Nov/2022:12:35:18 +0000] "GET /santafe HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
 10.10.249.191 - - [18/Nov/2022:12:35:18 +0000] "GET /jasonsantamar-20 HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
 10.10.249.191 - - [18/Nov/2022:12:35:18 +0000] "GET /santa_maria_maggiore HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
@@ -30,8 +30,8 @@ cat webserver.log | grep santa
 10.10.249.191 - - [18/Nov/2022:12:35:22 +0000] "GET /jasonsantamaria HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
 10.10.249.191 - - [18/Nov/2022:12:35:27 +0000] "GET /carlossantana_75 HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
 ```
-
-   **Friday**
+    **10.10.249.191 - - [18/Nov/2022:12:34:39 +0000] "GET /santaslist.txt HTTP/1.1" 200 133872 "-" "Wget/1.19.4 (linux-gnu)"**
+    **Friday**
 
 #### 4. What is the IP address of the attacker?
 
