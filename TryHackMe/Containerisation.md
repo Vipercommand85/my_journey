@@ -25,7 +25,7 @@
   * can connect containers together (ie. web server and database server)
   * export/import *__applications/images__*
   * transfer files between OS and container
-  * use YAML to allow developers to instruct how a container should be built and what is run in that container
+  * use **YAML** to allow developers to instruct how a container should be built and what is run in that container
 
 **What does an application become when it is published using Docker?**
 ```
