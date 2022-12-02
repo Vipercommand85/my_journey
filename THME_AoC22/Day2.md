@@ -30,8 +30,8 @@ cat webserver.log | grep santa
 10.10.249.191 - - [18/Nov/2022:12:35:22 +0000] "GET /jasonsantamaria HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
 10.10.249.191 - - [18/Nov/2022:12:35:27 +0000] "GET /carlossantana_75 HTTP/1.1" 404 437 "-" "gobuster/3.0.1"
 ```
-    **10.10.249.191 - - [18/Nov/2022:12:34:39 +0000] "GET /santaslist.txt HTTP/1.1" 200 133872 "-" "Wget/1.19.4 (linux-gnu)"**
-    **Friday**
+   **10.10.249.191 - - [18/Nov/2022:12:34:39 +0000] "GET /santaslist.txt HTTP/1.1" 200 133872 "-" "Wget/1.19.4 (linux-gnu)"**
+   **Friday**
 
 #### 4. What is the IP address of the attacker?
 
