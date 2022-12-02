@@ -1,4 +1,4 @@
-### Task 2: What is Containerisation
+## Task 2: What is Containerisation
 
 **Containerisation**
 : process of packaging an application and necessary resource (ie. libraries/packages) required into one package named a container allowing for the isolation of applications from one another
@@ -17,10 +17,10 @@
  nay
  ```
  
- ### Task 3: Introducing Docker
+ ## Task 3: Introducing Docker
  
   * can be run Linux,Windows, and MacOS
-  * creates *images/applications* that can be deployed, managed, and shared with ease
+  * creates *__images/applications__* that can be deployed, managed, and shared with ease
   * **Docker Engine** is essentially an API that runs on the host OS, which communicates between host OS hardware and containers
   * can connect containers together (ie. web server and database server)
   * export/import *__applications/images__*
@@ -37,7 +37,7 @@ images
 YAML
 ```
 
-### Task 4: History of Docker
+## Task 4: History of Docker
 
   * created by Solomon Hykes in 2013
   * was started as an internal project for dotCloud (PaaS)
@@ -55,5 +55,5 @@ PyCon
 V7
 ```
 
-# Task 5: The Benefits & Features of Docker
+## Task 5: The Benefits & Features of Docker
 
