@@ -1,9 +1,11 @@
 # Sant's Naughty & Nice Log
 
 ### Use the **ls** command to list the files present in the current directory. How many log files are present?
+**command used:**
 ```bash
 ls
 ```
+**Answer:**
 ```
 2
 ```
@@ -47,6 +49,7 @@ cat webserver.log | grep santa
 santaslist.txt
 ```
 ### Look through the log files for the flag  The format of the flad is: **THM{}**
+  **command used:**
   ```bash
   grep -r -e THM
   ```
