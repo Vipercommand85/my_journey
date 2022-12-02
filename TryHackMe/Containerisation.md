@@ -5,6 +5,7 @@
   * this isolation is only isolationg the applocation's environment
   * applications interact with the containerisation engine (ie. Docker Engine) and not the actual physical hardware
   * this containerisation sits on top of the **Host OS**
+ 
  **Namespace**
  : kernel feature that allows a process to access resources of the host OS without being able to interact with other processes
  
