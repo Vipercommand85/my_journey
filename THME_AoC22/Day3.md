@@ -1,10 +1,12 @@
 # Nothing Escapes Detective McRed
 
 ## What is OSINT
+
     * **OSINT** is gathering and analysing publicly available data for intelligence purposes from the internet, mass media, specialist journals/research, photos, and geospatial information
 
 ## OSINT Techniques
 ### Google Dorks
+
     * involves using specialist search terms and advanced search operators to find results not usually displated using regular search terms
         1. **inurl:** searches for a specific text in all indexed URLS ie. **inurl:hacking**
         2. **filetype:** searches for specific file extension ie. **filetype:pdf "hacking"**
@@ -12,20 +14,24 @@
         4. **cahce:** gets the latest cached version by the Google search engine ie. **cahce:tryhackme.com**
 
 ### WHOIS Lookup
+
     * this database stores public domain information such as registrant, administrative, billing and technical contact
     * is a publicly available database
     * some registrars offer Domain Privacy options that allow users to keep their WHOIS information private from the general public and only accessible to certain entities
 
 ### Robots.txt
+
     * publicly accessible file created by website admins that is intended for search engines to allow or disallow indexing of the website's URLs
     * is directly accessible through the domain's main URL
     * is **not able** to be modified
 
 ### Breahed Database Search
+
     * since many major social media and tech giants have suffered data breaches in the past, that information becomes publicly available
     * many web services offer to check if your email address or phone number is in a leaked database; [HaveIBeenPwned](https://haveibeenpwned.com)
 
 ### Searching GitHub Repos
+
     * some developers set their privacy of a repo to **public** which means anyone can access it
     * repos contain complete source code and most times, include passwords, access tokens, etc.
 
