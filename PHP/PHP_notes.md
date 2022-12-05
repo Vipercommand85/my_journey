@@ -1,4 +1,4 @@
-# Functions
+## Functions
 * Basic code to create a function
 * no variables outside or inside the function are accessible to the opposite
 
@@ -11,7 +11,7 @@ function showMessage($name = 'Bob') {
 
 ```
 
-# Return Values
+## Return Values
 * allows variable's values to be accessible outside of the function
 
 ```
@@ -28,7 +28,7 @@ echo $message;
 
 ```
 
-# Reserved Characters
+## Reserved Characters
 	
 * &	==>	&amp;	interpreted as the beginning of an entity or character reference
 * <	==>	&lt;	interpreted as the beginning of a tag
@@ -40,14 +40,14 @@ htmlspecialchars() = PHP function that will automatically change any characters 
 * very wise to use this fuction on any data that will be supplied by a user/or that is untrusted
 
 
-# Redirection
+## Redirection
 
 * basic syntax for redirecting to another page:
 
 header("Location: https://example.com/index.php");
 
 
-# Classes and Objects:
+## Classes and Objects:
 
 * classes are like a blue print that contains objects of a class, can have as many objects as you like
 * can have public or private objects and methods, default is public
@@ -236,7 +236,7 @@ class Item
 }
 ```
 
-# Getter and Setter Methods
+## Getter and Setter Methods
 
 * properties/objects are set as private
 * a public method/function is created to set and get the properties
@@ -352,7 +352,7 @@ Item::showCount();
 
 ## Constants
 * once defined cannot be changed throughout a script, would need to hard code change its value
-* when using the ** define() ** function, these variables are global
+* when using the **define()** function, these variables are global
 * **CONST** key word is used to define a constant inside of a class, defualt visibility of class constants is public
 * naming convention is captilization with " _ " as the delimiter between words
 
@@ -490,13 +490,13 @@ class Book extends Item
 }
 ```
 
-# Protected visibility of properties and methods
+### Protected visibility of properties and methods
 
 * are not able to be directly accessed outside of the class file
 * can be accessed by child classes
 
 
-# **PDO** = PHP Date Objects: allows you to interact with a databases with object orientented code
+### **PDO** = PHP Date Objects: allows you to interact with a databases with object orientented code
 	
 * to utlize this feature creat a new dir and create a class file with the details to connect to the databas(s) from any script
 
