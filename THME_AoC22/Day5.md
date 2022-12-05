@@ -18,8 +18,8 @@
 ## Attacking Passwords
 1. **Shoulder Surfing:** as the name suggest, an attacker would look over the shoulder of a vicim to see the pattern they used to unlock their phone or PIN used at an ATM
 2. **Password Guessing:** leverages personal information about the target in order to guess the password
-3. **Dictionary Attack: ** expands on the password guessing and attempts to include all valid words in a dictionary or word list
-4. **Brute Force Attack: ** the most exhaustive and time-consuming where an attacker can try all possible character combinations
+3. **Dictionary Attack:** expands on the password guessing and attempts to include all valid words in a dictionary or word list
+4. **Brute Force Attack:** the most exhaustive and time-consuming where an attacker can try all possible character combinations
 
 ## Hacking an Authentication Service
 * when possible it is always a good idea to automate tasks, **hydra** is a utility that can help us automate **brute forcing password atacks** for a variety of services
