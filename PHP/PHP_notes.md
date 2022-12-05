@@ -368,7 +368,7 @@ echo MAXIMUM;
 ```	
 
 
-## utlizing the **CONST** key word in a class
+* utlizing the **CONST** key word in a class
 
 ```php
 <?php
