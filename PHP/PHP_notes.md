@@ -438,7 +438,8 @@ echo Item::MAX_LENGTH;
 class Item
 class Book extends Item
 {
-	public $name;																public $author;
+	public $name;
+	public $author;
 
 	public function get ListingDescription()
 	{
