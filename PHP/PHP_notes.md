@@ -2,7 +2,7 @@
 * Basic code to create a function
 * no variables outside or inside the function are accessible to the opposite
 
-```
+```php
 <?php
 function showMessage($name = 'Bob') {
 	echo "Hello $name!";
@@ -14,7 +14,7 @@ function showMessage($name = 'Bob') {
 ## Return Values
 * allows variable's values to be accessible outside of the function
 
-```
+```php
 <?php
 
 function showMessage($name = 'Bob') {
@@ -25,7 +25,6 @@ function showMessage($name = 'Bob') {
 
 $message = showMessage();
 echo $message;
-
 ```
 
 ## Reserved Characters
@@ -54,7 +53,7 @@ header("Location: https://example.com/index.php");
  a) private objects/methods are not accessible outside of the class
  b) public object/methods are accessible to any code that will utilize the class file
 
-```
+```php
 <?php
 
 class Item
@@ -72,7 +71,7 @@ $my_item = new Item();
 
 object file:
 
-```
+```php
 <?php
 
 require 'Item.php'
@@ -81,7 +80,6 @@ $my_item = new Item();
 $item2 = new Item();
 
 var_dump($my_item, $item2);
-
 ```
 
 Class File ( Item.php):
@@ -89,7 +87,7 @@ Class File ( Item.php):
 * file name and class name are the same so that we can auto load this file
 * PSR coding standard suggests using StudlyCaps
 
-```
+```php
 <?php 
 
 class Item
@@ -97,14 +95,13 @@ class Item
 
 
 }
-
 ```
 
 * Properties are attibutes of objects of a class ie. username, email, etc
 * can optional declare a value in the class file for properties
 * can overwrite a declared value in the class file
 
-```
+```php
 <?php
 
 class Item
@@ -114,12 +111,11 @@ class Item
 	public $description = 'This is the default';
 
 }
-
 ```
 
 * can set and access a property by the following syntax
 
-```
+```php
 <?php
 
 require 'Item.php'
@@ -129,7 +125,6 @@ $my_item = new Item();
 $my_item->name = 'Example';
 
 var_dump($my_item->name);
-
 ```
 
 * can add functions as properties to a class called methods
@@ -137,7 +132,7 @@ var_dump($my_item->name);
 * per the PSR standard methods utilize camel case naming convention
 
 
-```
+```php
 <?php
 
 class Item
@@ -157,7 +152,7 @@ class Item
 
 * can access the object variable of a method in the same manner as a property
 
-```
+```php
 <?php
 
 require 'Item.php'
@@ -170,7 +165,7 @@ $my_item->sayHello();
 
 * can use an object of a class inside of a method with a special varibale **$this**
 
-```
+```php
 <?php
 
 class Item
@@ -192,13 +187,12 @@ class Item
 
 	}
 }
-
 ```
 
 * utlizing this new method in a script by setting its name property and then calling this method to print out the name property of the newly created object
 * can concatenate these properties like any other variable
 
-```
+```php
 <?php
 
 require "Item.php";
@@ -210,13 +204,12 @@ $my_item->name = 'An example';
 $item2->name = 'Another Example';
 
 echo $my_item->getName(), " ", $item2->getName();
-
 ```
 
 * special method called the contructor method which is commonly used to intialize properties of a newly created method
 * this method will be called when ever a new object is created
 
-```
+```php
 <?php
 
 class Item
@@ -246,7 +239,7 @@ class Item
 * can create a write only object by removing the getter function/method
 
 
-```
+```php
 <?php
 
 class Item
@@ -289,7 +282,7 @@ class Item
 
 * how you would call a setter/getter function/method
 
-```
+```php
 <?php
 
 require 'Item.php'
@@ -304,7 +297,7 @@ echo $my_item->getName();
 
 ## Static Objects and Methods
 
-```
+```php
 <?php
 
 class Item
@@ -337,7 +330,7 @@ class Item
 	
 * calling the static method/function in a script
 
-```
+```php
 <?php
 
 require 'Item.php';
@@ -357,7 +350,7 @@ Item::showCount();
 * naming convention is captilization with " _ " as the delimiter between words
 
 
-```
+```php
 <?php
 
 require 'Item.php';
@@ -377,7 +370,7 @@ echo MAXIMUM;
 
 ## utlizing the **CONST** key word in a class
 
-```
+```php
 <?php
 
 class Item
@@ -411,7 +404,7 @@ class Item
 	
 * calling the constant in a class in a script
 
-```
+```php
 <?php
 
 require 'Item.php';
@@ -440,7 +433,7 @@ echo Item::MAX_LENGTH;
 
 
 * Item class file
-```
+```php
 <?php
 class Item
 class Book extends Item
@@ -456,7 +449,7 @@ class Book extends Item
 
 * script that set properties and calls a function from the extended class
 
-```
+```php
 <?php
 
 require 'Item.php';
@@ -476,7 +469,7 @@ echo $book->getListingDescription();
 
 * Overwriting a parent method in the child class file
 
-```
+```php
 <?php
 
 class Book extends Item
@@ -500,7 +493,7 @@ class Book extends Item
 	
 * to utlize this feature creat a new dir and create a class file with the details to connect to the databas(s) from any script
 
-```
+```php
 //File name will be Database.php in this example which is also the name of the class
 
 <?php
@@ -539,5 +532,3 @@ class Database
 	}
 }
 ```
-
-
