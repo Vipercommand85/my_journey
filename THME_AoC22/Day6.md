@@ -14,18 +14,31 @@
 * this is also part of penn testing and red teaming implementations
 
 ## How to Analyse Emails
+
 **From**                          ==> the sender's address
+
 **TO**                            ==> receiver's address, including CC and BCC
+
 **Date**                          ==> timestamp of when email was sent
+
 **Subject**                       ==> subject of the email
+
 **Return Path**                   ==> the return address of the reply, a.k.a. "Reply-To"
+
 **Domain Key & DKIM Signitures**  ==> email signitures are provided by email services to identify and authenticate emails
+
 **SPF**                           ==> shows the server what was used to send the email
+
 **Message-ID**                    ==> Unique ID of email
+
 **MIME-Version**                  ==> as the name implies
+
 **X-Headers**                     ==> receiver mail providers usually add these fields/ can differ from each mail provider
+
 **X-Received**                    ==> mail servers that the email went through
+
 **X-Spam Status**                 ==> spam score of the email
+
 **X-Mailer**                      ==> email client name
 
 ## Important Email Header Fields for Quick Analysis
