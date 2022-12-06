@@ -30,23 +30,36 @@
 
 ## Important Email Header Fields for Quick Analysis
 | **Questions to Ask/Required Checks** | **Evaluation** |
+
 |======================================|================|
+
 | Do the **"From"**,**"To"**, and **"CC"** fields contain valid addresses? | Having invalid addresses is a red flag |
+
 | Do the **"From"** and **"To"** fields match? | Having **the same** sender and recipient is a red flag |
+
 | Do the **"From"** and **"Return-Path"** fields match? | Having **different** values in these sections is a red flag |
+
 | Was the email sent from the correct server? | Emails should have come from the official mail servers of the sender |
+
 | Does the **"Message-ID"** field exist, and is it valid? | Empty and/or malformed values are red flags |
+
 | Do the hyperlinks redirect to suspicious/abnormal sites? | Suspicious links and redirections are red flags |
+
 | Do the attachments consist of or contain malware? | Suspicious attachments are a red flag / File hashes marked as suspicious/malicious by sandboxes are a red flag |
 
 * can use Sublime text as an easy way to parse email header information
 * if files has an **".eml"** or **".msg"** extension, sublime text will automatically detect the structure and highlight the header fileds for ease of readability
 * **emlAnalyzer** is a command line tool that used to parse email header information
-  | **-i** | file to analyze using the full path to the file |
-  | **--header** | show header |
-  | **-u** | show URLs |
-  | **--text** | show clear text data |
-  | **--extract-all** | Extract all attachments |
+
+| **-i** | file to analyze using the full path to the file |
+
+| **--header** | show header |
+
+| **-u** | show URLs |
+
+| **--text** | show clear text data |
+
+| **--extract-all** | Extract all attachments |
   
  
  **What is the email address of the sender?**
@@ -55,7 +68,7 @@
  emlAnalyzer --header -i  ~/Desktop/Urgent\:.eml
  ```
  * output:
- * ```bash
+ ```bash
  ==============
  ||  Header  ||
  ==============
