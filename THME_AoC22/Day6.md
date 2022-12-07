@@ -101,7 +101,7 @@ X-Original-To...............elves.all@santaclaus.thm
 Return-Path.................<murphy.evident@bandityeti.thm>
 Delivered-To................elves.all@santaclaus.thm
 ```
-answer:
+## answer:
 ```
 chief.elf@santaclaus.thm
 ```
@@ -136,5 +136,18 @@ RISKY
 Division_of_labour-Load_share_plan.doc
 ```
 
+**What is the hash value of the attachment?**
+```
+0827bb9a2e7c0628b82256759f0f888ca1abd6a2d903acdb8e44aca6a1a03467
+```
 
+**Visit Virus Total and use the hash value to search, navigate to the behavior section, what is the second tatic marked in the Mitre ATT&CK section?**
+```
+Defense Evasion
+```
+
+**Visit InQuest and use the hash value to search, what is the subcategory of the file?
+```
+macro_hunter
+```
 
