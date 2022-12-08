@@ -34,7 +34,7 @@
 11. **Defang URL** now with all of the URLs in plain text, we can use this feature to make the URLs unclickable so that the SOC team can analyze them without any accidental clicks
 
 
-##Questions
+## Questions
 
 **What is the version of CyberChef found in the attached VM?**
 ```
