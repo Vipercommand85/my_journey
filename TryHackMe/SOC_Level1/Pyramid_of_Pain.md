@@ -112,6 +112,39 @@ Emotet
 
 **What is the name of the malicious document associated with the dropped binary?**
 ```
-invoice.exe
+G_jugk.exe
 ```
 
+**What is the name of the written report of the associated dropped binary?**
+```
+CMO-100120 CDW-102220.doc
+```
+
+
+## Task 6 Network Artifacts(Annoying)
+
+* if you can detect and respond to these threats, the attacker would need more time to go back and change his tatics or modify the tools
+
+* examples of network artifacts:
+   user-agent string
+   C2 Information
+   URI patterns followed by HTTP POST requests
+
+* can use TShark or Snort to detect these arifacts
+
+## Questions
+**What browser uses the User-Agent string shown in the screenshot above?**
+```
+Internet Explorer
+```
+
+**How many POST request are in the screenshot above?
+```
+6
+```
+
+
+## Task 7 Tools (Challenging)
+
+* at this stage the attacker would most likely give up trying to break into your network or go back to try to create a new tool that serves the same purpose
+* attackers would utilities to create malicious maldocs for spearphishing attempts, backdoors that can be used to establish C2 Infrastructure
