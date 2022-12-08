@@ -14,7 +14,7 @@
 
 * modifying a file by even a single bit will produce a different hash allowing attackers to obfuscate their malware if only files hashes are used as the **IOC**
 
-**Provide the ransomware name for the hash `63625702e63e333f235b5025078cea1545f29b1ad42b1e46031911321779b6be`:
+**Provide the ransomware name for the hash `63625702e63e333f235b5025078cea1545f29b1ad42b1e46031911321779b6be`:**
 ```
 Conti
 ```
