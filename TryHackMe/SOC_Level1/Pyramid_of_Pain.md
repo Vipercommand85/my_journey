@@ -40,4 +40,78 @@ craftingalegacy.com
 
 ## Task 4 Domain Names (Simple)
 
+* Domain Names map an IP adress to s string of text
+
+* usually contain a domain (**evilcorp**.com) and a top-level domain (evilcorp.**com**)
+    * can add as many subdomains as needed (**tryhackme**.evilcorp.com)
+
+* many DNS providers have loose standards and provide APIs to make it even easier for an attacker to change the domain name(s)
+
+* **Punycode** is a way of converting words that cannot be written in ASCII, into a Unicode ASCII encoding
+    * ie **ad1das.de** ==> **http://xn--addas-04a.de/**
+
+* **URL Shorteners** is a tool that creates a short and unique URL that will redirect to the specific website specified during the initial step of setting up of the URL Shortener link
+    * the following list are some of the services that attackers can use for this purpose:
+    1. bit.ly
+    2. goo.gl
+    3. ow.ly
+    4. s.id
+    5. smarturl.it
+    6. tiny.pl
+    7. tinyurl.com
+    8. x.co
+
+
+## Questions
+
+**Go to this report on app.any.run and provide the fistt malicious URL request that is shows**
+```
+craftingalegacy.com
+```
+
+**What term refers to an address used to access websites?**
+```
+Domain Name
+```
+
+**What type of attack uses Unicode characters in the domain name to imitate a known domain?**
+```
+Punycode Attack
+```
+
+**Provide the redirected website for the shortened URL using a prview: http://tinyurl.com/bw7t9p4u**
+```
+https://tryhackme.com/
+```
+
+
+## Task 5 Host Artifacts (Annoying)
+
+* Attacker would be a bit more frustrated if the Blue Team could detect his attack
+
+* Attacker would need to circle back at this detection level and change his attack tools and methodologies
+
+* **Host Artifacts** are traces or observables that attackers leave on the system
+    * registry values
+    * suspicious process execution
+    * attack patterns or IOC
+    * files dropped by malicious applications
+
+
+## Questions
+
+**What is the suspicious IP the victim machine tried to connect to in the screenshot above?**
+```
+35.214.215.33
+```
+
+**Use the tools introduced in task 2 and provide the name of the malware associated with the above IP**
+```
+Emotet
+```
+
+**What is the name of the malicious document associated with the dropped binary?**
+```
+invoice.exe
+```
 
