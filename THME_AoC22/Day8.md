@@ -50,7 +50,8 @@ The function should finish before the contract can process another function
 
 In this example, a contract can consecutively make new calls to functions while an old function is still executing
  * in this case, an attacker can continuously attempt to call the withdraw function before it can update the balance from the previous call
- * the pre-defined condition will always be met, even if it truly is not the case
+
+* the pre-defined condition will always be met, even if it truly is not the case
  
 ### Re-entrancy Attack
 
@@ -80,14 +81,14 @@ import the necessary files with the **.sol** extension
 
 #### Compile Contracts
 
-navigate to *solidity compiler* and select ```0.8.10+commitfcXXXXX``` from the dropdown *compiler* menu
+navigate to *solidity compiler* and select __0.8.10+commitfcXXXXX__ from the dropdown *compiler* menu
 
 #### Deploy and Interacting with Contracts
 
 Select a contract from the drop down menu and then hit the delpoy button
 
 use the action buttons underneath the *deployed contracts* section
-  * you will need to enter a value into the *value* box before you can execute a *__deposit or withdrawl__*
+  * you will need to enter a value into the *value* box before you can execute a __deposit or withdrawl__
   
   * the deposit button calls a public function as if it were another contract calling the function externall
 
