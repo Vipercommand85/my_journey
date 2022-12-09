@@ -96,9 +96,9 @@ Now that we have the contract operating as designed, let's attack it
   1. Select the contract you want to deploy from the *contract* dropdown menu
   
   2. Deploy the contract by pressing the *deploy* buttom
-    * you will need to provide a reference to the contract you are targeting before deploying the attack contract
+   * you will need to provide a reference to the contract you are targeting before deploying the attack contract
   
-    * enter the address of the *EtherStore* from the *__Deployed Contracts__* section
+   * enter the address of the **_EtherStore_** from the **_Deployed Contracts_** section
   
   3. Confirm the contract was delpoyed and the attack function can be seen from the *deployed contracts* subsection
   
