@@ -147,4 +147,42 @@ Internet Explorer
 ## Task 7 Tools (Challenging)
 
 * at this stage the attacker would most likely give up trying to break into your network or go back to try to create a new tool that serves the same purpose
-* attackers would utilities to create malicious maldocs for spearphishing attempts, backdoors that can be used to establish C2 Infrastructure
+
+* attackers would use utilities to create malicious maldocs for spearphishing attempts, backdoors that can be used to establish C2 Infrastructure, any **.EXE/.DLL** files, payloads, or password crackers.
+
+* Antivirus signatures, detection rules, and YARA rules can be great weapons for you to use against attackers at this stage
+
+* [MalwareBazaar](https://bazaar.abuse.ch) and [Malshare](https://malshare.com) are good resources to provide access to samples, malicious feeds, and YARA results
+
+* [SOC Prime Threat Detection Marketplace](https://tdm.socprime.com) is a platform where security professionals share their detection rules for different kinds of threats including the latest CVE's that are being exploited in the wild
+
+* [SSDeep](https://github.com/ssdeep-project/ssdeep) allows you to perform similarity analysis on files to find potetnially slightly different maldocs
+
+
+### Questions
+**Provide the method used to determine similarity between the files**
+```
+Fuzzy Hassing
+```
+
+**Provide the alternative name for fuzzy hashes without the abbreaviation**
+```
+Context Triggered Piecewise Hashes
+```
+
+
+## Task 8 TTPs (Tough)
+
+* **TTP (Tatics, Teqniques, & Procedures):** includes the entire [MITRE ATT&CK Matrix](https://attack.mitre.org) which outlines notable adversary's steps taken to achieve their goal, from starting point with phishing attempts to persistence and data exfiltration
+
+### Questions
+**How many techniques fall under the Exfiltration category as outlined by the ATT&CK Matrix from MITRE?**
+```
+9
+```
+
+**What is the name of the commercial, remote access tool used by Chimera for C2 beacons and data exfiltration?**
+```
+Cobalt Strike
+```
+
