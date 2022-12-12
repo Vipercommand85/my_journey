@@ -108,5 +108,5 @@ Now that we have the contract operating as designed, let's attack it
 
 **What is the flag found after attacking the provided EtherStore Contract?**
 ```
-
+flag{411_ur_37h_15_m1n3}
 ``` 
