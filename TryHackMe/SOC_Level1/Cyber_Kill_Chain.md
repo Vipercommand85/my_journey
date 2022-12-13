@@ -15,7 +15,9 @@
   * some tools include:
     
     1.[theHarvester](https://github.com/laramies/theHarvester) capable of gathering names, subdomains, IPs, URLs and emails using multiple public data sources
+    
     2.[Hunter.io](https://hunter.io) email hunting tool that will let you obtain contact information associated with the domain
+    
     3.[OSINT Framework](https://osintframework.com) provides the collection of OSINT tools based on various catagories
   
 ### Questions:
