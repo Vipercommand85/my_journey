@@ -140,7 +140,30 @@ proxychains -q nmap -n -sT -Pn -p 22,80,443,5432 [MACHINE IP]
 
 
 
+## Challenge Walkthrough
 
+* Used nmap to check for open ports
+```
+nmap -T4 -A -Pn -vv 10.10.10.58
+```
+* Output:
+```bash
+PORT   STATE SERVICE REASON         VERSION
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.54 ((Debian))
+|_http-favicon: Unknown favicon MD5: D41D8CD98F00B204E9800998ECF8427E
+| http-methods: 
+|_  Supported Methods: GET HEAD OPTIONS
+|_http-server-header: Apache/2.4.54 (Debian)
+|_http-title: Curabitur aliquet, libero id suscipit semper
+MAC Address: 02:EF:75:2A:F8:E5 (Unknown)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+```
+
+* Inspected Network infor on web page
+```
+running Laravel v8.26.1 (PHP v7.4.30)
+Set-Cookie Header= XSRF-TOKEN
+```
 
 
 
