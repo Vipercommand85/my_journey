@@ -159,8 +159,8 @@ Person james;
 #### Naming Variable Rules
 1. Can contain letters, numbers, and underscores
 2. Must begin with a letter or underscore (_)
- * cannot begin with a number
+  * cannot begin with a number
 3. Cannot use C++ **reserved keywords**
 4. Cannot redeclare a name in the same scope
- * C++ is case sensitive
+  * C++ is case sensitive
 
