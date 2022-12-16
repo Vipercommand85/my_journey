@@ -242,9 +242,13 @@ sizeof(some_variable);
 ```
 * gets its information from **\<climit\>** and **\<cfloat\>**
    * these files contain size and precision information about your implementation of C++
+      
       INT_MAX
+      
       INT_MIN
+      
       LONG_MAX
+      
       LONG_MIN
       ...
 
