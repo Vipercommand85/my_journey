@@ -183,12 +183,12 @@ Person james;
 int agel //uninitialized
 int age = 21; // C-like initialization
 int age (21); // Constructor initialization
-int age {21}; // C++11 list initialization syntax
+int age {21}; // C++11 list initialization syntax, will catch compile errors and fix
 ```
 
 #### Global Variables
 * are declared outside of any function
- * any variable in a function is considered a **local variable**
+    * any variable in a function is considered a **local variable**
 ```c++
 #include <iostream>
 using namespace std;
@@ -211,25 +211,42 @@ Fundamental data types implented directly by the C++ language
 
 * **Character** types
  **char**     can store exactly 1 byte with a minimum of 8 bits
+ 
  **char16_t** at least 16 bits
+ 
  **char32_t** at least 32 bits
+ 
  **wchar_t**  can represent the largest available character set
  
 * **Interger** types
- signed and unsigned
+      * signed and unsigned
 
 * **Floating-point** types
- **float**    can store up to 7 decimal digits
- **double** can store up to 15 decimal digits
- **long double** can store up to 19 decimal digits
- * can use **\`** anywhere in a program, especially useful with large numbers ie. 7`600`000`000
+ **float**    can store up to 7 decimal digits, positive or negative
+ 
+ **double** can store up to 15 decimal digits, positive or negative 
+ 
+ **long double** can store up to 19 decimal digits, positive or negative
+      * can use **\`** anywhere in a program, especially useful with large numbers ie. 7`600`000`000
 
 * **Boolean** type
 
 * Size and precision is often complier-dependent
  * **#include \<climits\>**
 
-
+#### What is the Size of a Variable(sizeof)
+* **sizeof()** returns the number bytes of a type or variable
+```c++
+sizeof(int);
+sizeof(some_variable);
+```
+* gets its information from **\<climit\>** and **\<cfloat\>**
+   * these files contain size and precision information about your implementation of C++
+      INT_MAX
+      INT_MIN
+      LONG_MAX
+      LONG_MIN
+      ...
 
 
 
