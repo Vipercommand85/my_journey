@@ -132,3 +132,35 @@ using std::endl;
     ```
     * cin extraction uses white space as the terminating point for reading in data, ie. spaces/tabs/new lines and will only be processed once the enter key is entered
 
+
+
+# Variables and Constants
+
+### What is a variable?
+* **variable:** is an abstraction for a memory location/ allows us to store information using meaningful names
+* must be declared before they are used
+* can change value through a program, however, will always retain the same memory location
+* must have a **type (interger,real number,string,etc)** and a **value( 10, 3.14, Mike)**
+```c++
+int age;
+ag = 21;
+```
+#### Declaring Variables
+* **VariableType VariableName;
+```c++
+string name;
+int age; // this is a declaration statement
+ag = 21;
+
+Account franks_account; // C++ allows you to declare non C++ builtin types as our own tpyes
+Person james;
+```
+
+#### Naming Variable Rules
+1. Can contain letters, numbers, and underscores
+2. Must begin with a letter or underscore (_)
+ * cannot begin with a number
+3. Cannot use C++ **reserved keywords**
+4. Cannot redeclare a name in the same scope
+ * C++ is case sensitive
+
