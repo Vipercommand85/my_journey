@@ -109,14 +109,14 @@ using std::cout;
 using std::endl;
 ```
 ### Basic Input and Output (I/O) with cin and cout 
-* must **include <iostream>** to utilize **cout, cin, cerr, clog**
+* must declare **#include \<iostream\>** at the beginning of a program to utilize **cout, cin, cerr, clog**
     * **cout** standard output stream that will send its output to the console by default
     * **cin** standard input stream that reads input from the keyboard by default
-    * **<<** insertion operator that is used with **cout**
+    * **\<\<** insertion operator that is used with **cout**
     ```c++
     cout << data;
     ```
-    * **>>** extraction operator that is used with **cin**
+    * **\>\>** extraction operator that is used with **cin**
     ```c++
     cin >> number;
     ```
