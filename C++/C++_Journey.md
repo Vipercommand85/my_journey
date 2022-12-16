@@ -205,6 +205,45 @@ int main(){
 ```
 * are automatically initialized to 0
 * are available by any part of the program, which means at any point, they could be changed
-* 
+
+#### C++ Primitive Data Types
+Fundamental data types implented directly by the C++ language
+
+* **Character** types
+ **char**     can store exactly 1 byte with a minimum of 8 bits
+ **char16_t** at least 16 bits
+ **char32_t** at least 32 bits
+ **wchar_t**  can represent the largest available character set
+ 
+* **Interger** types
+ signed and unsigned
+
+* **Floating-point** types
+ **float**    can store up to 7 decimal digits
+ **double** can store up to 15 decimal digits
+ **long double** can store up to 19 decimal digits
+ * can use **\`** anywhere in a program, especially useful with large numbers ie. 7`600`000`000
+
+* **Boolean** type
+
+* Size and precision is often complier-dependent
+ * **#include \<climits\>**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
