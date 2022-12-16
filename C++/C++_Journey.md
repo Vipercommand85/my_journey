@@ -150,7 +150,7 @@ ag = 21;
 ```c++
 string name;
 int age; // this is a declaration statement
-ag = 21;
+age = 21;
 
 Account franks_account; // C++ allows you to declare non C++ builtin types as our own tpyes
 Person james;
@@ -158,9 +158,53 @@ Person james;
 
 #### Naming Variable Rules
 1. Can contain letters, numbers, and underscores
-2. Must begin with a letter or underscore (_)
-  * cannot begin with a number
+
+2. Must begin with a letter or underscore **(_)**
+ * cannot begin with a number
 3. Cannot use C++ **reserved keywords**
+
 4. Cannot redeclare a name in the same scope
-  * C++ is case sensitive
+ * C++ is case sensitive
+
+#### Naming Variable - Style and Best Practices
+1. Be consistent with your naming conventions
+ * **myVariableName** vs. **my_variable_name**
+ * avoid beginning name with **(_)**
+
+2. Use meaningful names
+ * not too long or short
+
+3. Never use variables before initalizing them
+
+4. Declare variables close to when you need them in your code.
+
+#### Initialzing Variables
+```c++
+int agel //uninitialized
+int age = 21; // C-like initialization
+int age (21); // Constructor initialization
+int age {21}; // C++11 list initialization syntax
+```
+
+#### Global Variables
+* are declared outside of any function
+ * any variable in a function is considered a **local variable**
+```c++
+#include <iostream>
+using namespace std;
+
+int age {20}; //Global variable
+
+int main(){
+
+ string name {Mike}; //Local Variable
+
+ cout << age << endl;
+ return 0;
+}
+```
+* are automatically initialized to 0
+* are available by any part of the program, which means at any point, they could be changed
+* 
+
 
