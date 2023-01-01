@@ -7,3 +7,10 @@ sudo apt install neovim
 * add repo to apt package maanger
 ```bash
 
+```
+* update to the new version
+```bash
+sudo nala update -y
+```
+
+
