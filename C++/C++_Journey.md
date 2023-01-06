@@ -359,7 +359,7 @@ cout << test_scores endl; // this will print out the address location of the arr
 * Delcaring multi-dimensional arrays:
 **_Element_Type array_name \[dim1_size] \[dim2_size]_**
 ```c++
-int movie_rating \[3] \[4];
+int movie_rating [3] [4];
 ```
 ```c++
 const int rows{3};
