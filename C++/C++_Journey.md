@@ -238,8 +238,11 @@ Fundamental data types implented directly by the C++ language
 * **sizeof()** returns the number bytes of a type or variable
 ```c++
 sizeof(int);
+sizeof(short);
+sizeof(long);
 sizeof(some_variable);
 ```
+* when using **_sizeof()_** function on a variable you will get the size of the variable and not the actual values stored in the variable
 * gets its information from **\<climit\>** and **\<cfloat\>**
    * these files contain size and precision information about your implementation of C++
       
@@ -250,7 +253,172 @@ sizeof(some_variable);
       LONG_MAX
       
       LONG_MIN
+      
       ...
+
+
+#### What is a Constant?
+
+* are very much like variables, however, their value **cannot change once declared**
+
+* allows you to elimiate hard coding the same value in multiple locations
+
+**Types of Constants:**
+ * **Literal Constants**
+ ```c++
+ x = 12; // can add a "U/u" to specify signed or unsigned / "L/l" for long
+ y = 1.56; // can add a "F/f" to specify double
+ name = "Frank";
+ ```
+ * escape characters are examples of literal constants
+ * "\n, \t, \r, etc."
+ 
+ * **Declared Constants**
+ ```c++
+ const double pi {3.1415926};
+ const int monthe_in_year {12};
+ ```
+ * **Constant Expressions**
+ ```c++
+ constexpr keyword
+ ```
+ * **Enumerated Constants**
+ ```c++
+ enum keyword
+ ```
+ * **Defined Constants**
+ * not recommended in modern C++ code
+ ```c++
+ #define
+ #define pi 3.1415926
+ ```
+
+# Arrays and Vectors
+
+#### What is an Array?
+* arrays are compound data type or structure that collects elements
+* all elements must be of the same type, ie _int_, _float_, _char_, etc.
+* each element can be accessed directly
+
+##### Characteristics:
+* fixed in size
+* stored contiguously in memory
+* first element is at index **0**
+* last element is at index **size-1**
+* **C++ will not check if you are out of bounds**
+* Always initialize arrays
+* Iteration is often used to process
+
+#### Declaring and Initializing Arrays
+* Element_Type array_name **[ constant number of elements]** **{init list}\**;
+```c++
+int test_scores [5] {0}; // {0} initializes the array elements to 0
+
+int high_score_per_level [10] {3,5}; // initialized fist 2 indexes and the remaining to 0
+
+const int days_in_year {365}; 
+double hi_temp [days_in_year] {0};
+
+int another_array [] {1,2,3,4,5}; // size automatically calculated
+```
+
+#### Accessing and Modifying Array Elements
+* array_name **[element_index]**
+```c++
+int test_scores [5] {100,95,99,97,88};
+
+cout << "First score at index 0: " << test_scroes[0] << endl;
+cout << "Second score at index 1: " << test_scroes[1] << endl;
+cout << "Third score at index 2: " << test_scroes[2] << endl;
+cout << "Fourth score at index 3: " << test_scroes[3] << endl;
+cout << "Fifth score at index 4: " << test_scroes[4] << endl;
+```
+* you can read in values for specific array indexes
+```c++
+int test_scores [5] {0};
+
+cin >> test_scores[0];
+cin >> test_scores[1];
+cin >> test_scores[2];
+cin >> test_scores[3];
+cin >> test_scores[4];
+
+test_scores[0] = 99; // assignment statement for a specific index
+```
+
+**Hows does it work?**
+* the name of the array represents the location of the first element in the array (index 0)
+* the \[index\] represents the offset from the beginning of the array
+* C++ simply performs a calculatio to find the correct element
+```c++
+cout << test_scores endl; // this will print out the address location of the array
+```
+
+#### Multidimensional Arrays
+* no real limit on the amount of dimesions you can have in an array
+* Delcaring multi-dimensional arrays:
+**_Element_Type array_name \[dim1_size] \[dim2_size]_**
+```c++
+int movie_rating \[3] \[4];
+```
+```c++
+const int rows{3};
+const int cols {4};
+int movie_rating [rows] [cols];
+
+cin >> movie_rating [1] [2];
+cout << movie_rating [3] [1];
+```
+* Initializing multi-dimensional arrays
+```c++
+int movie_rating [3] [4]
+{
+  { 0, 4, 3, 5},
+  { 2, 3, 3, 5},
+  { 1, 4, 4, 5}
+};
+```
+
+#### Declaring and Initializing Vectors
+* container in the C++ Standard Template Library
+* an array that can dynamically grow and shrink at execution time
+* similar semantics and syntax as arrays
+* very efficient
+* can provide bounds checking
+* can use functions like sort, reverse, find, and more
+
+**Declaring Vectors:**
+```c++
+#include <vector>
+using namespace std;
+
+vector <char> vowels (5); // (5): tells the compiler you want 5 characters to be stored in this vector
+vector <int> test_scores (10); // in both of these examples, all indexes are automatically initialized to zero, does not need to be manually done
+
+vector <char> vowels {'a', 'e', 'i', 'o', 'u' }; // with vectors " ' " are used instead of double quotes with chars
+vector <int> test_scores { 100, 98, 89, 85, 93};
+vector <double> hi_temps (365, 80.0); // the 365 declares the initial size in this vector
+                                      // the 80.0 initializes every double to this value
+```
+#### Accessing and Modifying Vector Elements
+* can use array syntax **_vector_name \[element_index]_** however, there will be no bounds checking
+* better to use vector syntax **_vector_name.at(index_element)_**
+* **_at()_**: is a method that will give you the element at the given position in ()
+```c++
+vector <int> test_scores { 100, 98, 89, 85, 93};
+
+cout << "First score at index 0: " << test_scores.at(0) << endl; // will output 100
+cout << "Second score at index 1: " << test_scores.at(1) << endl; // will output 98
+```
+
+
+
+
+
+
+
+
+
 
 
 
