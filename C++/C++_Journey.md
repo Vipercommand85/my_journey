@@ -410,12 +410,41 @@ vector <int> test_scores { 100, 98, 89, 85, 93};
 cout << "First score at index 0: " << test_scores.at(0) << endl; // will output 100
 cout << "Second score at index 1: " << test_scores.at(1) << endl; // will output 98
 ```
+* **_push_back(element)_**: is a method that allows you to add an element to the end of the list of the same type to a vector
+```c++
+vector <int> test_scores { 100, 98, 89};
 
+test_scores.push_back(80);  // 100, 98, 89, 80
+test_scores.push_back(90);  // 100, 98, 89, 80, 90
+```
+* if you do use a method that requests an item that is not in bounds of the vector, an exception and error message is generated
+```c++
+cout << "\nEnter a test score to add to the vector: ";
 
+int score_to_add {0};
+cin >> score_to_add;
 
+test_scores.push_back(score_to_add);    // this will add the newly entered test score from the command line to the test_scores vector
+cout << "\nThere are now " << test_scores.sizeof() << " score in the vector" << endl;   // output: There are now 4 scores in the vector
+```
+* **Example of a 2D-vector**
+```c++
+vector <vector<int>> movie_ratings
+{
+    {1,2,3,4},
+    {2,4,2,9},
+    {3,5,2,8}
+};
 
+cout << "\nHere are the movie ratings for reviewer #1 using vector syntax :" << endl;
+cout << movie_ratings.at(0).at(0) << endl;
+cout << movie_ratings.at(0).at(1) << endl;
+cout << movie_ratings.at(0).at(2) << endl;
+cout << movie_ratings.at(0).at(3) << endl;
 
+// using the .at().at() allows you to grab each item in a specific row and column
 
+```
 
 
 
