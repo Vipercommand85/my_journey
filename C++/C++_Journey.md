@@ -3,9 +3,9 @@
 ### Running a C++ program from the command line
 * be sure to save file with a **.cpp** file extension so that the file will compile
 * will need to use the **g++** compiler, gnu C++ compiler
-* **-Wall** ==> turns on all warnings if any should arise
-* **-std=c++14** ==> tells the compiler to utilize the C++14 standard
-* **-o [FILE NAME]** ==> allows you to specify the name of the compiled file
+* **-Wall** // turns on all warnings if any should arise
+* **-std=c++14** // tells the compiler to utilize the C++14 standard
+* **-o [FILE NAME]** // allows you to specify the name of the compiled file
 
 ```bash
 g++ -Wall -std=c++14 main.cpp
@@ -446,8 +446,39 @@ cout << movie_ratings.at(0).at(3) << endl;
 
 ```
 
+## Statments and Operators 
 
+#### Expressions and Statments 
+* **Expressions:**"a sequence of operators and operands that specifies a computation" 
+* the most basic building block of a program 
+* computes a value from a number of operands
+**Expression Examples:**
+```c++
+34 // literal
+favorite_number // variable 
+1.5 + 2.8 // addition
+2 * 5 // multiplcation
+a > b // relational
+a = b // assignment 
+```
+* **Statments:** a complete line of code that performs some action usually terminated with a semi-colon
+* usually contains expressions:
+    * null, compund, selection, iteration, declaration, jumo, try blocks, and others
+**Statement Examples:**
+```c++
+int x;  // declaration 
+favorite_number = 12; // assignment
+x = 2 * 5;  // assignment
+1.5 = 2.8; // expression 
+if (a > b) cout << " a is greater than b";  // if statement
+;
+```
 
+#### Using Operators 
+* C++ has a rich set of operators 
+    * unary: act on one operand such as " - "
+    * binary: most operators are of this type acting on 2 operands
+    * ternary: 
 
 
 
