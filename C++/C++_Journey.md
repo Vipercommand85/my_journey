@@ -227,7 +227,7 @@ Fundamental data types implented directly by the C++ language
  **double** can store up to 15 decimal digits, positive or negative 
  
  **long double** can store up to 19 decimal digits, positive or negative
-      * can use **\`** anywhere in a program, especially useful with large numbers ie. 7`600`000`000
+      * can use **backticks** anywhere in a program, especially useful with large numbers ie. 7`600`000`000
 
 * **Boolean** type
 
