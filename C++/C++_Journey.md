@@ -476,19 +476,69 @@ if (a > b) cout << " a is greater than b";  // if statement
 
 #### Using Operators 
 * C++ has a rich set of operators 
-    * unary: act on one operand such as " - "
-    * binary: most operators are of this type acting on 2 operands
-    * ternary: 
+    * **unary**: act on one operand such as " - "
+    * **binary**: most operators are of this type acting on 2 operands
+    * **ternary**: 
 
 
 
 
+## Section 9: Controlling Program Flow
 
+* **_if_statement_** executes the followed statement if the condition is true, otherwise the statement is skipped if false
+ * that statement is typically indented underneather the conditional expression of the **_if_statement_**
+ * this is for human readability
+```c++
+if (num > 10)
+ ++num:
+ ```
+* this loop will loop until num becomes greater than 10, ei. when **num = 11**
 
+* **_block statement_** are enclosed in **\{}** and include multiple lines of statements
+```c++
+if(num > 10) {
+ ++num;
+ cout << "this too";
+ }
+```
+* blocks can constain variable declaration that are only visible within the block - **_local scope_**
 
+**_if else statement_**
+```c++
+if(num > 0)
+ cout << num << " is greater than zero";
+else
+ cout << num << " is less than zero.";
+```
+* if the experssion is **true** then execute **statement1**
+* if the expression is **false** then execute **statement2**
 
+**_if else statment_ with block statements**
+```c++
+if(num > 10){
+ ++num;
+ cout << "increment";
+} else {
+ num = 10;
+ cout << "Reset";
+}
+```
 
+**_if-else-if_ contruct**
+```c++
+if(score > 90)
+ cout << "A";
+else if (score > 80)
+ cout << "B";
+if(score > 70)
+ cout << "C";
+else if (score > 60)
+ cout << "D";
+else        // all others must be F
+ cout << "F";
 
+cout << "Done";
+```
 
 
 
