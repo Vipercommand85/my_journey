@@ -102,9 +102,9 @@ GPS Position                    : 51 deg 30' 51.90" N, 0 deg 5' 38.73" W
 **Using ```exiftool``` try to find where the kidnappers took the image they attached to their document. What is the name of the street?**
 ```
 Milk Street
-```bash
-**What is the model name of the camera used to take this photo?**
 ```
+**What is the model name of the camera used to take this photo?**
+```bash
 root@ip-10-10-251-116:~/Rooms/introdigitalforensics# exiftool letter-image.jpg | grep Model
 Camera Model Name               : Canon EOS R6
 Lens Model                      : EF50mm f/1.8 STM
