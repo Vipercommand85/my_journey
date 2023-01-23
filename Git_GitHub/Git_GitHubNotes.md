@@ -76,7 +76,10 @@ git merge [SOURCE BRANCH] [DESTINATION BRANCH]
 * accept the pull request and commit with a comment
 * GitHub automatically knows that the code in the merged brach exists elsewhere, so you will be prompted to salely delete the merged branch
 
-
+## Section 5: Merge Conflicts
+### Types of Merges
+* **Fast-Forward Merge:** basically a pointer being updated to the most recent commit
+* **Recursive Merge:** searching for shared commits that both branches have in common, oragnizes them together and merges them into a single branch
 
 
 
