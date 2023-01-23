@@ -1,8 +1,8 @@
 # Git & GitHub Masterclass ( Udemy)
 
-##Section 1: Getting started with Git
+## Section 1: Getting started with Git
 
-###Setup Git Workspace
+### Setup Git Workspace
 * **git init**: initalizes the current working directory as a git repository
 * **git add**: will add any files in the current directory/repo to the stage area for adding to the repo
 * **git commit**: will write the changes in the staging area to the repo
