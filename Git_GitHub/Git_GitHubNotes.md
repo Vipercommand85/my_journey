@@ -65,10 +65,16 @@ git log --graph
 git merge [SOURCE BRANCH] [DESTINATION BRANCH]
 ```
  * after successful merge, good practice to delete the source branch that was merged into the destination brach
+ * will need to delete branch from the remote repo as well
  ```bash
  git brach -d [SOURCE BRANCH]
  ```
  
+### Pull Request in Github
+* under pull requests tab any pull requests will be listed
+* review what changes will take affect as an sanity check, (individual/owner that is responsible for accepting pull requests)
+* accept the pull request and commit with a comment
+* GitHub automatically knows that the code in the merged brach exists elsewhere, so you will be prompted to salely delete the merged branch
 
 
 
