@@ -53,6 +53,33 @@
 ```bash
 git checkout --track origin/test
 ```
+### Graphing Branches on the Terminal
+* below command will log in a graphical way the branch you are currently working in
+```bash
+git log --graph
+```
 
 ### Merging Branches
-* **git merge [SOURCE BRANCH] [DESTINATION BRANCH]**
+* below command will merge the source branch to the destination branch
+```bash
+git merge [SOURCE BRANCH] [DESTINATION BRANCH]
+```
+ * after successful merge, good practice to delete the source branch that was merged into the destination brach
+ ```bash
+ git brach -d [SOURCE BRANCH]
+ ```
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
