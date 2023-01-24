@@ -539,6 +539,10 @@ else        // all others must be F
 
 cout << "Done";
 ```
+#### Nested _if_ Statement
+* allows testing of multiple conditions
+* **else** belongs to the closest **if**
+* indentation becomes important for clarity of code
 
 
 
