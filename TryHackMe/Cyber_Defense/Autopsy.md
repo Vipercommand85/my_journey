@@ -73,10 +73,78 @@ Comprised of **five top-level nodes:**
 * **O = Occurrence** will indicate how many times this file/folder has been seen in the past cases ( this will require the Central Repository)
 
 ### Keyword Search
+* allows an investigator to perform an ad-hoc search of the desired string
+* results will appear in the main pane
 
+### Status Area
+* progress bar at the bottom right corner that will give a status of a running process
 
+**Expand the "Data Sources" option; what is the number of available sources?**
+```
+4
+```
+**What is the number of the detected "Removed" files?**
+```
+10
+```
+**What is the filename found under the "Interesting Files" section?**
+```
+googledrivesync.exe
+```
 
+## Task 6: User Interface II
 
+### Data Sources Summary
+* if you right click on the name of a data source, there wil be an option for summary report
+
+### Generate Report
+* allows you to create a report in multiple formats that contains all the information that was present in the **Results Viewer** pane
+* these can be helpful on systems with low resources, however, there is not an additional search option, so a specific artifact will need to be searched for manually
+* can be found in the main action bar above the results viewer
+
+**What is the full name of the operating system version?**
+```
+Windows 7 Ultimate Service Pack 1
+```
+**What percentage of the drive are documents?**
+```
+40.8%
+```
+**What is the job number of the "Interesting Files Identifier" module on the report?
+```
+10
+```
+
+## Data Analysis
+**What is the name of an Installed Program with the version number of 6.2.0.2962?**
+```
+Eraser
+```
+**A user has a Password Hint. What is the value?**
+```
+IAMAN
+```
+**What was the IP address that accessed numerous _SECRET_ files on a network drive?**
+```
+10.11.11.128
+```
+**What web search term has the most entries?**
+```
+information leakage cases
+```
+**What was the web search conducted on 3/25/2015 21:46:44?**
+```
+anti-forensics tools
+```
+**What MD5 hash value of the binary is listed as an Interesting File?**
+```
+fe18b02e890f7a789c576be8abccdc99
+```
+**What self-assuring message did the 'Informant' write for himself on a Sticky Note?**
+* need to look in missmatch extension for .snt
+```
+tomorrow...everythingwillbeok...
+```
 
 
 
