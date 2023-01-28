@@ -110,7 +110,7 @@ Windows 7 Ultimate Service Pack 1
 ```
 40.8%
 ```
-**What is the job number of the "Interesting Files Identifier" module on the report?
+**What is the job number of the "Interesting Files Identifier" module on the report?**
 ```
 10
 ```
