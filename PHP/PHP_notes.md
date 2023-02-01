@@ -490,9 +490,9 @@ class Book extends Item
 * can be accessed by child classes
 
 
-### **PDO** = PHP Date Objects: allows you to interact with a databases with object orientented code
+### **PDO** = PHP Data Objects: allows you to interact with a databases with object orientented code
 	
-* to utlize this feature creat a new dir and create a class file with the details to connect to the databas(s) from any script
+* to utlize this feature creat a new dir and create a class file with the details to connect to the database(s) from any script
 
 ```php
 //File name will be Database.php in this example which is also the name of the class
@@ -500,7 +500,7 @@ class Book extends Item
 <?php
 
 /**
-* Datebase
+* Database
 *
 * A connection to the database
 *
@@ -510,7 +510,7 @@ class Book extends Item
 class Database
 {
 
-/**function that will get the datebase connection that can be used in any script
+/**function that will get the database connection that can be used in any script
 *
 * @return PDO object Connection to the database server
 *		
