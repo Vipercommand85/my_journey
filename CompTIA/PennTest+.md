@@ -49,7 +49,9 @@
 * know who to contact on a per issue basis in a timely manner
 
 ### Regulatory Compliance
-[**PCI DSS**](https://www.pcisecuritystandards.org/documents/Penetration-Testing-Guidance-v1_1.pdf): industry standard of security requirements for payment card processing
+[**PCI DSS**](https://www.pcisecuritystandards.org/documents/Penetration-Testing-Guidance-v1_1.pdf)
+: industry standard of security requirements for payment card processing
+
 PCI DSS requirement 11
 : intermnal and external testing that is carried out by the following triggers
 * annually
