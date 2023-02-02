@@ -92,7 +92,9 @@
 
 ### Support Resources
 **Black Hat Hacker**: no inside knowledge of systems and topology
+
 **White Hat Hacker**: opposite of black hat
+
 **Grey Hat Hacker**: some information woll be available but not as much as a white hat
 
 * **Web Services/Application Description Language (WSDL/WSADL)**
