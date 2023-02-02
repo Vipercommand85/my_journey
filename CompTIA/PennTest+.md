@@ -209,7 +209,7 @@ contains mobile and enterprise tactics and techniques
 
 allows you to determine if controls and technology are implented in such a way to detect and thwart known TTP's
 
-* **[Open Web Application Security Project (OWASP)]**(https://www.owasp.org)
+* **[Open Web Application Security Project (OWASP)](https://www.owasp.org)**
 nonprofit resource to help make web applications more secure
 
 [OWASP Top 10](https://www.owasp.org/Top10/)
