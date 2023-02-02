@@ -98,33 +98,43 @@
 **Grey Hat Hacker**: some information woll be available but not as much as a white hat
 
 * **Web Services/Application Description Language (WSDL/WSADL)**
- - XML file with lots of info about web service/application and it's interface requirements
- - can be publically available
- - can be used to leverage vulnerablities
+ XML file with lots of info about web service/application and it's interface requirements
+ 
+ can be publically available
+ 
+ can be used to leverage vulnerablities
 
 * **SOAP Project File (Simple Object Access Protocol)** 
-- not exposed to public
-- used by developers in development environment
-- used to exchange info for web services
-- provides low level web service interface details (input/output/server info)
+not exposed to public
+
+used by developers in development environment
+
+used to exchange info for web services
+
+provides low level web service interface details (input/output/server info)
 
 * **SDK Documentation (Software Development Kit)**
- - help provide info on tools used to develope software
- - can provide what libraries were used in the cration of the application/service
+ help provide info on tools used to develope software
+ 
+ can provide what libraries were used in the cration of the application/service
 
 * **Swagger Documentation**
- - popular open-source framework for developing REST (API) services
- - is a light weight API (Application Programming Interface)
- - can provide internal info on REST services exposed to clients
+ popular open-source framework for developing REST (API) services
+ 
+ is a light weight API (Application Programming Interface)
+ 
+ can provide internal info on REST services exposed to clients
 
 * **XSD (XNL Schema DEfinition)**
- - defines XML documentation content
+ defines XML documentation content
 
 * view sample application requests to generate a baseline of what should be sent and received to find potential weak spots that can be exploited
 * useful starting point when testing web applicatoins when determining what avenues to explore for vulnerabilities
+
 * **Architectural Diagram**
- - useful for mapping the topology to know how end points communicate with one another
- - helpful in determining which end point to attack first and in what order
+ useful for mapping the topology to know how end points communicate with one another
+ 
+ helpful in determining which end point to attack first and in what order
 
 ### Legal Groundwork
 * **Statement of Work (SOW)**
