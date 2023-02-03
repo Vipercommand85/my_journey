@@ -242,9 +242,157 @@ Disclaimers:
 **Blue Team** 
 - team used to stop the **Red Team** from succeeding and to ensure that security controls and technology are utilize to their full potential
 
+### Ethical Mindset
+- start with a trusted team as members are entrusted with substantial authority
+- backgrounf checks of Pentesting team
+- immediately report breaches/criminal activity
+- define a reporting process
+- preliminary info releases are acceptable
+- limit the use of tools to a particular engagement
+- avoid scope creep
+- do not run test that cross engagement boundaries
+- limit invasiveness based on scope
+- pay attention to limitations defined by the scope
+- watch out for long running test and redirects
+- risks to the professional including fees/fines, or court appearnces needed
 
+### Lab Enviornment
+- this is a very subjective area and there is one right way to set this up
 
+### Project Stategy and Risk
+#### Condideratoins
 
+**White-listed**
+- no one can access resources unless specifically granted
+
+**Black-listed**
+- everyone can access resources unless specifically blocked
+
+**Security Exceptions**
+- **IPS** ( Intrusion Prevention System)/**WAF**( Web Application Firewall) white-list
+- **NAC**( Network Access Control)
+- **Certificate pinning** (public key pinning)
+
+- explore company policies to learn about security considerations
+
+### Scope Vulnerabilities
+**Scheduling**
+- clear when and can run test(s)
+- notifications of who should be notified of certain findings
+- when the test(s) should be completed
+
+**Scope Creep**
+- client rquests additional taks to be performed after **SOW** is signed
+- takes resources away from the core **SOW** tasks
+- nust get authorization for any **SOW** modifications
+
+**Threat Actors**
+- what role will you assume as defined by yourself or the cleint
+- **APT**(Advanced persistent threat)
+- **Script Kiddies**
+- **Hacktivist:** is an activist that uses hacking skills to attack an organization/company that they feel are doing harm to people or groups of people through their business practices
+- **Insider Threat** typically an employee/member of an organization that wants to do harm to the organization
+
+**Capabilities**
+- what resources are able to be used during the engagement
+- will you have physical access or will be testing the physical controls of a facility
+- do you have a support structure that is helping in this engagement
+
+**Intent**
+- power/revenge
+- status/validation
+- monetary gain
+- ideology
+
+**Threat Model**
+- gather information and identify assets
+- rank pertinent threats
+- map threats to the assests
+
+### Compliance-based Assessments
+- rules to complete assessments are usually predefined by a standard
+- password policies
+- data isolation
+- ecryption key management
+- limitations put forth by the standard or organization
+- helps to clearly define objectives based on regulations
+
+## Section 3: Information Gathering and Vulnerability Scanning
+### Scanning and Enumeration
+**Information Gathering**
+- scanning is the process of looking at some number of "thing" to determine characteristics
+- commonly used in pen testing to uncover target vulnerabilities
+- many types of scan targets ie networks, network devices, computers, applications/services
+
+**Enumeration**
+- counting the detected instances of some target class
+- target classes include hosts, networks, domains, users, groups, network shares, web pages, applications/services, tokens
+
+### Scanning Demo
+- ensure that you are know the target IP range to be scanned
+```bash
+nmap -sP [TARGET IP ADDRESS RANGE/HOST]
+```
+- -sP is a ping sweep scan that sends out ICMP packets to see what hosts are active
+- many admins set firewall rules to drop/block these packets
+- can use cider notation on the IP address to scan a network/subnetwork 
+```bash
+arp-scan [TARGET IP ADDRESS RANGE/HOST]
+```
+**ARP** Address Resolution Protocol will look at a table of MAC addresses to map an IP address to
+- can utilize cider notation with the IP address to scan a network/subnetwork
+
+#### Web DNS Lookup
+**[WhoisLookup](http://whois.domaintools.com)**
+- will map a domain name to an IP address if the domain has been registered with a registrar
+
+### Packet Investigation
+**Packet Crafting**
+- creating specific network packets to gather information or carry out attacks
+- some tools include **netcat, nc, ncat, hping**
+- inspect packets with tools like **Wireshark**
+
+#### Inspecting Targets
+**Fingerprinting**
+- gathering more information about a specific end point such as OS type and version
+
+**Cryptography**
+- inspect certificates to conduct **MITM attacks**
+
+#### Eavesdropping
+- RF communication monitoring
+- **Sniffing** is the act of intercepting packets and inspecting their contents
+- **wireshark and tcpdump** can be used with wired connections
+- **aircrack-ng** is the most popular tool for wireless connections
+
+### Application and Open-source Resources
+#### Decompilation/Reverse Engineering
+**source code** is written by a developer/engineer that is human read able
+**compiler** is a program that is used to chagne source code to compiled code or executable code in machine language
+**Decompiler** attempts to convert executable code into source code
+- this can be very diffcult to read because the decompiler is guessing at what the source code would look like and how it would read
+- sometimes target is not direct executable ie. Java
+
+#### Debugging
+- allows you to run an executable in a controlled manner
+- make it easy to stop and examine memory at will
+- can reveal a program's secrets and weaknesses
+- **windbg** Windows debugger
+
+#### Open Source Intelligence Gathering (OSINT)
+[**CERT (Computer Emergency Response Team)**](https://www.us-cert.gov)
+- National Cybersecurity and Communications Integration Center (NCCIC) is the nation's flagshio cyber defense, incident response, and operational integration center
+[**NIST**](httpss://csrc.nist.gov)
+- up to date information on vulnerabilites provided by **Computer Security Resource Center**
+[**JPCERT (Japan's CERT)**](https://www.jpcert.or.jp/english/vh/project.html)
+[**CAPEC (Common Attack Pattern Enumeration & Classification)**](https://capec.mitre.org/)
+[**Full Disclosure**](http://seclists.org/fulldisclosure/)
+- popular mailing list from nmap creaters
+[**CVE (Common Vulnerabilities and Exposures)**](https://ccve.mitre.org/)
+- list of common vulberabilities and participation groups
+[**CWE (Common Weakness Enumeration)**](https://cwe.mitre.org)
+
+### Passive Reconnaissance
 
 
 
