@@ -415,12 +415,13 @@ arp-scan [TARGET IP ADDRESS RANGE/HOST]
 - strategic search engine analysis and enumeration
 - [**Shodan**](https://www.shodan.io/)
 - [**Censys**](https://censys.io/)
-- website archiving and caching
-[Google Hacking Database](https://www.exploit-db.com/google-hacking-database)
 
-[**Waybackmachine**](https://archive.org/)
+website archiving and caching
+- [**Google Hacking Database**](https://www.exploit-db.com/google-hacking-database)
+- [**Waybackmachine**](https://archive.org/)
 
-- public source code respos
+public source code respos
+
 [**Github**](https://github.com/)
 
 [**Sourceforge**](https://sourceforge.net/)
@@ -436,6 +437,7 @@ arp-scan [TARGET IP ADDRESS RANGE/HOST]
 
 #### Sources
 [**National Vulnerability Database (NVD)**](https://nvd.nist.gov/)
+
 [**CVE vs NVD**](https://cve.mitre.org/about/cve_and_nvd_relationship.html)
 
 ### Active Reconniassance
@@ -460,6 +462,7 @@ searching out what defensives the target has around their end points
 
 #### Cloud Assest Discovery
 [**CloudBrute (Kali)**](https://www.kali.org/tools/cloudbrute/)
+
 [**OWASP Amass**](https://github.com/OWASP/Amass)
 
 #### Third-party Hosted Service
