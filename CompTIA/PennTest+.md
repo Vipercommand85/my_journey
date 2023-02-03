@@ -399,10 +399,98 @@ arp-scan [TARGET IP ADDRESS RANGE/HOST]
 [**CWE (Common Weakness Enumeration)**](https://cwe.mitre.org)
 
 ### Passive Reconnaissance
+- reconnaissance that does not make physical or interactive connection to a target
+- need to determine the deployment model ie cloud or self-hosted
+- social media/job posting scraping
+**Cryptograhpic Flaws**
+- [**Secure Sockets Layer (SSL) certificates**](https://gbhackers.com/testssl-sh-tls-ssl-vulnerabilities/)
 
+**Revocation**
+- learn how and why tokens are revoked
+- avoid allowing revoced tokens to be used in test
 
+**Data**
+- [**Paasword dumps**](https://haveibeenpwned.com/)
+- file metadata will give a lot of information
+- strategic search engine analysis and enumeration
+- [**Shodan**](https://www.shodan.io/)
+- [**Censys**](https://censys.io/)
+- website archiving and caching
+[Google Hacking Database](https://www.exploit-db.com/google-hacking-database)
 
+[**Waybackmachine**](https://archive.org/)
 
+- public source code respos
+[**Github**](https://github.com/)
+
+[**Sourceforge**](https://sourceforge.net/)
+
+[**Bitbucket**](https://bitbucket.org/)
+
+#### OSINT Tools
+- [**Recon-ng**](https://www.kali.org/tools/recon-ng/)
+- [**ThreatPinchLookup**](https://github.com/cloudtracer/ThreatPinchLookup)
+- [**VFeed**](https://github.com/toolswatch/vFeed)
+- [**Vulnix**](https://github.com/flyingcircusio/vulnix)
+- [**Great list of OSINT Tools**](https://securitytrails.com/blog/osint-tools)
+
+#### Sources
+[**National Vulnerability Database (NVD)**](https://nvd.nist.gov/)
+[**CVE vs NVD**](https://cve.mitre.org/about/cve_and_nvd_relationship.html)
+
+### Active Reconniassance
+#### Defense Detection
+searching out what defensives the target has around their end points
+- load balancer detection
+- WAF detection
+- [**WafWoof**](https://github.com/sandrogauci/wafwoof)
+- [**https-waf-detect nmap script**](https://nmap.org/scripts/https-waf-detect.html)
+
+#### Antivirus Detection
+- examine e-mail headers and footers
+- [**BeEF / mitmf (Kali)**](https://securityonline.info/detect-antivirus-softeare-victim-machine-without-user-interaction/)
+
+#### Firewall
+- [**Firewalk (Kali)**](https://www.kali.org/tools/firewalk/)
+
+#### Wardriving
+- act of driving around with high gain attenas in order to get a signal from different wireless networks
+- very old practice from when wireless was first being introduced
+- [**Wardriving Intro**](https://www.geeksforgeeks.org/wardriving-introduction/)
+
+#### Cloud Assest Discovery
+[**CloudBrute (Kali)**](https://www.kali.org/tools/cloudbrute/)
+[**OWASP Amass**](https://github.com/OWASP/Amass)
+
+#### Third-party Hosted Service
+- similar approach to cloud assest discovery
+- often more restrictions (external)
+
+### Vulnerability Scanning
+- systematic approach to examining targets to identify known weaknesses
+
+#### Types OF Scans
+- Full scan will scan ports, services, and vulnerabailites
+- not stealthy
+```bash
+nmap -A <target>
+```
+```bash
+perl nikto.pl -h <target>
+```
+- command might be **nikto** if you have executable version of this program
+- **OpenVAS** is an open-source version of Nessus
+
+- Port Scan
+```bash
+nmap -p <ports> <target>
+```
+- Stealth Scan attempts to avoid tripping defesnsive control thresholds
+```bash
+nmap -sS <target>
+```
+
+### 
 
 
 
