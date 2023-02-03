@@ -382,14 +382,20 @@ arp-scan [TARGET IP ADDRESS RANGE/HOST]
 #### Open Source Intelligence Gathering (OSINT)
 [**CERT (Computer Emergency Response Team)**](https://www.us-cert.gov)
 - National Cybersecurity and Communications Integration Center (NCCIC) is the nation's flagshio cyber defense, incident response, and operational integration center
+
 [**NIST**](httpss://csrc.nist.gov)
 - up to date information on vulnerabilites provided by **Computer Security Resource Center**
+
 [**JPCERT (Japan's CERT)**](https://www.jpcert.or.jp/english/vh/project.html)
+
 [**CAPEC (Common Attack Pattern Enumeration & Classification)**](https://capec.mitre.org/)
+
 [**Full Disclosure**](http://seclists.org/fulldisclosure/)
 - popular mailing list from nmap creaters
+
 [**CVE (Common Vulnerabilities and Exposures)**](https://ccve.mitre.org/)
 - list of common vulberabilities and participation groups
+
 [**CWE (Common Weakness Enumeration)**](https://cwe.mitre.org)
 
 ### Passive Reconnaissance
