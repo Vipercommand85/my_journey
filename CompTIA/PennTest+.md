@@ -35,37 +35,27 @@
 
 ### Rules of Engagement
 * pay attention to target audience
-who is sponsoring the pen test
+* who is sponsoring the pen test
+* what is the purpose of the test
+  * **PCI DSS** : Payment Industry Data Security Standard
+#### These govern the pen tester's activites
+* test scope: technical/physical/personnel
+* internal/external communication: inherent risks with these tests
+* crashing devices, services, whole servers
+* corrupting data
+* degrading perfomance/avialibility of services resulting in Terms of Service (TOS)/regulation/legislation violation
 
-what is the purpose of the test
- 
-**PCI DSS** : Payment Industry Data Security Standard
-
-these govern the pen tester's activites
-
-* test scope
-technical/physical/personnel
-
-* internal/external communication
-inherent risks with these tests
-
-crashing devices, services, whole servers
-
-corrupting data
-
-degrading perfomance/avialibility of services resulting in Terms of Service (TOS)/regulation/legislation violation
-
-* know who to contact on a per issue basis in a timely manner
+#### Know who to contact on a per issue basis in a timely manner
 
 ### Regulatory Compliance
 [**PCI DSS**](https://www.pcisecuritystandards.org/documents/Penetration-Testing-Guidance-v1_1.pdf): industry standard of security requirements for payment card processing
 
-**PCI DSS requirement 11**
-: intermnal and external testing that is carried out by the following triggers
-- annually
-- after significant infrastructure changes
+##### PCI DSS requirement 11
+* intermnal and external testing that is carried out by the following triggers
+ - annually
+ - after significant infrastructure changes
 
-**General Data Protection Regulation(GDPR)**
+##### General Data Protection Regulation(GDPR)
 - European Union (EU) regulation
 - data protection and privacy for all individuals in the EU
 - companies/organizations that have personnel established in the EU will need to comply with this standard
@@ -76,24 +66,23 @@ degrading perfomance/avialibility of services resulting in Terms of Service (TOS
 * what does each party provide?
 * at what point does the engagement begin?
 * protect confidentiality of findings
-exploitable entry point is confidential information
-
+* exploitable entry point is confidential information
 * does the client know of the engagement taking place
 * every task in the test should have a value
-if more tests need to be added, a cost should be associated with the additional test(s)
+ * if more tests need to be added, a cost should be associated with the additional test(s)
 
 ### Impact and Constraints
 set expectations on the onset of the engagement
-**Impact**
+###### Impact
 - results of testing
 - report vulnerabilities
 - remediation, how should the client respond to findings
 
-Disclaimers:
+###### Disclaimers:
 - Point-in-time assessment
 - comprehensiveness ie, enterprise/organisation/department
 
-**Technical Contraints**
+###### Technical Contraints
 - limitations that reduce scope
 - production components
 - out-of-service devices
@@ -108,54 +97,54 @@ Disclaimers:
 
 **Grey Hat Hacker**: some information woll be available but not as much as a white hat
 
-**Web Services/Application Description Language (WSDL/WSADL)**
+###### Web Services/Application Description Language (WSDL/WSADL)
 - XML file with lots of info about web service/application and it's interface requirements
 - can be publically available
 - can be used to leverage vulnerablities
 
-**SOAP Project File (Simple Object Access Protocol)** 
+###### SOAP Project File (Simple Object Access Protocol)
 - not exposed to public
 - used by developers in development environment
 - used to exchange info for web services
 - provides low level web service interface details (input/output/server info)
 
-**SDK Documentation (Software Development Kit)**
+###### SDK Documentation (Software Development Kit)
 - help provide info on tools used to develope software
 - can provide what libraries were used in the cration of the application/service
 
-**Swagger Documentation**
+###### Swagger Documentation
 - popular open-source framework for developing REST (API) services
 - is a light weight API (Application Programming Interface)
 - can provide internal info on REST services exposed to clients
 
-**XSD (XNL Schema DEfinition)**
+###### XSD (XNL Schema DEfinition)
 - defines XML documentation content
 - view sample application requests to generate a baseline of what should be sent and received to find potential weak spots that can be exploited
 - useful starting point when testing web applicatoins when determining what avenues to explore for vulnerabilities
 
-**Architectural Diagram**
+###### Architectural Diagram
 - useful for mapping the topology to know how end points communicate with one another
 - helpful in determining which end point to attack first and in what order
 
 ### Legal Groundwork
-**Statement of Work (SOW)**
+##### Statement of Work (SOW)
 - clearly states what tasks are to be accomplished
 - could be an appendix of a MSA
 
-**Master Services Agreement (MSA)**
+##### Master Services Agreement (MSA)
 - specifies details of the business arrangement
 
-**Non-Desclosure Agreement (NDA)**
+###### Non-Desclosure Agreement (NDA)
 - agreement that defines confidentiality, restrictions and/or sharing of information obtained during the PenTest engagement
  - is a bi-directional agreement
 
-**Environmental Differences**
+##### Environmental Differences
 - export restrictions - restrictions on shipments, transfer of technology, or services outside of the U.S. (country the engagement is taking place)
 - main focus is on encryption standards from US to other countries
 **[U.S. State Department Resource](https://www.state.gov/strategictrade/overview/)**
 **Corporate Policies** with the current corperation must always be followed closely
 
-**Written Authorization**
+###### Written Authorization
 - obtain signiture from proper signing authority
 - "get out of jail free" card
 - Pen tests can reveal sensitive or confidential information
@@ -165,7 +154,7 @@ Disclaimers:
  - get permission for any outside resources used
 
 ### Service Provider Agreements
-**Service-level Agreement (SLA)**
+##### Service-level Agreement (SLA)
 - legal agreement between a service provider and a client
 - determines quality of work
 - will specify availability of services
@@ -229,7 +218,7 @@ Disclaimers:
 
 ### Scoping the engagement
 #### Types of assessment
-**Goals-based/objectiuves-based**
+##### Goals-based/objectiuves-based
 - **Goals-based** testers will work to fulfill goals that were determined prior to the start of the engagement
 - **Objectives-based** assests to protect are defined and testers use all angles to attack protected objectives
 - Compliance-based
@@ -262,13 +251,13 @@ Disclaimers:
 ### Project Stategy and Risk
 #### Condideratoins
 
-**White-listed**
+##### White-listed
 - no one can access resources unless specifically granted
 
-**Black-listed**
+##### Black-listed
 - everyone can access resources unless specifically blocked
 
-**Security Exceptions**
+##### Security Exceptions
 - **IPS** ( Intrusion Prevention System)/**WAF**( Web Application Firewall) white-list
 - **NAC**( Network Access Control)
 - **Certificate pinning** (public key pinning)
@@ -493,7 +482,151 @@ nmap -p <ports> <target>
 nmap -sS <target>
 ```
 
-### 
+### Target Considerations
+#### Container
+* lightweight instance of a VM
+* runs on top of host OS
+* Docker, Puppet, Vagrant
+
+#### Application Scan
+##### Dynamic Analysis
+* target environment is running and reposnds to queries
+
+##### Static Analysis
+* collect artifacts for post-execution analysis
+
+#### Scanning Considerations
+* time to run scans- approvaed schedule
+* protocols used - largely dependaent on target selection
+* network topology - metwork layout of test targets
+* bandwidth limitations - tolerance to impact ( affects availability)
+* query throttling - slow down test iterations to avoid exceeding bandwidth
+ * **nmap -T** is an example of throttling queries
+* fragile systems/non-traditional assets
+
+#### Analyze Scan Results
+* assest categorization
+ * identify and rank assets by relative value
+ * vulnerable assets with little value could be a waste of time
+* adjudication - determine which results are valid
+ * filter out flase positives
+* prioritization of vulnerabilities
+* highest impact vulnerabilities - ease of exploit vs payoff
+
+### Nmap Scoping & Outout Options
+* Network Mapper
+* one of the most common and most useful tools for reconnaissance
+* **nmap -A** does much of what we're about to see
+ * **-A** will include majority of options available with **nmap**
+
+##### SYN SCAN
+```bash
+nmap -sS <target>
+```
+**SYN** (stealth) scan
+* sends SYB packet and examines response (SYN/ACK means the port is open)
+* if SYN/ACK is reecieved nmap will send **RST** to terminate the connection attempt
+* will most likely not trip any controls
+
+##### FULL CONNECT SCAN
+```bash
+nmap -sT <taget>
+```
+* this will complete the 3 way TCP handshake
+* more reliable since there was a connection
+* will alert more controls this way
+
+##### Service ID Option
+```bash
+nmap -sV <target>
+```
+* attempts to determine service and version info
+```bash
+nmap -sV --version-intensity <level>
+```
+* **0** will probe as little as possible to make version determinations
+* **9** will probe **ALL** known versioning parameters per host to make version determinations
+
+##### Timing Options
+```bash
+nmap -T[level] <target>
+```
+* range is from **0 - 5**
+* **0** is will not gerenate much noise while **5** will
+
+##### Output
+```bash
+nmap <target> -oA [file name]
+```
+* **-oA** will create 3 files of the 3 main types; **normal, XML, grep**
+* **-oN** normal file type only
+* **-oX** XNL file type only
+* **-oG** grep file type only
+
+##### Gathering Information with NMAP
+```bash
+nmao -O <target>
+```
+* **-O** OS fingerprinting
+```bash
+nmap -Pn <target>
+```
+* **-Pn** will disable ping sweep
+* usefule if you already know that a certain host is up and available
+
+```bash
+nmap -iL [path/to/file]
+```
+* **-iL** uses a text file that contains a list of targets to scan
+
+#### Prioritization of Vulnerabilities
+**Rank Assest** ==> **Rank Vulnerabilities** ==> **Rank Exploits**
+
+##### Leverage Inforamtion
+* leveraging gathered information to prepare for exploits by mapping vulnerabilities to potential exploits
+* Nmap **vulners and vulscan** scrips
+* **Metasploitable** search feature in frame work
+* will possibly need to clone a github repo into **/usr/share/nmap/scripts**
+```bash
+git clone https://github.com/vulnersCom/nmap-vulners.git
+```
+```bash
+git clone https://github.com/scipag/vulscan.git
+```
+```bash
+nmap --script nmap-vulners -sV <target>
+```
+```bash
+nmap --script vulscan --script-args vulscandb=exploitdb.csv -sV <target>
+```
+* **--script-agrs vulscandb=[VALUE]** tells nmap ti use only db to scan whihc is specified
+
+#### Common Attack Techniques
+* some Windows exploits can be run in Linux
+* [**cross-compling code**](https://www.hackingtutorials.org/exploit-tutorials/mingw-w64-how-to-compile-windows-exploits-on-kali-linux/)
+* may need to/want to modify an exploit that is found so that you are able to bypass any comtrols that are in place that are looking for signitures of malware
+* exploits may, and most likely will, need to be chained together to compromise a device/system to gain access to another system
+* lab environment is ideal for proof-of-concept development
+
+###### Social Engineering
+* attacks that focus on manipulating humans into giving out information that they normally wouldn't give out
+
+###### Credential Brute Forcing
+* using all possible actions to uncover credentials for accessing a device/system
+* very likely to set off controls that will at some point block/drop any traffic coming from your IP
+
+###### Enlightened Attacks
+* using dictionary attacks to uncover credentials of users
+* will not send as many traffic as brute forcing
+* passwords are normally stored in a hash
+ * **hash** will take input, run it through an algorithm and generate a fixed length output that will always be the same for the given input
+* **rainbow table** a list of pre-hashed passwords from a dictionary attack
+
+### Automating Vulnerability Scans
+
+
+
+
 
 
 
