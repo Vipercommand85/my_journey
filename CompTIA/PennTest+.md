@@ -25,6 +25,7 @@
     - Python, Ruby, Perl, JavaScript
   * explaining use cases for various pentesting tools
 
+
 ## Section 2: Planning and Engagement
 ### Planning a Pen Test
 * **PERMISSION IS ESSENTIAL FOR ANY ETHICAL PENTEST**
@@ -305,6 +306,7 @@ set expectations on the onset of the engagement
 - ecryption key management
 - limitations put forth by the standard or organization
 - helps to clearly define objectives based on regulations
+
 
 ## Section 3: Information Gathering and Vulnerability Scanning
 ### Scanning and Enumeration
@@ -623,7 +625,53 @@ nmap --script vulscan --script-args vulscandb=exploitdb.csv -sV <target>
 * **rainbow table** a list of pre-hashed passwords from a dictionary attack
 
 ### Automating Vulnerability Scans
+#### Goals of Automation
+* Repeatability
+* Minimal Interaction
+* Exception-only notification
+* Must handle multiple environments
+ * Multi-OS
+ * Cloud, on-prmise, and third-party
 
+#### Vulnerability Tools and Automation
+* command-line tools are easy to automate
+ * scripts and schedulers
+ * analysis to minimize false postives
+
+### Credential Attacks
+#### Hydra
+* a command-line tool for brute forcing credentials
+* watch for leadin spaces when creating a dictionary list
+```bash
+hydra -L usernamelist.txt -P passwordlist.txt ftp://<target>
+```
+
+
+## Section 4: Network-Based Attacks
+### Exploit Resources
+#### [**Exploit Database (DB)**](https://www.exploit-db.com)
+* maintained by [**Offensive Security**](https://www.offensive-security.com/)
+* CVE compliant archive of public exploits
+
+#### [**Packet Storm**](hhtps://www.packetstormsecurity.com/)
+* global security resource
+* purpose is to provide a current repository of security threat information
+
+### Network-Based Exploits
+#### NETBIOS name service (NBNS)
+* part of NetBIOS-over-TCP
+* similar functionality to DNS
+
+#### LLMNR (Link-local Multicast Name Resolution)
+* protocol based on DNS packet format
+* allows IPv4 and IPv6 name resolution on the same local link
+
+#### DNS & ARP Poisoning
+
+#### SMB (Srver Message Block)
+* protocol used in Windows to provide file and printer access and remote service access
+* Linux can access these resources using **SAMBA**
+* 
 
 
 
