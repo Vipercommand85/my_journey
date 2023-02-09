@@ -671,8 +671,69 @@ hydra -L usernamelist.txt -P passwordlist.txt ftp://<target>
 #### SMB (Srver Message Block)
 * protocol used in Windows to provide file and printer access and remote service access
 * Linux can access these resources using **SAMBA**
-* 
+* TCP ports 139 and 445
+* **EternalBlue/WannaCry** ransome ware used SMB to propagate
 
+#### SNMP (Simple Network Management Protocol)
+* used to query and manage IP address for devices
+* multiple version with **SNMPv1 being insecure**
+
+#### SMTP (Simple Mail Transport Protocol)
+* standard protocol for transmittin email
+* open relay, local relay, phishing, spam, etc.
+
+#### FTP (File Transfer Protocol)
+* insecure protocol for transfering files
+* no ecryption for transfers and credentials
+* easy for attackers to use for data exfiltration
+
+
+### FTP Exploit Demo
+```bash
+nmap --script vulscan --script-args vulscan=exploitdb.csv -sV -p 21 <target>
+```
+* this command will map any exploits knows for the version of FTP on the target
+
+### MITM Exploits
+* collects of attacks where the attacker intercepts messages between a sender and receiver
+* attacker can modify.regenerate or forward intercepted messages
+
+#### DNA Cache Poisoning
+* attacker compromises a DNS server and changes a known good domain name's IP address to an IP address of their choice
+
+##### ARP Spoofing
+* similar to DNS poisoning but with local MAC addresses
+
+##### Pass the Hash
+* attacker intercepts an NTLM hash (user credential) and reuses it to appear as an authenticated user to Windows
+
+##### Replay Attacks
+* an attack where the attacker captures network packets to then use them at a later point in time to replay an authenticated user's actions
+
+##### Relay Attacks
+* where captured packets are sent to an alternate destination instead of the original destination
+
+##### SSL (Secure Sockets Layer) Stripping
+* where an attacker decrypts network traffic and then sends the packets unencrypted to their chossing
+
+##### Downgrade
+* where a proxy negoatiates with a server to chose the least sercure encryption standard so that the contents could be easily decrypted
+
+##### DoS (Denial of Service)/stress test
+
+##### NAC (Network Access Control) bypass
+
+##### VLAN ( Virtual Local Area Network) Hopping
+
+
+## Section 5: Selecting Pen Testing Tools
+### Wireless Exploits
+* wireless and RF use broadcast technology
+* any wireless receiver within range of the wireless transmitter can intercept packets
+* **aircrack-ng** is a tool that allows you to grab, modify, and process wireless transmissions
+
+#### Evil Twin
+* uses a clone of a valid WAP to have clients connect to 
 
 
 
