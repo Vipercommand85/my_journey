@@ -733,7 +733,58 @@ nmap --script vulscan --script-args vulscan=exploitdb.csv -sV -p 21 <target>
 * **aircrack-ng** is a tool that allows you to grab, modify, and process wireless transmissions
 
 #### Evil Twin
-* uses a clone of a valid WAP to have clients connect to 
+* uses a clone of a valid WAP to have clients connect to it
+* **Karma attack** (Karma Attacks Radio Machines Automatically) device that listens for an SSID request and pretends to be that valid WAP
+* **Downgrade Attack** attempts to negotiates a more insecure protocol
+
+#### Deauthentication Attacks
+* DoS attacks that disrupts communication between user and WAP
+
+#### Fragmenatation Attacks
+* DoS attack that floods a network with datagram fragments
+
+#### Credential havesting
+* process of capturing or discovering valid login information
+* social engineering, etc.
+
+#### WPS Implentation Weakness
+* consumer grade WAPs could allow an attacker to learn the WPS PIN
+
+### Bluetooth Vulnerabilities
+#### Bluejacking
+* unsolicited messages to a Bluetooth enable device
+
+#### Bluesnafing
+* stealing information from Bluetooth-enabled devices
+
+### Other Wireless Vulnerabilities
+#### RFID Cloning
+* unauthorized copy of device's RF signal
+
+#### Jamming
+* DoS attack that diables communication among devices
+
+#### Repeating
+* recieving and retransmitting a signal to increase range
+
+
+### Wireless Exploits Part 2
+#### Data Modification
+* unauthorized wireless acces to change actionable data
+* may focus on altering configuratoin to eas further access/attack
+
+#### Data Corruption
+* attack on availability
+* targets may be valuable data and/or configuration settings
+
+#### Capture Handshake
+* capturing the TCP 3-way handshake to replay/impersonation attacks
+* alos known as **On-path** attacks
+
+
+## Section 6: Reporting and Communication
+### OWASP Top 10
+
 
 
 
