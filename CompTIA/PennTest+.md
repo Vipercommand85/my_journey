@@ -784,7 +784,17 @@ nmap --script vulscan --script-args vulscan=exploitdb.csv -sV -p 21 <target>
 
 ## Section 6: Reporting and Communication
 ### OWASP Top 10
+* open source web application security project that outlines the top 10 most seen vulnerable aspects of web applications
+* the principles listed in the project can be used for non-web applications
 
+### Application Exploits, Part 1
+#### Injection Attacks
+* inserting additional data into an application beyond what is expected
+* **SQLi (Structured Query Language Injection)** is adding specially crafted SQL inout to extract/modify data or execure commands
+* **HTML injection** is adding HTML code/submitting data to change how a page works or the data is handled
+* **Command Injections** is adding command line options that change the way commands operate
+* **Code Injection** is generalized SQLi, adding code to any language to change a program's behavior
+* 
 
 
 
