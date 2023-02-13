@@ -794,7 +794,60 @@ nmap --script vulscan --script-args vulscan=exploitdb.csv -sV -p 21 <target>
 * **HTML injection** is adding HTML code/submitting data to change how a page works or the data is handled
 * **Command Injections** is adding command line options that change the way commands operate
 * **Code Injection** is generalized SQLi, adding code to any language to change a program's behavior
+
+### SQLi 
+```bash
+sqlmap -u "<website>" --cookie="<cookie>"
+```
+* this tool will test for different types of SQLi a web application is vulnerable to
+* will need succesfull login credentials in order for the tool to operate as designed
+
+### Application Exploits, Part 2
+#### Credential Burte Forcing
+* Offline cracking (**Hydra**)
+
+#### Session Hijacking
+* intercepting and using a session token to take over a valid distributed (web) session
+
+#### Redirect
+* sending the user to a different site from what they expected
+
+#### Default Credentials
+* vendors of software often supply defualt credentials for quick and easy access to the product
+* too often many admins do not disable/remove these default credentials from being used
+* this information is readily available on vendor's websites/documentation
+
+#### Weak Credntials
+* is this why password cracking works
+
+#### Kerberos Exploits
+* forging tickets to allow unauthorized access to presources
+* used for bypassing authentication controls
+
+#### Authorization Exploits
+* **Parameter pollution** is providing custom inout parameters to alter service/API operation
+
+#### Insecure Direct Object Reference (IDOR)
+* programming mistake that can allow access to objects that should be reference indirectly so ensure that the proper security controls are being utilized correctly
+
+### Application Exploits, Part 3
+#### Cross-Site Scripting (XSS)
+* injection attack in which an attacker sends malicios code (**client-side script**) to a web application that a subsequent client runs
+* most likely **JavaScript or HTML**
+
+#### 3 most common types
+* **_stored/persistent_** is when the attack data (script) is stored discretely on the server
+* **_reflected_** is an attack in which the attack code is sent to another client, this is a non-persistent attack
+* **_DOM (Document Object Model)_** is when the attack code is injected into an XML file and that file is sent as data
+ * XML that contains the client-side script
+
+#### Coss-site Request Forgery (CSRF/XSRF)
+* similar to XSS but occurs within an authenticated session
 * 
+
+
+
+
 
 
 
