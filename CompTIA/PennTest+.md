@@ -135,7 +135,7 @@ set expectations on the onset of the engagement
 ##### Master Services Agreement (MSA)
 - specifies details of the business arrangement
 
-###### Non-Desclosure Agreement (NDA)
+##### Non-Desclosure Agreement (NDA)
 - agreement that defines confidentiality, restrictions and/or sharing of information obtained during the PenTest engagement
  - is a bi-directional agreement
 
@@ -145,7 +145,7 @@ set expectations on the onset of the engagement
 **[U.S. State Department Resource](https://www.state.gov/strategictrade/overview/)**
 **Corporate Policies** with the current corperation must always be followed closely
 
-###### Written Authorization
+##### Written Authorization
 - obtain signiture from proper signing authority
 - "get out of jail free" card
 - Pen tests can reveal sensitive or confidential information
@@ -843,7 +843,73 @@ sqlmap -u "<website>" --cookie="<cookie>"
 
 #### Coss-site Request Forgery (CSRF/XSRF)
 * similar to XSS but occurs within an authenticated session
-* 
+* **XSRF** attacks the user
+* attacker can cause authorized user to take some action by clicking a link
+
+#### ClickJackicking
+* tricking a user into clicking a different link or obkect that was intended
+
+### Security Misconfiguration
+#### Directory traversal
+* allows users to navigate outside a web server's root directory
+
+#### Cookie Manipulation
+* access to cookies can allow an attacker to cahnge the way in which a web application operates in general, or just for a specific user/session
+
+#### File Inclusion
+* related to directory traversal
+* attacker is allowed to build a path to an .exe file or a file to access
+
+### Code Vulnerabilities
+#### Unsecure Code Practices 
+##### Comments in source code
+* good for developers and technical personnel
+* bad for keeping secrets
+
+##### Lack of Error Handling
+* bad things happen, developers don't think of everything
+* overly verbose error handling
+
+##### Hard-coded Credentials
+* happens often - compiled and interpreted (strings commands)
+
+##### Race Conditions
+* resource should be validated before it's used, ie cheching file is in a place
+* **TOC (Time of Check)/TOU (Time of Use)**
+ - gap between checking a condition and using that resource
+ - attackers can influence other events and affect operation
+
+##### Unauthorized use of functions/unprotected API (Application Programming Interface)
+
+##### Hidden Elements
+* hidden attribute in XM/HTML (doesn't hide data in the source code)
+* sensitive information in the DOM
+
+##### Code Signing
+* certificates can authenticate author's identity, ensure integrity
+* lack of code signing allows attackers to modify code between deployment and execution
+
+### API Attacks and Attack Resources
+#### RESTful (Representational State Transfer)
+* architectural syle for distributed application using HTTP
+* based on HTTP verbs - simple and lightweight
+* popular in mobile apps
+
+#### Extensible Markup Language Remote Procedure Call ( XML=RPC)
+* XML used to encode remote procedure calls transported via HTTP
+
+#### SOAP (Simple Object Access Protocol)
+* older more structed distributed service call architecture
+* uses payload and envelope model
+
+### AttacK Resources
+#### Word Lists
+* lists of commonly used authenticatio credentials
+* cracking utilities uses these to carry out brute-force attacks
+* some tools include common word lists ie Kali, Metasploit, etc.
+
+
+
 
 
 
