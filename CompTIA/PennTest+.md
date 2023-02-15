@@ -908,7 +908,54 @@ sqlmap -u "<website>" --cookie="<cookie>"
 * cracking utilities uses these to carry out brute-force attacks
 * some tools include common word lists ie Kali, Metasploit, etc.
 
+### Privilege Escalation (Linux)
+#### SUID/SGID Programs
+* permission to execute a program as executable's owner/group
+```bash
+ls -l
+```
+* if you see **-r-sr-sr-x** for a file after using the above command, this means that the SUIG and SGID have been set
+* if you can run this program(s) and crash it, you might be left at an elevated shell prompt
 
+#### Unsecure SUDO
+* authorized users can execute commands as if logged in as the root user
+
+#### Ret2libc
+* stack overflow attack
+* replaces current stack return address with attacker-chosen address of another subroutine
+* Libc includes useful calls, such as 'system' calls
+
+#### Sticky bits
+* directory permission
+* multiple users can create, read, and write files, but only the owner can delete
+* _ls_ command with show a '_t_' in the last bit of the permissions
+
+### Privilege Escalation (Windows)
+#### CPASSWORD
+* Group Policy Preference attribute that contains passwords
+* SYSVOL folder of the Domain Controller (encrypted XML)
+
+#### LDAP (Lightweight Directory Access Protocol)
+* stores passwords in clear text
+
+#### Kerboroasting
+* Domian users can query Kerberos tickets for other users
+
+#### LSASS (Local Security Authority Subsystem Service)
+* enforces security policy
+
+#### Unattended installation
+* feature that allows provision new machines rapidly without user interaction
+* will need to provide credentials to complete this task
+* **PXE(Preboot Execution Enviornment)** will store credentials to allow the unattended installation to be completed
+
+#### SAM Database (Security Account Manager)
+* database that contains user passwords
+
+#### DLL hijacking (Dynamic Link Library)
+* forcing a loader to load a malicious DLL
+
+### Miscel 
 
 
 
