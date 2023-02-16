@@ -1037,9 +1037,133 @@ ls -l
 #### DoS Attacks
 * saturate network or CPU with traffic/work to leave no capability for authorized processes
 
+#### Side-Channel Attacks
+* generally carried out by a malicious VM that sample system performance during crytographic operations to disclose key information
+
+#### Direct-to-origin Attacks
+* attacks that penertate layers of devices intended to protect the true network's addresses
+* two-step-attack - first find the real network, second attack the end point directly
 
 
+## Section 8: Specialized and Fragile Systems
+### Mobile Attacks
+#### Reverse Engineering
+* decomposing steps in a process to determine weaknesses
+* attackers use it to find vulnerabilities
+* can be used to select appropriate controls
 
+#### Sandbox Analysis
+* analyzing malware or exploit on isolated device/system
+* exploit is contained within the sandbox
+* ideal to disconnect/disable any network device so the malware/exploit doesn't make any calls out into the web
+
+#### Spamming
+* type of DoS attack
+* flooding channel with useless traffic to reduce the usability of useful messages
+
+#### Insecure Storage
+* unencrypted and easy for apps to access
+
+#### Passcode Vulnerabilities
+* weak and easy to guess
+
+#### Certificate Pinning
+* limiting certificates that devices or apps will accept
+
+#### Using Known Vulnerable Components
+* dependency vulnerabilities including libraries or other included code
+* patching fragmentation - only patching part of a vulnerability or some systems/components
+
+#### Root Privileges
+* potential for attacjer to elevate permissions by leveraging an escape vulnerability
+
+#### Over-reach Permissions
+* allows app to do more than is necessary
+
+#### Biometrics Integration
+* any authenticated method must be implemented securely and limited in its use
+
+#### Business Logic Vulnerabilities
+* vulnerable software that creates a risks of data disclosure, alteration, and availability
+
+### Mobile Tools
+[**Burp Suit**](https://portswigger.net/)
+[**Dozer**](https://labs.withsecure.com/tools/drozer)
+[**Needle**](https://github.com/WithSecureLabs/needle)
+[**MobSF**](https://mobsf.github.io/Mobile-Security-Framework-MobSF/)
+[**Ettercap**](https://www.ettercap-project.org/)
+[**Frida**](https://frida.re/)
+[**Obejction**](https://github.com/sensepost/objection)
+[**Andriod SDK**](https://developer.android.com/studio)
+[**apkx**](https://github.com/muellerberndt/apkx)
+
+### IoT Attacks
+#### Bluetooth Low Energy (BLE)
+* exloits depend on relaxed requirements for Bluetooth reconnection of paired devices
+
+#### Fragile Environment
+* low cost, low power devices
+
+#### Availability Concerns
+* interrupted availability could negatively affect a larger system
+* many IoT devices are expected to be unavailable at times
+
+#### Data Corruption
+* skew larger processes and analysis
+
+#### Data Exfiltration
+* easier access to raw and granular data
+
+### IoT Vulnerabilities
+* Insecure defaults for ease of use and setup
+* cleartext communication - lack of encryption
+* hard-coded configurations
+* outdated firmware and hardware
+* data leakage - difficult to secure simple devices in the wild
+* use of insecure or outdated components
+
+### Data Storage and Management Interface Attacks
+#### Misconfigurations
+* on-premises and cloud based
+* default/blank username/password
+* limit the exposure of the data storage system
+
+#### Lack of user input sanitization
+* goal of software tends to be usability, not security
+
+#### Underlying Software Vulnerabilities
+* same as with any hardware/software built using components
+
+#### Error Messages and Debug Handling
+* error messages can divulge too much architectural information
+
+#### Injection Vulnerabilities
+* single quote method
+
+#### Intelligent Platform Management Interface (IPMI)
+* purpose is to secure, control and manage servers remotely independent of the host OS
+* the elevated permissions requirements of IPMIs make the system vulnerable
+* since IPMI are largely hardware-based, patches may not be available or applied
+* hardware, software, and component vulnerabilities may pose problems
+
+### Virtual and Containerized Enviornment Attacks
+#### Virtual Machine Escape
+* accessing resources outside a VM's boundary ie memory, storage, CPU
+
+#### Hypervisor Vulnerabilities
+* DoS
+* Code Execution
+* Memory corruption
+
+#### VM Repository Vulnerabilities
+* altering trusted images with malicious ones
+* potentiallu easy way to trick users into running malware
+
+#### Containerized Environments
+* workload remote access
+* acces to sensitive data and resources
+* elevated privilege
+* execute a host escape
 
 
 
