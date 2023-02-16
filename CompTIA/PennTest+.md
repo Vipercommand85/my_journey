@@ -955,7 +955,92 @@ ls -l
 #### DLL hijacking (Dynamic Link Library)
 * forcing a loader to load a malicious DLL
 
-### Miscel 
+### Miscellaneous Privilege Escalation
+#### Services in Windows
+##### Unquoted service paths
+* allow abbreviated attack paths (without spaces)
+
+##### Writable service paths
+* allow attacker to replace services' path with the path of malicious programs
+
+#### Unsecure file/folder permissions
+* root installs allow read/write by any user
+
+#### Keyloggers
+* records every keystroke
+
+#### Scheduled Taks
+* attackers may add new tasks to run persistently with elevated privileges
+
+#### Kernel Exploits
+* unpatched systems are vulnerable
+
+### Miscellaneous Host Vulnerabilities
+#### Default Accounts
+* disable accounts that are not being used
+
+#### Sandbox Escape
+* **shell upgrade** - gaining acces to a shell with higher privilege
+* **VM** - escaping a VM may allow access to underlying environment
+* **COntainer** - similar to VM escape (ie. **Docker**)
+
+#### Cold Boot Attack
+* ability to physically reboot a system ( can allow access to encryption keys)
+* physically security is esential to stopping this attack
+
+#### JTAG debug (Joint Test Action Group)
+* is an industry standard for verifying designs and testing printed circuit boards after manufacture
+* can allow attacker to interact with chips
+
+#### Serial Console
+* ability to plug dircetly into a device to gain keyboard access
+
+
+## Section 7: Attacking the Cloud
+### Cloud Attacks, Part 1
+#### Credential Harvesting
+* using different techniques to compromise credentials used to access cloud resources
+
+#### Privilege Escalation
+* leveraging application or service vulnerabilities to carry out unauthorized actions
+
+#### Account Takeover
+* after compromising credentials, attachers can change access configuration to deny the rightful owner access
+
+#### Metadata Service Attack
+* service that provides information about how to access hosted services
+* compromised metadata service could report malicious service information
+
+#### Misconfigured Cloud Assets
+##### Identity and Access Management (IAM)
+* incorrect/malicious authentication/authorization
+
+##### Federation Misconfigurations
+* deny access to authorized subjects or allow access to unauthorized subjects
+* potential to leak credentials
+
+##### Object Storage
+* improper settings could allow unauthorized access
+
+##### Containerization Technologies
+* improper container configurations can allow unauthorized connections
+
+### Cloud Attacks, Part 2
+#### Resource Exhaustion
+* similar to classic DoS/DDoS attacks
+* threat to service and server availability
+
+#### Cloud Malware Injection Attacks
+* delivering malware to cloud-based VMs and containers
+* similar to malware delivery for physical servers
+
+#### DoS Attacks
+* saturate network or CPU with traffic/work to leave no capability for authorized processes
+
+
+
+
+
 
 
 
