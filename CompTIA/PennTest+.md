@@ -1174,8 +1174,93 @@ ls -l
 * execute a host escape
 
 
+## Section 9: Socila Engineering and Physical Attacks
+### Pretext for a Social Engineering Attack
+* encourage victims to do at least some of the work
+* only resort to technical exploits to carry out what social engineering cannot
+* build a storyline that sounds plausible and encourages victims to participate
+* depends on urgency, need, and consequences of inaction
+
+#### Social Engineering
+* tricking or coercing people into violating security policy
+* depends on willingness to be helpful
+* human weaknesses can be leveraged
+* may rely on technical aspects
+* will bypass many security controls in place
+
+##### Phishing Attacks
+* people are contacted by a seemingly legitimate imposter in an attempt to extract sensitive information
+
+##### Spear phishing
+* target a specific person/group
+
+##### SMS Phishing
+* using sms test messages
+
+##### Voice phishing
+
+##### Whaling
+* targeting personnel from the C-suite
+
+### Spear Phishing Demo
+#### SET (Social Engineering Toolkit)
+* a framework that simplifies the process of creating social engineering payloads
+
+### In-Person Social Engineeering
+#### Elicitation
+* gathering information about a system from authorized users
+
+#### Interrogation
+* informal interviews with crafted quesions to extract information
+
+#### Impersonation
+* pretending to be someone of authority ie, IT or support desk team
+
+#### Shoulder Surfing
+
+#### USB Key Drop
+* not always an in-person attack but physical device is being used to accomplish an attack
+* can make these drives autoboot once plugged into a USB slot
+* typcially want to drop these is an area that people will likely to think this is normal
+
+#### Motivation Techniques
+* authority
+* scarcity
+* social proof
+* urgency
+* likeness
+* fear
+
+### Physical Security
+#### Piggybacking/Tailgating
+* unauthorized person following an authorized person through a physical control
+* dependant on the goodness of people
+
+#### Fence Jumping
+* physically bypassing a control
+
+#### Dumpster Diving
+* looking through trash for useful information
+
+#### Lock Picking
+* opening a lock without a key
+* is very good important to have authorization from management team that has authorized the pentest before attempting this action
+* **lock bypass** - defeating a lock mechanism without picking them, ie bolt cutters, remove hinges
+
+#### Egress Sensor
+* senses a person approaching a door to leave a facility so that a swipe/scan/etc doesn't need to be used to unlock a normally locked door
 
 
+## Section 10: Post-Exploitation
+### Post-Exploitation Techniques
+#### Lateral Movement
+* **RPC/DCOM (Remote Procedural Call/ Distributed Component Objcet Model)
+* **PsExec** is a utility that supports executing processes on other systems (ie. telnet)
+* **WMI (Windows Management Instrumentation)** managing deviced and applications from remote computers
+* **Scheduled tasks** ability to have calls/malware run at a specific time
+* **PS remoting/WinRM** Powershell remoting/Windows Remote Management
+* **SMB** protocol for exposing shares to remote computers including Linux
+* 
 
 
 
