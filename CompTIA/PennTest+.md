@@ -1328,6 +1328,44 @@ ls -l
 
 [**NII Penetration Testing Report**](https://www.niiconsulting.com/assets/pdf/NII_Penetration_Testing_Report_v1.2.1.pdf)
 
+### Tips for Writing a Report
+* tell your story
+* know your audience(s)
+ - executive 1-page summary
+ - technical/management
+ - motivation - audit?
+* leave the reader with a call to action
+ - include steps to fix the issues
+* your report will be your voice after you leave
+
+#### Try to answer any questions that may arise
+* what did you do?
+* why did you make the choices you made?
+* what did you find and how did your findings affect you conclusions?
+* mostly a presentation and summary fo data
+* transform as needed into a common format
+
+#### Common Sections
+* Executive Summary
+* Methodology
+ - your approach to the overall test activities
+ - tools and techniques
+ - why you did what did you did
+* Findings and Remediation
+ - ranked list
+  * what you found with importatn findings first
+  * what you recommend the client does with options as appropriate
+* Metrics and measures
+ - details of what you found
+ - how you assessed each finding
+ - [Risk Rating](https://www.pentest-standard.org/index.php/Reporting)
+* Summary - call to action
+
+
+
+
+
+
 
 
 
