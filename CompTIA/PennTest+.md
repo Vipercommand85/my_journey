@@ -1320,13 +1320,13 @@ ls -l
 * digest of all activities and conclusions
 * some conclusions are drawn during tests, some result from post-test analysis
 #### Resources
-(**Pentest-Standard**)[https://www.pentest-standard.org]
+[**Pentest-Standard**](https://www.pentest-standard.org)
 
-(**Public Pentesting Report**)[https://www.github.com/juliocesarfort/public-pentesting-report]
+[**Public Pentesting Report**](https://www.github.com/juliocesarfort/public-pentesting-report)
 
-(**Offensive Security**)[https://www.offensive-security.com/reports/sample-penetration-testing-report.pdf]
+[**Offensive Security**](https://www.offensive-security.com/reports/sample-penetration-testing-report.pdf)
 
-(**NII Penetration Testing Report**)[https://www.niiconsulting.com/assets/pdf/NII_Penetration_Testing_Report_v1.2.1.pdf]
+[**NII Penetration Testing Report**](https://www.niiconsulting.com/assets/pdf/NII_Penetration_Testing_Report_v1.2.1.pdf)
 
 
 
