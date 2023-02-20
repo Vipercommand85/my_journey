@@ -1346,21 +1346,49 @@ ls -l
 * transform as needed into a common format
 
 #### Common Sections
-* Executive Summary
-* Methodology
- - your approach to the overall test activities
- - tools and techniques
- - why you did what did you did
-* Findings and Remediation
- - ranked list
-  * what you found with importatn findings first
-  * what you recommend the client does with options as appropriate
-* Metrics and measures
- - details of what you found
- - how you assessed each finding
- - [Risk Rating](https://www.pentest-standard.org/index.php/Reporting)
-* Summary - call to action
+##### Executive Summary
+##### Methodology
+* your approach to the overall test activities
+* tools and techniques
+* why you did what did you did
+##### Findings and Remediation
+* ranked list
+ - what you found with importatn findings first
+ - what you recommend the client does with options as appropriate
+##### Metrics and measures
+* details of what you found
+* how you assessed each finding
+* [Risk Rating](https://www.pentest-standard.org/index.php/Reporting)
+##### Summary - call to action
 
+#### Best Practices
+##### Risk Appetite
+* amount of risk a client is willing to accept
+* tone of entire report should be based on the company's appetite for risk
+* **risk appetite statement** should appear in the report introduction
+##### Report Storage
+* reports should become part of the organization's document repository
+* used as input for future pen tests and other assessments
+* security policy should state how long reports are kept
+##### Report Handling and Disposition
+* security policy should state how assessment reports are stored
+* how are reports are handled at EOF?
+
+### Important Components of Written Reports
+#### Note Taking
+* is very important, do not rely on memory for any meetings or activities
+* ongoing documentation during tests
+* screenshots are extremely helpful
+#### Common themes/root causes
+* use common vulnerability entries
+* capture environment and any noticeable conditions
+* document any procedures that deviate from well-known best practices
+
+### Mitigation Strategies
+* nearly every pen test will discover multiple vulnerabilities
+* pen test report should contain recommendations to mitigate each vulnerability
+* solutions vary depending on the vulnerability
+* 
 
 
 
