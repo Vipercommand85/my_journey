@@ -1260,7 +1260,74 @@ ls -l
 * **Scheduled tasks** ability to have calls/malware run at a specific time
 * **PS remoting/WinRM** Powershell remoting/Windows Remote Management
 * **SMB** protocol for exposing shares to remote computers including Linux
-* 
+* **RDP** ability to access a desktop from a remote computer (**Apple Remote Desktop**)
+* **VNC (Virtual Network Computing)**
+* **X-server Forwarding**
+ - X-windows access to Linux desktop
+* **Telnet** unsecure remote access (everything in clear text)
+* **SSH (Secure Shell)** more secure remote access to shell
+* **RSH/RLogin** legacy secure remote access
+ - should use SSH for secure remote logins
+
+### Post-Exploitation Tools
+#### (Empire)[https://www.alpinesecurity.com/blog/empire-a-powershell-post-exploitation-tool/]
+* a powershell post-exploitation tool
+
+#### (Mimikatz)[https://www.github.com/ParrotSec/mimikatz]
+
+#### (Bloodhound)[https://www.bloodhound.readthedocs.io/en/latest/]
+* uses graph theory to reveal the hidden and often unintended relationships within an Active Directory enviornment
+* 4.0 supports Azure
+
+### Network Segmentation Testing
+* test to confirm that network segments work as designed
+* only approved traffic flows between segments
+* no gaps exist that attackers can exploit
+* involves scanning and carrying out a vulnerability assessment on each network segment
+#### Strategy
+* **ICMP/TCP/UDP** scans
+
+### Persistence & Stealth
+#### Persistence
+* Scheduled jobs/tasks using **Cron in Linux and Task Manager in Windows**
+* **daemons** are programs that run in the background, services or processes (ie fptd,sshd,mysqld)
+* **Back doors** a program or facility that allows you to log in to a remote end point that will bypass standard security controls
+* **Trojan** malware that looks like it does something useful
+* **New User Creation** makes later logins easier
+
+#### Stealth
+* cleaning up files, including tools installed
+* hide any files that you need to leave
+* sanitize log files as much as possible
+* remove any traces of activity while you were accessing the environment
+
+### Detection Avoidance Techniques
+* living-off-the-land technique/fileless malware
+* **PsExec** - lightweight telnet replacement for Micorsoft that supports launching remote interactive command prompts
+* **WMI** extensions that provide OS interface capability
+* **PS remoting/WinRM** are common on most Windows machines that should not trip any security controls
+* data exfiltration
+* covering your tracks
+* Steganpgraphy
+* establishing a covert channel for communication
+
+
+## Section 11: Post-Engagement Activities
+### Report Writing
+* commincates findings AND recommendations
+* primary deliverable
+* most likely the only chance to make your points
+* digest of all activities and conclusions
+* some conclusions are drawn during tests, some result from post-test analysis
+#### Resources
+(**Pentest-Standard**)[https://www.pentest-standard.org)
+
+(**Public Pentesting Report**)[https://www.github.com/juliocesarfort/public-pentesting-report)
+
+(**Offensive Security**)[https://www.offensive-security.com/reports/sample-penetration-testing-report.pdf]
+
+(**NII Penetration Testing Report*)[https://www.niiconsulting.com/assets/pdf/NII_Penetration_Testing_Report_v1.2.1.pdf]
+
 
 
 
