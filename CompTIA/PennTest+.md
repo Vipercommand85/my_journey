@@ -1507,26 +1507,96 @@ ls -l
 * object-oriented hihg-level interpreted general puropse programming language
 * extensive libraries
 
-Variables
-: temporary data storage in memory
+### Scripting Basics
+#### Variables
+* temporary data storage in memory
+#### Subtitutions
+* input parameters and environment variables
+#### Common Operations
+* usually for string and comparisons
+#### Logic
+* controls looping and flow of a script
+#### Basic I/O
+* read input and write output
+#### Error Handling
+* when thins don't work
+#### Arrays
+* simple data structure
+#### Encode/Decode
+* using base64 and handling special characters
 
-Subtitutions
-: input parameters and environment variables
+### Bash Scripting Basics
+#### Comments
+* help you remember what you were doing when writing the script using `#`
+* everything after the `#` is part of the comment
+#### Variables
+* varName=value `name=Michael`
+* to print the value stored in a variable use the command **echo** with a **$** in front of the variable name
+```bash
+echo $name
+```
+* common to read data into variables as opposed to hard coding too mcuh
+* bash variables are untyped
+#### Subtitutions
+* **Variables** ==> $name
+* **Input Parameters** ==> $1,$2,etc.
+* **Environment Variables** ==> $PATH
+* Bash will set defaults when no other value is provided
+```bash
+JAVAPATH=${JAVAHOME:=/usr/lib/java}
+# := is way to specify another value to set the variable to if the first is empty
 
-Common Operations
-: usually for string and comparisons
+OUTPUTDIR=${1:=-/tmp}
+# need to use :- instead of := with input parameters
+```
+### Common operations
+#### String Operations
+* **Concatenation**
+```bash
+var="Hello";var=$var World"
+```
+* **Length**
+```bash
+${#name}
+```
+* **Extract a substring**
+```bash
+${name:3}
+```
+* **Replacing substring**
+```bash
+${name/ch/xx}
+# will replace "ch" with "xx"
+```
+#### Compound Operations
+* **-a** = AND
+* **-o** = OR
+* **-eq/==** = EQUAL
+* **-ne/!=** = NOT EQUAL
+* **-gt/>** and **-ge/>=** = GREATER THAN/GREATER THAN OR EQUAL TO
+* **-lt/>** and **-le/>=** = LESS THAN/LESS THAN OR EQUAL TO
+* **-n** = NOT NULL (empty string)
+* **-z** = NULL (empty string)
 
-Logic
-: controls looping and flow of a script
+### LOGIC
+#### FOR LOOP
+```bash
+for i in $(seq 1 5)
+do
+ # statements you want to loop through
+ # indent for ease of reading
+done
+```
 
-Basic I/O
-: read input and write output
 
-Error Handling
-: when thins don't work
 
-Arrays
-: simple data structure
+
+
+
+
+
+
+
 
 
 
