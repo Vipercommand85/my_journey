@@ -1388,7 +1388,146 @@ ls -l
 * nearly every pen test will discover multiple vulnerabilities
 * pen test report should contain recommendations to mitigate each vulnerability
 * solutions vary depending on the vulnerability
-* 
+
+#### Categories
+1. **People** - behavior changes
+ * social engineering training
+ * stronger password policy 
+2. **Process** - how things are done
+ * backup media handling
+ * ID management
+3. **Technology** 
+ * controls based on hardware and/or software
+
+#### Common Findings
+* shared local administrator credentials
+* weak password complexity
+* plain text passwords
+* no multifactor authentication
+* SQL injection
+* unnecessary open services
+
+### Technical & Physical Controls
+#### Technical Controls
+* those controls that are implented with hardware/software and configuration settings
+* process-level remediation by recommending procedure changes to increase security
+* patch management via planning, testing, executing, and managing recurring patch activity
+* document key rotation cycles and validate that procedures are followed
+* ensure that certificates are managed properly and securely
+* document how intelectual property and other sensitive data is handled and managed
+* review network segmentation policy and procedures for validatin compliance
+#### Physical Controls
+* these are controls that you can physically touch in the real world
+* access control vestibles which allow personnel/automated controls to determine authorization prior to opening inner door
+* **Biometeric Controls** what you are or what  you do, harder to spoof
+* Video surveillance helps detect unusual behavior
+
+### Administrative & Operational Controls
+#### Administrative Controls
+* are mainly focused on policy and procedures
+* role-based access control, the actual policy that determines roles and permissions for those roles
+* implementing secure software development lifecycle such as SCM, SDLC
+* minimum password requirements best on best practices and organizational needs
+* balance security and usability requirements
+* general policies and procedures based on best practices and popular security frameworks to validate that all necessary policies and procedures are in place
+
+#### Operation Controls
+* govern how day to day operations occur
+* may be based on policy
+* job rotation is helpful to identify personnel taking advantage of privilege
+* time-of-day restrictions to limit resource and facility access to align with work duty hours
+* mandatory vacations may help to uncover abuse of access and/or privilege
+* user training on security awareness and procedures
+
+### Communication
+* good communication is critical to the penetration test success
+* most penetration test should be conducted openly
+* cooperation is always enhanced with communication
+* clearly define the escelation paths when issues arise
+* should have a set timing and frequency of communication usually identified by triggers
+
+#### Reasons for Communcation
+* situational awerness - most common recurring reason
+* de-escalation of any critical risks from information gathered through the penetration testing
+* resolving any conflicts with personnel of organization
+* goal reprioritization happens when changes occur while the pentest is being conducted
+* all changes must follow stated changes procedures
+
+### Presentation of Findings
+#### Executive
+* high-level bullet points
+* algin every point with a strategic objective
+* use business language
+#### Management
+* focus on high-level goals to satisfy business objectives
+* align technical recommendations with business goals
+#### Technical
+* summary section that focuses on actions to implement
+* detail section provides lots of technical information to carry out recommended actions
+
+### Post-Report Activities
+#### Client Acceptance
+* formal cessation of project activities and acceptance of deliverable
+* client should sign a statement of acceptance
+* lessons learned
+* follow-up on actions/retest
+* avoid extending the project scope here without a change process
+* attestation of findings - independent review of your report by a third party
+
+### Data Destruction Process
+* agreements should include destruction expectations of data
+* identify what information collected is in scope
+* document procedures followed to dispose of covered data
+* provide all data to client in a secure manner and then destroy all that data locally
+
+
+## Section 12: Tools & Programming
+### Using Scripting in Pen Testing
+* automate mundane/repetitive tasks
+* allows for easy documentation of commands/tools used
+* less error proned
+* easily repeatable
+#### What is a script?
+* interpreted sequence of commands
+* written in a specific language with its own syntax
+* not complied or assembled
+
+### Common Scripting Languages
+#### Bash - Bourne Again Shell
+* command shell for most Linux/MAC systems
+* freely available version of the UNIX Bourne shell (sh)
+#### PowerShell - Windows based
+* admin and automation shell
+* available in Windows since 2006
+* powerful scripting language
+* exclusively Windows based
+#### Ruby
+* object-oriented hihg-level interpreted general puropse programming language
+#### Python
+* object-oriented hihg-level interpreted general puropse programming language
+* extensive libraries
+
+Variables
+: temporary data storage in memory
+
+Subtitutions
+: input parameters and environment variables
+
+Common Operations
+: usually for string and comparisons
+
+Logic
+: controls looping and flow of a script
+
+Basic I/O
+: read input and write output
+
+Error Handling
+: when thins don't work
+
+Arrays
+: simple data structure
+
 
 
 
