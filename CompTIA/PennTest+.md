@@ -1761,7 +1761,42 @@ for i in range(minport, maxport+1):
 |**AND/OR**|-a/-o|-and,-or,-not !|and &&, or \|\|, not !|and, or, not|
 |**Comparisions**|-eq (==), -ne (!=), -lt (<), -le (<=), -gt (>), -ge(>=)| -eq, -ne, -gt, -ge, -lt, -le|==, !=, >, >=, <, <=|==, != (<>), >,>=, <, <=|
 |**Looping**|For|For, While, Do-While, Do-Until|while, until, for|for, while|
-|**Flow Control**|```bash if condition then commands elif commands else commands fi```|```PowerShell if (condition){ statements }elseif(condition){ statements } else { statements }```|```ruby if condition then statments elsif statments else statements end```|```ptyhon if conidition: statements elif condition: statements else: statements```|
+|**Flow Control**|
+```bash 
+if condition 
+then 
+ commands 
+elif 
+ commands 
+else 
+ commands 
+fi```
+|
+```PowerShell 
+if (condition){ 
+ statements 
+}elseif(condition){
+ statements 
+}else{ 
+ statements }```
+|
+```ruby 
+if condition then 
+ statments 
+elsif 
+ statments 
+else 
+ statements 
+end```
+|
+```ptyhon 
+if conidition: 
+ statements 
+elif condition:
+ statements 
+else:
+ statements```
+ |
 
 
 
