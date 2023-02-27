@@ -1765,9 +1765,76 @@ for i in range(minport, maxport+1):
 
 
 ### Data Strcutures Part 1
+#### JSON (JavaScript Object Notation)
+* free form way of noting data using **keys** and **values**
+* [**Real Python**](https://www.realpython.com/python-json/)
+```python
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "hobbies": ["running", "sky diving", "singing"],
+  "age": 35,
+  "children": [
+   {
+    "firstName": "Alice",
+    "age": 6
+   },
+   {
+    "firstName": "Bob",
+    "age": 8
+   }
+  ]
+}
+```
+* [**Python Pool**](https://ww/pythonpool.com/python-key-value-pair/)
+
+### Data Strcutures Part 2
+#### CSV (Comma Seperated Value)
+* a single line of data with each value seperated by a **,**
+
+#### List and Trees
+* list just like arrays, however, they can be multiple data types
+* [**Geeks for Geeks**](https://www.geekforgeeks.com/python-data-structures/)
+* trees a hieracrchical data structure
+* topmost node of a tree is the root, bottommost nodes are called leaf nodes
+* nodes directly above another are parent nodes and those directly below are called children
+
+### Libraries
+* utilized for fuctionality that is already written and tested for use so that this functionality isn't needed to be written manual everytim the functionality is needed
+* check CVE's for the libraries that will be used as well as manually reviewing the code
+* dramatically increases prodcutivity
+
+### Class: Object Oriented Programming
+#### Python Classes and Objects
+* [**Geeks for Geeks**](https://www.geekforgeeks.com/python-classes-and-objects/)
+* **class** : is a user defined blueprint or prototype from which objects are created
+* objects of a class will have **_attributes_** that help to define each object
+* objects of a class will have **_behaviors_** that are functions that will run on an object 
+
+### Procedures and Functions
+#### Procedures 
+* allows us to group a block of code under a name that we can call from anywhere in the program to execute
+* values can be passed into the procedure to alter how/what happens with the block of code
+
+#### Functions
+* are much like prcedures, however, fucntions return values unlike procedures
+* can be used in an assignment statement where the value returned can be saved to a variable
+
+### Perl and JavaScript
+#### [Perl](https://www.perl.org)
+* flexible general purpose scripting language
+* a family of 2 languages, **Perl** and **Raku**
+* orginally develope as a UNIX scripting language for report processing
+* run on most operating systems
+
+#### [JavaScript](https://www.javascript.com/)
+* high lever, just in time compiled laguage
+* popular in web applications
+* flexible and powerful standalone language
+* **Node.js** popular open source JavaScript runtime enviornment
 
 
-
+### Pen Testing Toolbox
 
 
 
