@@ -1748,9 +1748,13 @@ for i in range(minport, maxport+1):
   print("Port opened on %d" % i)
 ```
 
-
-
-
+### Scripting Languages Comparison
+|     | Bash | PowerShell | Ruby | Python |
+|-----|------|------------|------|--------|
+|Comments| # | # or <# #> | # or =begin =end| # |
+| Variables-Assign|varName-value|$varName=value|varName=value|varName=value|
+|Variables-Display | echo $varName | Write-Host $varName | puts varName | print(varNmae) |
+|Subsitution-Enviornment Variables | $envVarName | Get-Item Env:varName | ENV['varName'] | Os.eviron['varName']
 
 
 
