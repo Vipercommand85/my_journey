@@ -1770,7 +1770,8 @@ elif
  commands 
 else 
  commands 
-fi```
+fi
+```
 |
 ```PowerShell 
 if (condition){ 
@@ -1778,7 +1779,8 @@ if (condition){
 }elseif(condition){
  statements 
 }else{ 
- statements }```
+ statements }
+ ```
 |
 ```ruby 
 if condition then 
@@ -1787,7 +1789,8 @@ elsif
  statments 
 else 
  statements 
-end```
+end
+```
 |
 ```ptyhon 
 if conidition: 
@@ -1795,8 +1798,9 @@ if conidition:
 elif condition:
  statements 
 else:
- statements```
- |
+ statements
+ ```
+|
 
 
 
