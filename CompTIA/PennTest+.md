@@ -1686,12 +1686,67 @@ base64 -d <<< string
 ```PowerShell
 Set-ExecutionPolicy Unrestricted
 ```
+* utilize **Windows PowerShell ISE** for ease of editing and running PowerShell scripts
+
+### Ruby Scripts
+```ruby
+#!/usr/bin/ruby
+
+require 'socket'
+# imports a library to create sockets
+
+TARGET = ARGV[0] || '10.10.1.10'
+MINPORT = ARGV[1] || 22
+MINPORT = ARGV[2] || 80
+# variable assignment
+# capital varaiables are CONSTANTS
+# ARGV[*] sepcifies the first arguemnt that would be supplied on the command line (starts counting from 0)
+# || specifies to give the following value as default if it was left blank at the command line
+
+$i = MINPORT.to_i
+# .to_i converts the variable to an interger to ensure we do not get any errors
+# Ruby creates objects and to have an object do something you will need to use methods (.action) on them 
+
+while $i <= MAXPORT.to_i do
+ begin
+  socket = TCPSocket.new(TARGET, $i)
+  status = "open"
+  puts "Port #{$i} is #{status}."
+# puts will output a string to the terminal
+
+ rescue Errno::ECONNREFUSED, Errno::ETIMEDOUT
+  status = "closed"
+ end
+ $i = $i + 1
+end
+```
+
+### Python Scripting
+```python
+import sys, socket
+
+# this is not the best practice to read in variables
+target = sys.argv[1]
+minport = int(sys.argv[2])
+maxport = int(sys.argv[3])
+
+#important to indent correctly
+def porttry(cur_target, port):
+
+# try/except is used for error handling
+ try:
+  s.connect((cur_target, port))
+  return True
+ except:
+  retunr None
 
 
-
-
-
-
+for i in range(minport, maxport+1):
+ s = socket.socket(2, 1) #socket.AF_INET, socket.SOCK_STREAM
+ value = porttry(target, i)
+ if value != None:
+  print("Port opened on %d" % i)
+```
 
 
 
