@@ -1751,10 +1751,43 @@ for i in range(minport, maxport+1):
 ### Scripting Languages Comparison
 |     | Bash | PowerShell | Ruby | Python |
 |-----|------|------------|------|--------|
-|Comments| # | # or <# #> | # or =begin =end| # |
-| Variables-Assign|varName-value|$varName=value|varName=value|varName=value|
-|Variables-Display | echo $varName | Write-Host $varName | puts varName | print(varNmae) |
-|Subsitution-Enviornment Variables | $envVarName | Get-Item Env:varName | ENV['varName'] | Os.eviron['varName']
+|**Comments**|#|# or <# #>|# or =begin =end|#|
+|**Variables-Assign**|varName-value|$varName=value|varName=value|varName=value|
+|**Variables-Display** |echo $varName|Write-Host $varName|puts varName|print(varNmae)|
+|**Subsitution-Enviornment Variables**|$envVarName|Get-Item Env:varName|ENV['varName']|Os.eviron['varName']|
+|**String Lenght**|${string}|(string).lenght|string.length|len(string)|
+|**String-Substring**|${string:position}|(string).Substring(start,end)|string[1..3]|string[start:end+1]|
+|**String-Replace String**|${string/substring/replacement}|(string).Replace(substr,replStr)|string[1..3]=replStr|string.replace(old,new,count)|
+|**AND/OR**|-a/-o|-and,-or,-not !|and &&, or \|\|, not !|and, or, not|
+|**Comparisions**|-eq (==), -ne (!=), -lt (<), -le (<=), -gt (>), -ge(>=)| -eq, -ne, -gt, -ge, -lt, -le|==, !=, >, >=, <, <=|==, != (<>), >,>=, <, <=|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
