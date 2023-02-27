@@ -1588,12 +1588,104 @@ do
 done
 ```
 
+### Flow Control
+#### If/elif Condition
+```bash
+if [CONDITION]
+then
+ [COMMANDS]
+elif [CONDITION]
+ [COMMANDS]
+else
+ [COMMANDS]
+fi
+```
+#### BASH IF Conditions
+* **-d [FILE]** is true if file is a directory
+* **-e [FILE]** is trus if file exists
+* **-f [FILE]** is true if file exists and is a regular file
+* **-z [STRING]** is true if string is a null string
+* **-n [STRING]** is true if string is not a null string
+* **stringA=stringB** is true if strings are equal
+* **stringA!=stringB** is true if strings are not equal
+* **test / []** allows to test a certain case
+```bash
+if test -eq $name "Michael"
+if [ $name="Michael"]
+```
+* **break** exits the current loop iteration
+* **exit** exits a script and returns a value (exit code)
 
+### Bash Scripting Techniques
+#### I/O - File vs. Terminal vs. Network
+* Iput from a terminal use the **read** command
+```bash
+read -p "enter your name:" name; echo "hi, " $name
+```
+* input from a file 
+```bash
+input=[filePathName]
+while IFS=read -r f1 f2 f3 f4
+# f1-f4 are place holders for variables that will store information based on the $IFS deliminator value
+```
+* input from a network device
+```bash
+while read -r inline < /dev/ttyS1
+```
 
+#### Error Handling
+* **$?** is the exit status of a script
+```bash
+if ["$?"="0"] then
+```
 
+#### Arrays
+```bash
+bashArray=(val1, val2, vasl3)
 
+# OR
 
+declare -a bashArray=(val1, val2, vasl3)
+```
+* accessing items in an array
+```bash
+bashArray=(val1, val2, vasl3)
 
+for i in 123
+do
+ echo ${bashArray[$i]}
+done
+```
+
+#### Ecoding/Decoding
+* **locale** shows local related environment variables
+* can change assignment of **LANG** for local character encoding
+ - `LANG=da_DK.UTF-8`
+* can use openssl or base54 to encode and decode strings
+##### Encoding
+```bash
+echo string | base64
+
+# OR
+
+base64 <<< string
+```
+
+##### Decoding
+```bash
+echo string | base64 --decode
+
+# OR
+
+base64 -d <<< string
+```
+
+### PowerShell Scripts
+* will first need to allows PowerShell scripts to run
+ - search for PowerShell in the launch search bar and open a session
+```PowerShell
+Set-ExecutionPolicy Unrestricted
+```
 
 
 
