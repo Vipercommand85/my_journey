@@ -1,103 +1,105 @@
 # UTM Features:
-	*Antivirus
-	*Anti=Spam
-	*Content Filtering
-	*Web Filtering
+* Antivirus
+* Anti=Spam
+* Content Filtering
+* Web Filtering
 	
 # Automation
-	Built into Junos OS
-	Can be either on-box, off-box, combination of both
+Built into Junos OS
+Can be either on-box, off-box, combination of both
 
 # Junos Space
 
-	Applications available for the Junos Space Network Management Platform (JSNMP):
-		* Security Director
-		* Connectivity Services Director: Offers service providers and enterprises the power to quickly design, provision, and deliver
-		* Service Insight
-		* Service Now
-		* Network Director: Simplifies ethernet switch deployments and provides rapid operation of campus and date center networks.
-		* Policy Enforcer: Component of security director provides the ability to orchestrate policies created by Juniper's Advanced Threat Prevention (ATP)cloud-based malware detection solution
+Applications available for the Junos Space Network Management Platform (JSNMP):
+* Security Director
+* Connectivity Services Director: Offers service providers and enterprises the power to quickly design, provision, and deliver
+* Service Insight
+* Service Now
+* Network Director: Simplifies ethernet switch deployments and provides rapid operation of campus and date center networks.
+* Policy Enforcer: Component of security director provides the ability to orchestrate policies created by Juniper's Advanced Threat Prevention (ATP)cloud-based malware detection solution
 	
-	* Provides tools that enable automation device discovery and management, job operation management, audit laogging, and network administration
-	* Service Now & Service Insight provide detection, isolation, and resolution of network faults and incidents; do not require additional licensing but require a valid support contract to function
-	* Security Director, Network Director, and Connectivity Services require additional licensing
-		a) Security Director delivers a scalable and responsive security management application that improves the reach, ease, and accuracy of policy administration.
-		b) depoly end-to-end security services on network elements- Firewall policies, VPSs, NAT, UTM, Application Services, IPS, Security Intelligence, and event logging services
-		c) Improves network security policy consistency and compliance, even as networks scale
-		d) Intuitive Web management UI is easy to run and make changes across any environment encompassing up to 15,000 devices
-	# Juniper Advanced Threat Prevention
-		a) Detection: machine learning and a behavoriotal analysis engine that continuously collects and detects
-		b) Analytics: correlates and consolidates threat information
-		c) Mitigation: creates policies that strengthen inline security tools against future attacks
-	# JSA: market leading SEIM
+* Provides tools that enable automation device discovery and management, job operation management, audit laogging, and network administration
+* Service Now & Service Insight provide detection, isolation, and resolution of network faults and incidents; do not require additional licensing but require a valid support contract to function
+* Security Director, Network Director, and Connectivity Services require additional licensing
+a) Security Director delivers a scalable and responsive security management application that improves the reach, ease, and accuracy of policy administration.
+b) depoly end-to-end security services on network elements- Firewall policies, VPSs, NAT, UTM, Application Services, IPS, Security Intelligence, and event logging services
+c) Improves network security policy consistency and compliance, even as networks scale
+d) Intuitive Web management UI is easy to run and make changes across any environment encompassing up to 15,000 devices
+
+# Juniper Advanced Threat Prevention
+a) Detection: machine learning and a behavoriotal analysis engine that continuously collects and detects
+b) Analytics: correlates and consolidates threat information
+c) Mitigation: creates policies that strengthen inline security tools against future attacks
+
+# JSA: market leading SEIM
 
 # Junos Architecture:
-	Junos OS is the base OS, makes it easy to learn and administor multiple devices
-	Junos OS functionality is compartmentalized into multiple software processes
-		each process runs in its own protected memory space, ensuring that one process cannot directly interface with another
-	# Junos OS Planes:
-		1) Control Plane: contains the RE (Routing Engine), kernel, processes, chassis management, UI, routing protocols, system monitoring, and clustering control
-		2) Data Plane: contains the Packet Forwarding Engine (PFE) that forwards packets, session setup and maintenance, load balancing, secuirty policy, screen options, VPN, and IDP
+* Junos OS is the base OS, makes it easy to learn and administor multiple devices
+* Junos OS functionality is compartmentalized into multiple software processes
+* each process runs in its own protected memory space, ensuring that one process cannot directly interface with another
+
+# Junos OS Planes:
+1) Control Plane: contains the RE (Routing Engine), kernel, processes, chassis management, UI, routing protocols, system monitoring, and clustering control
+2) Data Plane: contains the Packet Forwarding Engine (PFE) that forwards packets, session setup and maintenance, load balancing, secuirty policy, screen options, VPN, and IDP
 	
-	# SRX Series Devices:
-		* high performance firewall that runs Junos OS
-		* intergrates security services, such as IDP, UTM, and AppSecure
-		* Scalable to a variety of form factors
-		* automates with the controllers to coordinate single gloabl security policy
-`		* includes services such as stateful firewalling, NAT, VPNs
+# SRX Series Devices:
+* high performance firewall that runs Junos OS
+* intergrates security services, such as IDP, UTM, and AppSecure
+* Scalable to a variety of form factors
+* automates with the controllers to coordinate single gloabl security policy
+* includes services such as stateful firewalling, NAT, VPNs
 
 # SRX DEVICE
 
-	#Traffic Processing and Logical Packet Flow
-		Transit Traffic Processing: is forwarded through the local system
-		RE provides the forwarding table ( forwarding information base to PFE)
+## Traffic Processing and Logical Packet Flow
+* Transit Traffic Processing: is forwarded through the local system
+* RE provides the forwarding table ( forwarding information base to PFE)
 
-	#Exception Traffic Processing
-		traffic destined for the local system is processed by the RE CPU
-		* Examples packets addressed to the chassis:
-			routing protocol updates
-			telnet sessions
-			pings
-			traceroutes
-			replies to traffic sourced from the RE
-			IP packets with the IP Option field
-			traffic that requires the gerenation of ICMP messages
-		PFE processes special traffic including ICMP reply messages and TTL expired messages
-		internal link is rate-limited to protect from DoS attacks; not configureable
-		control traffic is given preference when congestion exists
+## Exception Traffic Processing
+* traffic destined for the local system is processed by the RE CPU
+* Examples packets addressed to the chassis:
+	- routing protocol updates
+	- telnet sessions
+	- pings
+	- traceroutes
+	- replies to traffic sourced from the RE
+	- IP packets with the IP Option field
+	- traffic that requires the gerenation of ICMP messages
+* PFE processes special traffic including ICMP reply messages and TTL expired messages
+* internal link is rate-limited to protect from DoS attacks; not configureable
+* control traffic is given preference when congestion exists
 	
-	# Packet-Based Processing:
-		stateless packet processing
-		packet mode
-		every packet is processed indivisually without regard to session membership
+## Packet-Based Processing:
+* stateless packet processing
+* packet mode
+* every packet is processed indivisually without regard to session membership
 	
-	# Session-Based Processing:
-		stateful packet processing
-		flow mode
-		first packet triggers session creation
-			sessions are tracked in a session table
-			subsequent packets matching an existing sesssion are treated as packets in the previous session
+## Session-Based Processing:
+* stateful packet processing
+* flow mode
+* first packet triggers session creation
+	- sessions are tracked in a session table
+	-subsequent packets matching an existing sesssion are treated as packets in the previous session
 
 
 # Module 4: Juniper SRX Initial Configuration
+## Shipped with factory defualt settings, root login has no password
+* has a system log for event tracking
+* platform-dependent additional parameters
 
-	# Shipped with factory defualt settings, root login has no password
-		has a system log for event tracking
-		platform-dependent additional parameters
+## Branch SRX Series Factory Default configuration
+* interface ge-0/0/0 is set for the untrust zone
+* defualt IP address on fxp0: 192.168.1.1/24
+* defualt IP address irb.0 is in the trust zone: 192.168.2.1/24
+* this allows the device to have internet access out of the box
+	
+## Other SRX devices must be configured manually with CLI	
 
-	# Branch SRX Series Factory Default configuration
-		interface ge-0/0/0 is set for the untrust zone
-		defualt IP address on fxp0: 192.168.1.1/24
-		defualt IP address irb.0 is in the trust zone: 192.168.2.1/24
-			this allows the device to have internet access out of the box
-	
-	# Other SRX devices must be configured manually with CLI
-	
-	
-	# Initial Configuration
-		ethernet cable must be plugged into fxp0 on an SRX device, defult IP address 192.168.1.1/24
-		using browser login as root with no password
-	# Configuring System Identity
+## Initial Configuration
+* ethernet cable must be plugged into fxp0 on an SRX device, defult IP address 192.168.1.1/24
+* using browser login as root with no password
+
+## Configuring System Identity
 		enter hostname for device
 		enter root password
 		Add DNS Server entries and Domain Name
