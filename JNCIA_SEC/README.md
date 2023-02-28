@@ -4,7 +4,7 @@
 	*Content Filtering
 	*Web Filtering
 	
-#Automation
+# Automation
 	Built into Junos OS
 	Can be either on-box, off-box, combination of both
 
