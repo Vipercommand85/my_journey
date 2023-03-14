@@ -8,4 +8,3 @@ CREATE TABLE flights ( id INTERGER PRIMARY KEY AUTOINCREMENT, origin TEXT NOT NU
 * Lower case words are column names
 * **PRIMARY KEY** specifies that this id integer is what is used to uniquely identify each row of data
 * **NOT NULL** will ensure that this field is never empty
-* 
