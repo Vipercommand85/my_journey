@@ -102,7 +102,6 @@ CREATE INDEX name_index ON passemgers (last);
 ```
 * much like the index in a book to find information much more quickly
 * **(last)** specifies what column to create an index on
-* 
 
 
 
