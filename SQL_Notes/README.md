@@ -111,8 +111,17 @@ CREATE INDEX name_index ON passemgers (last);
 
 ## Section 8: Creating Databases and Table
 ### Primary and Foreign Keys
-* **Primary Key** is a column or a group of columns used to identiy a row uniquely in a table
+#### Primary Key
+* is a column or a group of columns used to identiy a row uniquely in a table
+* are important since they allows us to easily discern what columns should be used for joining tables together
 
+#### Foreign Key 
+* is a field or group of fields in a table that uniquely identifies a row in another table
+* defined in a table that references to the primary key of the other table.
+* table that contains the foreign key is called a referencing table or child table
+* table to which the foreign key references is called a referenced table or parent table
+* a table can have multiple foreign keus depending on its relationship with other tables
+*  
 
 
 
