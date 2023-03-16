@@ -33,6 +33,7 @@ SELECT * FROM flights;
 * **SELECT** allows us to query a table for selected information
 * **/*** sepcifies all data in the table
 
+
 ```sql
 SELECT origin, destination FROM flights;
 ```
