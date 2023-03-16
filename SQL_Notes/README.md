@@ -107,6 +107,14 @@ CREATE INDEX name_index ON passemgers (last);
 
 
 
+# THE COMPLETE SQL BOOTCAMP: 0 - HERO (UDEMY BY JOSE PORTILLA)
+
+## Section 8: Creating Databases and Table
+### Primary and Foreign Keys
+* **Primary Key** is a column or a group of columns used to identiy a row uniquely in a table
+
+
+
 
 
 
