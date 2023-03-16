@@ -122,7 +122,56 @@ CREATE INDEX name_index ON passemgers (last);
 * table that contains the foreign key is called a referencing table or child table
 * table to which the foreign key references is called a referenced table or parent table
 * a table can have multiple foreign keus depending on its relationship with other tables
-*  
+
+### Constraints
+* are rules enforced on data columns in a table
+* used to prevent invalid data from being entered into the database to ensure accuracy and reliability of the data in the database
+#### Column Constraints
+* constrains the data in a column to adhere to certain conditions
+#### Table Constraints
+* applied to the entire table rather than to an individual column
+
+### Most Common Column Constraints
+#### NOT NULL
+* ensures that a column cannot have a **NULL** value
+
+#### UNIQUE
+* ensures that all values in a column are different
+
+#### Primary Key
+* is set up as a constraint
+* is a column or a group of columns used to identiy a row uniquely in a table
+
+#### Foreign Key
+* is set up as a constraint
+* is a field or group of fields in a table that uniquely identifies a row in another table
+
+#### CHECK
+* ensures that all values in a column satisfy certain conditions
+
+#### EXCLUSION
+* ensures that if any two rows compared on the specified column or expression using the specified operator, not all of these comparisions will return TRUE
+
+### Most Common Table Constraints
+#### CHECK (condition)
+* to check a condition when inserting or updating data
+
+#### REFERENCES
+* to constrain the value stored in the column that must exist in a column in another table
+
+#### UNIQUE (column_list)
+* forces the values stored in the columns listed inside the parathenses to be unique
+
+#### PRIMARY KEY(colums_list)
+* allows you to define the primary key that consists of multiple columns
+
+
+
+
+
+
+
+
 
 
 
