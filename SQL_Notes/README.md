@@ -99,7 +99,7 @@ SELECT first, origin, destination FROM flights JOIN passengers ON passengers.fli
 ## Optimization of querying data
 ### CREATE INDEX
 ```sql
-CREATE INDEX name_index ON passemgers (last);
+CREATE INDEX name_index ON passemgers(last);
 ```
 * much like the index in a book to find information much more quickly
 * **(last)** specifies what column to create an index on
@@ -165,8 +165,36 @@ CREATE INDEX name_index ON passemgers (last);
 #### PRIMARY KEY(colums_list)
 * allows you to define the primary key that consists of multiple columns
 
+```sql
+CREATE TABLE account(user_id INTERGER PRIMARY KEY AUTOINCREMENT, username VARCHAR(50) UNIQUE NOT NULL, password VARCHAR(50) NOT NULL, email VARCHAR(250) UNIQUE NOT NULL, created_on TIMESTAMP NOT NULL, last_login TIMESTAMP )
+```
+```sql
+CREATE TABLE job(job_id INTERGER PRIMARY KEY AUTOINCREMENT, jon_name VARCHAR(200) UNIQUE NOT NULL)
+```
+```sql
+CREATE TABLE account_job(user_id INTERGER REFERENCE account(user_id), job_id INTERGER REFERENCE job(job_id), hire_date TIMESTAMP)
+```
+* this command references **foreign keys _used_id_** from the **account table** and **_job_id_** from the **job table**
 
+### INSERT Command
+* allows you to add in rows to a table
+#### General Syntax
+```sql
+INSERT INTO table(column1, column2,) VALUES(value1, value2);
+```
+#### Inserting values from another table
+```sql
+INSERT INTO table(column1,column2) SELECT column1,column2 FROM another_table WHERE condotion;
+```
+* the inserted row values must match up for the table, including contraints
+* SERIAL (in PGAdmin) columns do not need to be provided a value
 
+### UPDATE Command
+* allows you to modify data already in a table
+#### General Syntax
+```sql
+UPDATE table SET column1=value1, column2=value2 WHERE condition;
+```
 
 
 
