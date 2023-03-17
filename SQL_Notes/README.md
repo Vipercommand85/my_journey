@@ -195,6 +195,105 @@ INSERT INTO table(column1,column2) SELECT column1,column2 FROM another_table WHE
 ```sql
 UPDATE table SET column1=value1, column2=value2 WHERE condition;
 ```
+### UPDATE (join)
+* using another table's values
+```sql
+UPDATE TableA SET original_col = TableB.new_col FROM tableB WHERE tableA.id =TableB.id;
+```
+* Return affected rows
+```sql
+UPDATE account SET last_login = created_on RETURNING account_id,last_login;
+```
+
+### DELETE Command
+* can be use to remove rows from a table
+```sql
+DELETE FROM table WHERE row_id=1;
+```
+* can delete rows based on their presence in other tables
+```sql
+DELETE FROM tableA USING tableB WHERE tableA.id=tableB.id;
+```
+* deleting all rows from a table
+```sql
+DELETE FROM table_name;
+```
+* similar to the UPDATE command, you can also add in a RETURNING call to return rows that were removed
+
+### ALTER Command
+* allows for changes to an existing table structure
+  - adding,dropping, or renaming columns
+  - changing a column's data type
+  - set DEFAUL values for a column
+  - add CHECK constraints
+  - rename table
+#### General Syntax
+```sql
+ALTER TABLE table_name action;
+```
+* adding columns
+```sql
+ALTER TABLE table_name ADD COLUMN new_col TYPE;
+```
+* removing columns
+```sql
+ALTER TABLE table_name DROP COLUMN col_name TYPE;
+```
+* alter contraints
+```sql
+ALTER TABLE table_name ALTER COLUMN col_name SET DEFAULT value;
+```
+```sql
+ALTER TABLE table_name ALTER COLUMN col_name SET NOT NULL;
+```
+```sql
+ALTER TABLE table_name ALTER COLUMN col_name ADD CONSTRAINT constraint_name;
+```
+```sql
+ALTER TABLE table_name ALTER COLUMN col_name DROP DEFAULT;
+```
+
+### DROP Key Word
+* allows for the complete removal of a column in a table
+* in **PostgreSQL** this will also automatically remove all of its indexes and constraints involving the column
+* it **WILL NOT** remove columns used in view, triggers, or stored procedures without the additional **CASCADE** clause
+
+#### General Syntax
+```sql
+ALTER TABLE table_name DROP COLUMN col_name CASCADE;
+```
+* checking for existence to avoid errors
+```sql
+ALTER TABLE table_name DROP COLUMN IF EXISTS col_name;
+```
+* dropping multiple columns
+```sql
+ALTER TABLE table_name DROP COLUMN col_one, DROP COLUMN col_two;
+```
+
+### CHECK Constraint
+* allows us to create more customized constraints that adhere to a certain condition
+* i.e. making sure all integer values fall below a certain threshold
+```sql
+CREATE TABLE example(ex_id PRIMARY KEY AUTOINCREMENT, age SMALLINT CHECK (age > 21), parent_age SMALLINT CHECK (parent_age > age));
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
