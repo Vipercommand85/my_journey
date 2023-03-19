@@ -171,10 +171,11 @@ CREATE TABLE account(user_id INTEGER PRIMARY KEY AUTO_INCREMENT, username VARCHA
 ```sql
 CREATE TABLE job(job_id INTEGER PRIMARY KEY AUTO_INCREMENT, jon_name VARCHAR(200) UNIQUE NOT NULL)
 ```
+* this command references **foreign keys _used_id_** from the **account table** and **_job_id_** from the **job table**
 ```sql
 CREATE TABLE account_job(user_id INTEGER REFERENCE account(user_id), job_id INTEGER REFERENCE job(job_id), hire_date TIMESTAMP)
 ```
-* this command references **foreign keys _used_id_** from the **account table** and **_job_id_** from the **job table**
+
 
 ### INSERT Command
 * allows you to add in rows to a table
