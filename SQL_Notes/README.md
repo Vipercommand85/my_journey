@@ -3,7 +3,7 @@
 ## Command Syntax
 ### Creating a Table
 ```sql
-CREATE TABLE flights ( id INTERGER PRIMARY KEY AUTOINCREMENT, origin TEXT NOT NULL, destination TEXT NOT NULL, duration INTEGER NOT NULL):
+CREATE TABLE flights ( id INTEGER PRIMARY KEY AUTO_INCREMENT, origin TEXT NOT NULL, destination TEXT NOT NULL, duration INTEGER NOT NULL):
 ```
 * **CREATE TABLE** key words used to specify the creation of a table
 * Lower case words are column names
@@ -166,13 +166,13 @@ CREATE INDEX name_index ON passemgers(last);
 * allows you to define the primary key that consists of multiple columns
 
 ```sql
-CREATE TABLE account(user_id INTERGER PRIMARY KEY AUTOINCREMENT, username VARCHAR(50) UNIQUE NOT NULL, password VARCHAR(50) NOT NULL, email VARCHAR(250) UNIQUE NOT NULL, created_on TIMESTAMP NOT NULL, last_login TIMESTAMP )
+CREATE TABLE account(user_id INTEGER PRIMARY KEY AUTO_INCREMENT, username VARCHAR(50) UNIQUE NOT NULL, password VARCHAR(50) NOT NULL, email VARCHAR(250) UNIQUE NOT NULL, created_on TIMESTAMP NOT NULL, last_login TIMESTAMP )
 ```
 ```sql
-CREATE TABLE job(job_id INTERGER PRIMARY KEY AUTOINCREMENT, jon_name VARCHAR(200) UNIQUE NOT NULL)
+CREATE TABLE job(job_id INTEGER PRIMARY KEY AUTO_INCREMENT, jon_name VARCHAR(200) UNIQUE NOT NULL)
 ```
 ```sql
-CREATE TABLE account_job(user_id INTERGER REFERENCE account(user_id), job_id INTERGER REFERENCE job(job_id), hire_date TIMESTAMP)
+CREATE TABLE account_job(user_id INTEGER REFERENCE account(user_id), job_id INTEGER REFERENCE job(job_id), hire_date TIMESTAMP)
 ```
 * this command references **foreign keys _used_id_** from the **account table** and **_job_id_** from the **job table**
 
