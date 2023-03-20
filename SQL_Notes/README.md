@@ -176,7 +176,6 @@ CREATE TABLE job(job_id INTEGER PRIMARY KEY AUTO_INCREMENT, jon_name VARCHAR(200
 CREATE TABLE account_job(user_id INTEGER REFERENCE account(user_id), job_id INTEGER REFERENCE job(job_id), hire_date TIMESTAMP)
 ```
 
-
 ### INSERT Command
 * allows you to add in rows to a table
 #### General Syntax
@@ -279,10 +278,23 @@ ALTER TABLE table_name DROP COLUMN col_one, DROP COLUMN col_two;
 CREATE TABLE example(ex_id PRIMARY KEY AUTOINCREMENT, age SMALLINT CHECK (age > 21), parent_age SMALLINT CHECK (parent_age > age));
 ```
 
-
-
-
-
+## Section 10: Conditional Expressions and Procedures
+### CASE
+* can be used to onlu execute SQL code when certain conditions are met i.e **IF/ELSE** statements from other programming languages
+* 2 main ways to use a CASE statement: General CASE or CASE expression
+* Both methods can lead to the same result
+#### "General" CASE
+```sql
+CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE some_other_result END;
+```
+* the results are returned as another column of output
+```sql
+SELECT column, CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE some_other_result END FROM table;
+```
+* can specify the column name of the returned results
+```sql
+SELECT column, CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE some_other_result AS label END FROM table;
+```
 
 
 
