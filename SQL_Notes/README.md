@@ -295,7 +295,13 @@ SELECT column, CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 EL
 ```sql
 SELECT column, CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE some_other_result AS label END FROM table;
 ```
+* one way to look at a general CASE is that it is a large column call that allows you to filter through the returned results with specific returned values for each time the condition(s) are met
 
+#### CASE Expression
+* first evaluates an expression then compares the result with each value in the WHEN clauses sequentially
+```sql
+
+```
 
 
 
