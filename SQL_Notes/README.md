@@ -346,9 +346,29 @@ SELECT item,(price-COALESCE(discount,0)) AS final FROM table;
 SELECT CAST('5' AS INTERGER);
 ```
 
+#### NULLIF
+* takes in 2 inputs and returns **NULL** if both arguments are equal otherwise it will return thr first argument passed
+```sql
+NULLIF(arg1,arg2);
+```
+* useful in cases where a **NULL** value would cause an error or unwanted result
 
+#### VIEWS
+* allows you to quickly create a starting point of a query that is run often as a **VIEW**
+* is a database object that is of a stored query, does not store any data
+* can update and alter views
+##### Create a new view
+```sql
+CREATE VIEW name_of_view AS enitre_query;
+```
+##### View a view
+```sql
+SELECT * FROM name_of_view;
+```
+* to add a column to a view, rerun the **CREATE VIEW** query with the additional column
+* can **DROP** a view just as you would a table
 
-
+#### 
 
 
 
