@@ -285,7 +285,7 @@ CREATE TABLE example(ex_id PRIMARY KEY AUTOINCREMENT, age SMALLINT CHECK (age > 
 * Both methods can lead to the same result
 #### "General" CASE
 ```sql
-CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE some_other_result END;
+SELECT column_name CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE some_other_result END FROM table_name;
 ```
 * the results are returned as another column of output
 ```sql
@@ -300,14 +300,51 @@ SELECT column, CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 EL
 #### CASE Expression
 * first evaluates an expression then compares the result with each value in the WHEN clauses sequentially
 ```sql
-
+SELECT column_name 
+  CASE column_name WHEN value THEN results
+  END AS new_col_name
+FROM table;
+```
+* add mutilpe cases
+```sql
+SELECT column_name 
+  CASE column_name WHEN value THEN results
+  END AS new_col_name,
+  CASE column_name WHEN value THEN results
+  END AS new_col2_name
+FROM table;
+```
+* performing actions on the results from each case statement
+```sql
+SELECT column_name 
+  SUM(CASE column_name WHEN value THEN results
+  ELSE other_result
+  END) AS new_col_name,
+  SUM(CASE column_name WHEN value THEN results
+  ELSE other_result
+  END) AS new_col2_name
+FROM table;
 ```
 
+#### COALESCE
+* a function that accepts an unlimited number of arguments
+* returns the first argument that is not **NULL**
+* if all arguments are **NULL**, function will return **NULL**
+```sql
+COALESCE(arg1,arg2,arg3,...,argN)
+```
+* becomes useful when querying a table that contains **NULL** values and substituting it with another value to perform arithmetic without having errors
+```sql
+SELECT item,(price-COALESCE(discount,0)) AS final FROM table;
+```
 
-
-
-
-
+#### CAST
+* allows you to convert from one data type to another
+* not every instance of a data type can be **CAST** to another data type
+* i.e. **'5'** to an interger **will** work, **'five'** to an interger **will not**
+```sql
+SELECT CAST('5' AS INTERGER);
+```
 
 
 
