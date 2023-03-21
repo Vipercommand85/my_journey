@@ -368,7 +368,7 @@ SELECT * FROM name_of_view;
 * to add a column to a view, rerun the **CREATE VIEW** query with the additional column
 * can **DROP** a view just as you would a table
 
-#### 
+#### Import/Export Functionality
 
 
 
