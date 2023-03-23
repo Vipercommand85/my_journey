@@ -6,7 +6,7 @@
 <p class="foo">This is a paragraph.</p>
 ```
 ```HTML
-<p>
+<p></p>
 ```
 * opening tag
 ```HTML
