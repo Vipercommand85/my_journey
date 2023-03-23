@@ -83,24 +83,91 @@
 <pre>...</pre>
 ```
 * allows you to add specific deliniation of text that will be rendered by the browser
-* 
 
+### HTML [Entities](https://dev.w3.org/html5/html-author/charref)
+* allows you to represent non-ASCII characters that can be rendered by the browser
+* common character entity used in HTML is the non-breaking space: **&nbsp;**
 
+### HTML Text Formatting
+* both of these are used to bold text
+```html
+<b>...</b>
+<strong>...</strong>
+```
+* both of these are use to italize text
+```html
+<i>...</i>
+<en>...</em>
+```
+* allows to highlight text
+```html
+<mark>...</mark>
+````
+* used to create smaller text on the fly if not specified in a CSS file
+```html
+<small>...</small>
+```
+* used to create a strike through text
+```html
+<del>...</del>
+```
+* used to create an underline under the text
+```html
+<ins>...</ins>
+```
+* used to create a subscript looking text
+```html
+<sub>...</sub>
+```
+* used to create a superscript looking text
+```html
+<sup>...</sup>
+```
+* provides additional formatting and indentation when rendered by the browser
+```html
+<blockquote>...</blockquote>
+````
+* gives enclosed text an underline
+```html
+<u>...</u>
+````
+* will give text a strike through much like **del**
+```html
+<strike>...</strike>
+````
+* will increase the size an boldness of the text only slightly more than the original text but not as large and great as strong or headings
+```html
+<big>...</big>
+````
+* give subtle text differnce from the default
+```html
+<acronym>...</acronym>
+````
+* allows you to place quotes around text
+```html
+<q>...</q>
+````
+* allows you to give citing characteristics to text
+```html
+<cite>...</cite>
+````
+* gives a different font from the default
+```html
+<code>...</code>
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Divs and Spans to Organize Text
+```html
+<div>...</div>
+```
+* is the generic container for flow content and has no affect on the content or layout until CSS is used
+* should only be used when no other semantic elements, i.e. article, nav, is appropriate
+* is a block-level element
+```html
+<span>...</span>
+```
+* generic inline container for phrasing content, which does not inherently represent anything
+* both can be used to group elements for styling purposes and common attributes
 
 
 
