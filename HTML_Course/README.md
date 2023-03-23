@@ -8,11 +8,7 @@
 ```HTML
 <p></p>
 ```
-* opening tag
-```HTML
-</p>
-```
-* closing tag
+* opening & closing tags
 * **class** - attribute name
 * **"foo"** - attribute value
 * **This is a paragraph.** - content
