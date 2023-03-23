@@ -5,8 +5,8 @@
 ```HTML
 <p class="foo">This is a paragraph.</p>
 ```
-##### <p> - start tag
-##### </p> - end tag
+* <p> - start tag
+* </p> - end tag
 * **class** - attribute name
 * **"foo"** - attribute value
 * **This is a paragraph.** - content
