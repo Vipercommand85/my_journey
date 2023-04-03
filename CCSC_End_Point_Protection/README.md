@@ -94,12 +94,16 @@
 
 ### Windows Disk Encryption
 * designed to be fully internet ready and easily share information which is incompatible with security
+
 [TrueCrypt](https://www.grc.com/misc/truecrypt/truecrypt.htm)
 * has been abandoned as a project, however, it is still free of any significant cryptographic problems
+
 [VeraCrypt](https://veracrypt.codeplex.com)
 * is a fork of **TrueCrypt**
+
 [CipherShed](https://www.ciphershed.org)
 * is a fork of **TrueCrypt**
+
 [DiskCryptor](https://diskcryptor.net/wiki/Main_Page)
 
 [Symantec](https://buy.symantec.com/estore/clp/productdetails/pk/drive-encryption)
