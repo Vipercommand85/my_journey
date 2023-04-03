@@ -92,7 +92,35 @@
   - this provides an attack vector where the key can be found in memory
   - most disk encryption solutions provide a preboot authentication by loading a small highly secure OS that is strictly locked down
 
-### Attacks on Ecrypted Containers, Vloumes, & Partitions
+### Windows Disk Encryption
+* designed to be fully internet ready and easily share information which is incompatible with security
+[TrueCrypt](https://www.grc.com/misc/truecrypt/truecrypt.htm)
+* has been abandoned as a project, however, it is still free of any significant cryptographic problems
+[VeraCrypt](https://veracrypt.codeplex.com)
+* is a fork of **TrueCrypt**
+[CipherShed](https://www.ciphershed.org)
+* is a fork of **TrueCrypt**
+[DiskCryptor](https://diskcryptor.net/wiki/Main_Page)
+
+[Symantec](https://buy.symantec.com/estore/clp/productdetails/pk/drive-encryption)
+* pay for and closed source which is powered by PGP technology
+
+#### BitLocker 
+* resilent to most cryptographic attacks as it utilizes **128/256-bit XTS AES keys**
+* supports **TPM**
+##### Modes of TPM
+###### Transparent Operation Mode
+* this mode happens automagically when the system boots
+* keys are stored within the TPM and once the device is powered on, the TPM utilizes the key to decrypt the drive
+* not very secure mode of operation
+###### User Authentication Mode
+* users will need to supply the **SAME** password/pin to decrypt the drive
+* slightly more secure that transparent mode but all users should have a unique password/pin for any security controls
+###### USB Startup Key Mode
+* a secret startup key is placed on a USB key that will need to be inserted into the device when the device is booting to allows for the drive to be decrypted
+* not all devices support reading from a USB drive on boot 
+
+#### VeraCrypt
 
 
 
