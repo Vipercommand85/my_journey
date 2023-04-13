@@ -1,3 +1,11 @@
+## Section 8: Intro to Databases
+### Connect to the Database from PHP
+#### You will need to know 4 pieces of information
+1. Host Address of the Database
+2. Database Name
+3. Username
+4. Password of the user
+
 ## Functions
 * Basic code to create a function
 * no variables outside or inside the function are accessible to the opposite
