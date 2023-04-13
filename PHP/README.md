@@ -1,4 +1,12 @@
-## Section 8: Intro to Databases
+## Section 8: Introduction to Databases
+### Intro to Databases
+* ideal to create a user account to access the database, not using the root account
+```mysql
+CREATE USER 'user_name'@'IP Address' IDENTIFIED VIA 'password'; 
+GRANT USAGE ON *.* TO 'user_name'@'IP Address' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+GRANT ALL PRIVILEGES ON `cms`.* TO 'user_name'@'IP Address';
+```
+### 
 ### Connect to the Database from PHP
 #### You will need to know 4 pieces of information
 1. Host Address of the Database
@@ -14,9 +22,10 @@ $db_name = "cms";
 $db_user = "cms_www";
 $db_pass = "64w6H2r0J1zwLRyK";
 
-// this the procedural style 
+ 
 $conn = mysqli_connect($db_host, $db_name, $db_user, $db_pass);
 
+// this is the procedural style
 // the use of an error handler to ensure that we have connected successfully
 if (mysli_connect_error()) {
 	echo mysli_connect_error();
