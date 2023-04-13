@@ -6,6 +6,29 @@
 3. Username
 4. Password of the user
 
+```PHPH
+<?php
+
+$db_host = "localhost";
+$db_name = "cms";
+$db_user = "cms_www";
+$db_pass = "64w6H2r0J1zwLRyK";
+
+// this the procedural style 
+$conn = mysqli_connect($db_host, $db_name, $db_user, $db_pass);
+
+// the use of an error handler to ensure that we have connected successfully
+if (mysli_connect_error()) {
+	echo mysli_connect_error();
+	exit;
+}
+
+echo "Connected successfully.";
+
+php>
+```
+
+
 ## Functions
 * Basic code to create a function
 * no variables outside or inside the function are accessible to the opposite
