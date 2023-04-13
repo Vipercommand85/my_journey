@@ -6,7 +6,7 @@
 3. Username
 4. Password of the user
 
-```PHPH
+```PHP
 <?php
 
 $db_host = "localhost";
