@@ -367,6 +367,182 @@
 * similar to legacy systems with the exception that they provider of the system/software will need to make any changes to mitigate the vulnerability found
 
 
+## Section 5: Chapter 4: Threats & Vulnerabilities Associated with Specialized Technology
+### Web Application Scanners
+* likely to be looking at **HTTP/HTTPS** protocols over ports **80/443** respectively
+
+#### OWASP Zed Attack Proxy (ZAP)
+* proxy inserted between client and server
+
+#### BurpSuite
+* also used as a proxy
+* more manually geared with more granularity with settings and features
+
+### Web Application Scanners Part 2
+#### Nikto
+* a command line tool that scans a host and maps any found vulnerabilities to **OSVDB ( Open Source Vulnerabilty Database)**
+
+#### Arachni
+* not installed by default in Kali Linux
+* command line tool that scans a host and maps any found vulnerabilities
+
+### Scanning
+#### Frequency
+* industry regulations help to determine frequency
+* regulations vary by industry
+
+#### Resources
+* People
+* Communication
+* Time
+* will determine how effecient and effective this campaign will be
+
+#### Constraints
+* finding qualified personnel
+* techincal capacity
+
+#### Determining Frequency
+* effects on workflow
+* resources used
+
+#### Feeds
+* make sure the feeds are up to date from the vendor
+
+#### Sensitivity
+* tune the sensitivity so as not to distrupt normal day to day operations
+
+#### Scope
+* special or isolated systems used be addressed and how they will be dealt with
+
+#### Privilege
+* credential: will give specific access to teams/team members/devices to allow for ease of access
+* non-credential
+
+#### Server or Agent Based ( Respectively)
+* centralized
+* across network nodes
+
+### Configuring and Executing Scans
+#### Nessus
+##### Advanced Scan
+###### Settings
+####### Basic
+######## General Tab
+* give the scan a name
+* description if needed
+* specify folder to keep the results in
+* specify targets, could be a range of targets i.e 10.10.10.0/24
+
+######## Schedule Tab
+* allows you to specify the frequency of the scan
+
+######## Notifications Tab
+* can provide an email to be notified when the scan is complete
+
+####### Discovery Tab
+* allows you to enable certain techniques to discover hosts
+* you can enable or disable scanning of sensitive devices in this tab as well
+* also has a section for specifing ports and services to be scanned or skipped
+
+####### Assessment Tab
+* have tabs to specify settings for **general purpose, Brute Forcing, Web Applications, Windows, Malware**
+
+####### Report Tab
+* used to add and remove features in the final Nessus report generated after the scan has completed
+
+###### Credentials
+* options for using credentials for scans
+
+####### Cloud Services
+* AWS
+* Microsoft Azure
+* Rackspace
+* Salesforce.com
+
+####### Database
+* MongoDB
+
+####### Host
+
+####### Misc
+* VMWare ESX SOAP API
+* Paolo Alto Networks PAN-OS
+* OpenStack
+* RHEV
+
+### Reverse Engineering
+#### Hardware
+* lower cost of manufacturing process makes counterfieting a growing concern
+* high-end devices have been counterfieted
+##### Trusted Foundaries
+* have been created in response to US gov finding coutnerfieted units in their networks
+* assures the integrity of products
+* assures the integrity of the supply chain
+* analysis of hardware components
+
+#### Software
+##### Detecting Suspicious Files
+* name alone will not reveal this
+
+##### Hashing Fucntions
+* there are multiple repositories of known bad files
+* comparing files in the network/endpoint to one in these repositories can uncover a malicious file
+
+##### Hashing
+* takes a variable length input and produces a fixed length output
+* two most popular hashing fucntions are **md5sum** and **shasum**
+
+#### Reverse Engineering Software
+* typically use a static, dynamic, and a combination of both approach
+
+##### Static Analysis
+* typically involves reading through a binary to figure out program structure
+
+##### Dynamic Analysis
+* connectin a binary to a debugger to simulate execution
+* in this manner you can probe the program to figure out what it's trying to do, call for resources, output produced, etc.
+
+#### Strings Command
+* a command line tool that will parse through the binary looking for and printing to the screen, any ASCII strings it finds
+
+#### Binary Ninja
+* popular free demo version of a visual representation of a binary
+
+### Enumeration
+#### Active Scanners
+##### Nmap
+* command line tool that allows you to map the network with various switches/options
+
+##### Hping
+* command line tool that allows you to granularly craft ICMP packets to help bypass technical controls in place that would noremally ignore/drop these requests
+
+#### Passive Scanners
+##### Responder
+* remote access attack tool that poisons name servers
+
+### Wireless Assessment Tools
+#### Aircrack-ng
+* open-source wireless security suite
+* useful to audit WLAN security
+
+#### Reaver
+* utility that exploits WPS weaknesses
+* wireless password cracking tool
+
+#### oclHashcat (Hashcat)
+* command line tool used to crack hashes
+
+### Cloud Assessment Tools
+#### ScoutSuite
+* open source tool written in Python
+* security auditing tool to help assess security posture in cloud environments
+* outputs results in XML that can be viewed in a browser
+
+#### [Prowler](https://github.com/toniblyx/prowler)
+* AWS CIS Benchmark tool
+
+#### [Pacu](https://rhinosecuritylabs.com/aws/pacu-open-source-aws-exploitation-framework/)
+* Pentesting AWS to secure the cloud
 
 
 
