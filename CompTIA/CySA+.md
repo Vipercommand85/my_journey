@@ -424,47 +424,47 @@
 
 ### Configuring and Executing Scans
 #### Nessus
-##### Advanced Scan
-###### Settings
-####### Basic
-######## General Tab
+#### Advanced Scan
+#### Settings
+#### Basic
+#### General Tab
 * give the scan a name
 * description if needed
 * specify folder to keep the results in
 * specify targets, could be a range of targets i.e 10.10.10.0/24
 
-######## Schedule Tab
+#### Schedule Tab
 * allows you to specify the frequency of the scan
 
-######## Notifications Tab
+#### Notifications Tab
 * can provide an email to be notified when the scan is complete
 
-####### Discovery Tab
+#### Discovery Tab
 * allows you to enable certain techniques to discover hosts
 * you can enable or disable scanning of sensitive devices in this tab as well
 * also has a section for specifing ports and services to be scanned or skipped
 
-####### Assessment Tab
+#### Assessment Tab
 * have tabs to specify settings for **general purpose, Brute Forcing, Web Applications, Windows, Malware**
 
-####### Report Tab
+#### Report Tab
 * used to add and remove features in the final Nessus report generated after the scan has completed
 
-###### Credentials
+#### Credentials
 * options for using credentials for scans
 
-####### Cloud Services
+#### Cloud Services
 * AWS
 * Microsoft Azure
 * Rackspace
 * Salesforce.com
 
-####### Database
+#### Database
 * MongoDB
 
-####### Host
+#### Host
 
-####### Misc
+#### Misc
 * VMWare ESX SOAP API
 * Paolo Alto Networks PAN-OS
 * OpenStack
