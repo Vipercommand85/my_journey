@@ -545,6 +545,289 @@
 * Pentesting AWS to secure the cloud
 
 
+## Section 6: Chapter 5: Threats & Vulnerabilities Asscoiated with Specialized Technology
+### Mobile and IoT
+#### Access Points
+* any place where a device connects via WiFi, then into the network infrastructure
+* common place for vulnerabilities
+
+#### VPN (Virtual Private Network)
+* allows you to establish a secure connection using an insecure access point
+
+#### Network Vulberabilities
+* mobile device has to connect to IT infrastructure
+* WiFi or celluar
+* older technologies were insecure
+* newer technologies are more secure and  use encryption
+
+#### Device Vulnerabilities
+* securing mobile devices is challenging task because the whole idea of them is to be easily connectable
+* provision for multi-use
+* cannot secure one device for multiple different uses
+
+#### OS Vulnerabilities
+* os update frequently by competition between OS manufacturers
+* patching bugs and security vulnerabilities
+
+#### Application Vulnerabilities
+* improper platform usage
+* insecure data storage
+* insecure authentication
+* insecure authorization
+* code quality vulnerabilities
+
+### IoT
+* smaller devices connecting to the internet and doing things autonomously
+* IoT devices are ubiquitous
+* users not often concerned about security
+* many devices are not hardened
+* default credentials listed on the internet
+
+#### Botnet
+* collection of compromised devices used to launch a DDoD atack
+
+#### Mirai Botnet
+* malware that compromised a lot of insecure IoT devices
+* successful DDoS attack
+
+### Emmbedded & Firmware Systems
+#### Special-Purpose Software
+* typically operating a chip
+* low-power processor
+* often no external storage
+* software can be burned into the firmware
+* could just be hardware only
+* i.e. an older style thermostat in a house
+* limited ability to monitor or patch
+
+#### Real Time OS (RTOS)
+* devices that require low-latency input processing
+* i.e. vehicles, manufacturing, aviation, medical
+* vulnerabilities allow threats to underlying performance guarantees
+
+#### System on a Chip (SoC)
+* software and hardware intergrated on a single chip
+* used in special-purpose applications
+* SoC is efficient and cost effective
+* vulnerabilities can affect the entire SoC environment 
+
+#### Field Programmable Gate Array (FGPA)
+* combination of SoC and embedded system
+* programmable chip with the ability to be modified and reprogrammed in the field
+* must use special device to overwrite the firmware/ upgradable
+* cost effective
+* simplicity sometimes lead to vulnerabilities
+
+### Access & Vehicles Risk
+#### Physical Acccess Control
+##### RFID
+* Radio-frequency identification
+* chip that uniquely communitcates with a receiver
+* physical readers make reverse engineering and spoofing possible
+* vulnerabilities can allow attackers to bypass access control
+* replay and cloning are popular attack methods
+
+### Vehicles
+* vehicles of all types are increasingly connected
+* internet connectivity access to many subsystems
+* control of some subsystems
+* this connectivity inherently opens up vulnerabilities
+
+#### Controller Area Network (CAN bus)
+* defines communication among vehicle components
+* CAN exploits that alter vehicle operation have been demostrated
+
+### Drones
+* can be controlled for malicious purposes by an attacker
+* can be an innocent attack in which an attacker hijacks a civilian drone to be used for a malicious purpose
+* some military drones are the size of meduim duty air craft
+
+
+### Automation & Control Risk
+#### Building Automation Systems
+* network of connected of cyber-physical devices
+* combination of computing decive that has impact in the physical world
+* some examples are robots, PLC's, thermostats, lighting
+* vulnerabilities can impact a building's usability, inhabitability, and safety
+
+#### Workflow & Process Automation Systems
+* systems that direct or control workflow
+* project/document management software, software configuration management
+* value is in autonomy, vulnerabilities can adversely affect this automation
+* important to audit desired workflow externally
+
+#### Industrial Control System (ICS)
+* cyber-physical systems, software to control physical behavior
+* common in manufacturing and warehousing/distribution
+* elevators and HVAC systems
+* remote terminal unit (RTU) or PLC's
+* PLCs commonly use firmware
+
+#### Supervisory Control & Data Acquisition (SCADA)
+* special class of ICS
+* monitors and controls cyber-physical systems
+##### Vulnerabilities
+* the need to communicate with the remote facilities
+* autonomous operation of remote facilities
+* not modular
+
+#### Modbus
+* SCADA (PLC) communication standard
+* security not part of its design by default
+
+
+## Section 7: Chapter 6: Threats & Vulnerabilities Associated with Operating in the Cloud
+### Cloud Models
+#### Software as a Service (SaaS)
+* cloud provider manages all that is needed for some software to run
+* the user only manages the User Data
+
+#### Platform as a Service (PaaS)
+* cloud provider manages what is needed to run an application on the virtual server
+* the user manages the User Data and the application(s) that is running on the server
+
+#### Infrastructure as a Service (IaaS)
+* cloud provider manages all the components that are typically found in a traditional bare metal server, i.e. storage, networking, hardware
+* user manages the OS, databases, runtime, applications, and user data
+
+### Cloud Deployment Models
+#### Public Cloud
+* most popular
+* lease connectivity and functionality from service provider
+
+#### Private Cloud
+* create a collection of servers in you own data center
+* only for internal network access
+
+#### Community Cloud
+* private cloud owned by a consortium
+* shared among many entities
+
+#### Hybrid Cloud
+* looks like a single cloud environment but is made up both private and public models ( and in certain instances community cloud)
+
+### Vulnerabilities
+* authorization
+* authentication
+
+### Remote Service Invocation (FaaS, IaC, API)
+#### Function as a Service (FaaS)
+* serverless architecture
+* allows you to fucos on responding to functionality request
+* example AWS Lamda Functions
+
+#### Infrastructure as a Code (IoC)
+* developers tend to develop based on personal preferences
+* this causes divergence in the environments which can introduce vulnerabilities
+* structured method to create stable developemt environments
+* minimizes local configuration differnces
+* virtualization and structured provisioning
+* makes it easy to create cloned environments
+
+#### API
+* poorly written APIs may have vulnerabilities
+##### OWASP API Security Project Top 10
+1. Broken Object Level Authorization
+2. Broken User Authentication
+3. Excessive Data Exposure
+4. Lack of Resources and Rate Limiting
+5. Broken Function Level Authorization
+6. Mass Assignment
+7. Security Misconfiguration
+8. Injection (SQLi, HTMLi)
+9. Improper Asset Management
+10. Insuffuecuent Logging and Monitoring
+
+
+### Cloud Vulnerabilities
+#### Imporper Key Management
+* encryption can protect confidentiality, integrity, non-repudiation
+* security depends on the encryption key
+* difficult to securely generate, distribute, and replace keys as needed
+
+#### Unprotected Storage
+* cloud storage is located on someone else's computing systems
+* be sure to secure that storage
+* admins must configure security settings properly
+* multiple layers of security are always recommended
+* common loophole is mass access which is often granted for convenience
+* this may expose sensitive data
+
+#### Logging & Monitoring
+* responsibility changes based on the cloud service model
+* with SaaS/PaaS there is little control to the user on what is logged
+* it is essential that you ensure all important events are monitored and logged
+* more services means less granular control
+* SLA spells out roles and responsibilities for all parties
+
+
+## Section 8: Chapter 7: Mitigating Controls for Attacks & Software Vulnerabilities
+### Injection & Overflow Attacks
+#### Injection Attacks
+* attacker sends input so software does something unintended by developer
+##### Remote Code Execution (RCE)
+* tells target system to run some unauthorized function
+
+##### XML attacks
+*  allow you to send embedded bad data or invalid data that causes the XML parser to hang or crash
+
+##### SQLi Attacks
+* most common language for relational databases
+* very flexible
+* hard to secure
+* often used along with remote code execution
+
+##### Cross Site Scripting (XSS)
+* leverage trust between a client and server
+* **persistent** attack stores malicious code on a server
+* **non-persistent (reflected)** is an attack in which an attacker takes advantage of a vulnerability on the server
+* **Document Object Model (DOM)** attack used in XML data transfers where bad data is injected into the XML
+
+##### Directory Traversal
+* attacks that allow an attacker to move around the different directories of an application
+* could possibly allow access to sensitive data or unauthorized data
+
+### Overflow Attacks
+* happens when an attacker provides more input than the developer allowed for
+* input may overflow into the next memory space
+
+#### Buffer Overflow Attack
+* attacker may be able to write to unauthorized areas of memory
+
+#### Interger Overflow Attack
+* provide interger values that are too great or too small
+
+#### Heap Overflow Attack
+* can cause a program to call itself multiple times
+
+### Best Practices for Stopping these Attacks
+* carefully and aggressively parse input
+* validate all input
+* only process valid input
+* if it is not valid input reject it, do not try to clean it up
+
+### Authentication Attacks
+#### Privilege Escalation
+* attacker tries to do more than they're authorized to do
+* then attempts to try to gain higher privilege
+* ideally attacker tries to become admin in Windows and root in Unix/Linux
+
+##### Methods for Privilege Escalation
+* login as someone else
+* brute force your way in
+* exploit various vulnerabilities to allow you to escape to a higher privilege shell
+* example is rooting/jailbraking a mobile device
+
+#### Password Praying
+* use a list of popular passwords across a multitude of machines so you are not detected as malicious activity
+
+#### Credential Stuffing
+* attacker obtains a list of previuosly-leaked username and passwords and tries to use them on other sites
+
+#### Impersonation
+* attacker pretends to be someone else bu stealing someone's login credentials
+
+
 
 
 
