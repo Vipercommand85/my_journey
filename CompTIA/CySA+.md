@@ -908,25 +908,20 @@
 ### Network Architecture & Assent Management
 #### Physical Connections
 * wired networks, star, bus, mesh, ring
-
 #### Software-Defined
 * may have a traditional physical connections but has a logical layout
 * control layer (routing)
 * data layer (moving packets)
-
 #### Virtual Private Cloud (VPC)
 * private resources in a public cloud environment
 * use encryption for security
-
 #### Virtual Private Network (VPN)
 * secure tunnel between two end points
 * almost always encrypted
-
 #### Serverless
 * deploy software network components withour a server
 * FaaS
 * use other peoples' services instead of hosting your own
-
 ### IT Asset Management (ITAM)
 #### Asset Lifecycle
 * acquisition
@@ -936,13 +931,227 @@
 * disposal
 * must always have approval to move any asset(s) from one stage to another
 * must always document any approved movements of asset(s)
-
 #### Maintaining Inventory and Configuration
 * asset tagging to be able to uniquely identify any asset
 
-
 ### Protecting Your Territory
-#### 
+#### Network Segmentation
+* the process of breaking down large networks into smaller networks/zones
+* improves network management at large
+* improves traffic across the network
+* prevents an attacker from moving across networks
+* achievable across all OSI & TCP/IP layers
+#### Physical Layer Segmentation
+* seperate netowrks & devices connecto to seperate intercommecting devices
+#### Link Layer Segmentation
+* VLANs allow multiple devices across multiple networks to be connected to the same physical device
+* great way to manage traffic
+* ensures segmentation
+* verify hard isolation across the network
+#### Jump Server
+* login enabled
+* enchanced authentication protocols
+* strict access rules
+* no services or applications that aren't necessary will run on this server
+* ensure that these are monitored and updated regularly
+
+### Identity & Access Management (IAM)
+#### Determining a User's Identity
+* Identification
+* Authentication
+#### Process
+* register as new user
+* provide credentials
+* authentication via PIN, token, password, biometrics, etc
+#### Privilege Management
+* authorization is providing resource access
+* the key is authentication via **MFA**
+#### Signle Sign-on (SSO)
+* using a single identity across several applications or organizations
+* **Security Assertion Markup Language (SAML)** is used to transport these credentials and sessions
+#### Federated Identification
+* using a signle identity across several organizations
+* user identifies/authenticates with a central identity manager
+* i.e. OpenID
+### IAM Mehtods
+#### Role-based Access Control (RBAC)
+* users (subjects) belong to one or more roles (groups)
+* object permissions are granted based on role
+#### Attribute-Based Access Control (ABAC)
+* users (subject) posses descriptive attributes
+* object permissions are granted based on attributes
+#### Mandatory-Access Cotnrol (MAC)
+* subjects have clearances
+* objects have classifications
+### IAM Auditing
+#### Manual Review
+* necessary to identify malicious behavior
+### Cloud Access Security Broker (CASB)
+* runs between users and cloud services
+#### 4 CASB Pillars
+* **Visibility**: subject.object access transparency
+* **Threat Protection**: detects and blocks malicious activity
+* **Compliance**: controls to adhere to regulatory requirements
+* **Data Security**: controls to protect sensitive data
+
+### Encryption & Active Defense
+#### Encryption
+* mathematical technique to scramble text
+* converts plaintext to ciphertext
+* reversable (converts ciphertext into plaintext)
+#### Symmetric (Private Key)
+* uses a single key to encrypt and decrypt
+* must find a secure way to transfer the key to entities you will need to decrypt any files/emails
+#### Asymmetric (Public Key)
+* uses 2 keys, a public and private key pair
+* can use the private key to encrypt and anyone can decrypt with the public key
+### Digital Signature
+* uses encryption and hashing
+* **hashing**: mathematical function that takes input and creates a unique fixed-length output
+* verifies the message sender
+### Certificate Management
+#### Digital Certificate
+* public key of a known identity
+* stored by a trusted entity
+#### Certificate Authority
+* trusted entity that stores public keys of known indentities
+##### Trust Is the Foundation
+#### X.509
+* IEEE certificate standard
+* defines certificate contents
+#### Certificate Management
+* creation
+* authenticating
+* storage (trusted manner)
+* distribution
+* revocation (when it is no longer valid)
+### Active Defense
+* process, attitude, a culture
+* avoid being a sitting target
+#### Moving Target Defense (MTD)
+* change attack surface frequently to confuse attackers
+* honeypots/honeynets can be used to track and obsver attackers in real time
+* use obfuscation and agility
+* reduces value of reconnissance
+
+
+## Section 10: Chapter 9: Software Assurance Best Practices
+### Platforms
+#### Web Application
+* browser based
+#### Mobile
+* thin client
+#### Embedded
+* self-contained
+#### System-on-a-chip (SoC)
+* more compact than embedded
+#### Firmware
+* just the stable code
+#### Software Architecture
+* processing presentation (GUI) and business logic
+* storage 
+* communication
+#### Common Architecture Types
+##### Host-based
+* referred to as a Mainframe system
+* everything ran on one computer
+##### Client-Based
+* pushed a lot of functionality to the clients
+* disk storage was left on the mainframe
+#### Client/Server
+* often called a thich client
+* client would mainly do presentation
+* server would mainly do business logic and storage
+* first true distibuted architecture
+#### Distributed (N-tier) Model
+* fully distributed model
+* multiple servers performing specific business logic functions (web server. database server, etc.)
+
+### SOA & DevSecOps
+#### Service-Oriented Architecture (SOA)
+* SOA clients consume services via APIs
+* usually based on a web approach with a loosely-coupled connection bewteen client and server
+* persistent or non-persistent
+* can be open or closed
+* cloud computing makes SOA far easier to scale
+* uses **SAML**
+* implies seperate trust zones
+#### Simple Object Access Protocol (SOAP)
+* early method to invoke services
+* XML over HTTP
+* data in an evelope approach
+* can be complex
+#### Representation State Transfer (REST)
+* lightweight and flexible
+* preffered for clients with minimal processing capability i.e. mobile devices
+* based on HTTP methods
+#### Microservices
+* limited scope, loosely coupled services (often REST)
+### DevOps
+* intergrates operations with software developments
+* gives operations direct input into software functionality & quality
+* developers benefit from timely, relevant perspective
+#### DevSecOps
+* intergrates security with DevOps
+* increases the priority of security, no longer an aftethought
+* easier (and cheaper) to design security into software by not needing to add it later on
+
+### Secure Software Development
+### Coding Requirements
+#### Functional Requirements
+* inputs, processes, & outputs
+#### Non-Functional Requirements
+* character input, input constraints, & system limitations
+#### Security Requirements
+* class includes fucntional and non-functional aspects
+### Development Phase
+#### Design
+##### Static Analysis
+* review before the code has been executed
+* analyzed using automated tools
+##### Code Review
+* manual inspection by human developers and security staff
+### Implementation Stage
+#### Testing Types
+##### Functional 
+* software performs as expected
+##### Non-functional
+* quality test of infrastructure
+* deep dive into the mechanics of the application and infrastructure
+##### User Acceptance
+* software acts as user expects
+### Testing for Security Professional
+#### Fuzzing
+* give software various input
+* define crahes & exceptions
+#### Stress
+* push limits of software
+* give input the software is expecting
+#### Regression
+* test security through updates & patches
+### Operations & Maintainance Phase
+#### Maintainance Responsibility
+* outline software security requirements for developers & implementers
+* pathces, how often, under what conditions, who is responsible
+#### Maintainance Phase Length
+* all software eventually gets retired
+* define EOF
+### Waterfall Model
+* flows idea to final product of the software
+* might only be suitable for certain tasks
+### Agile Model
+* use quick sprints in succession to get the product out
+* can repeat this sprints as much as needed to ensure that the product is exactly how you want it
+
+### Coding Best Practices
+#### [CERT](https:securecoding.cert.org/)
+
+#### OWASP Secure Coding Practices
+
+
+
+
+
 
 
 
