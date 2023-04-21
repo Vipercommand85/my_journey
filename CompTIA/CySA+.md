@@ -825,7 +825,125 @@
 * attacker obtains a list of previuosly-leaked username and passwords and tries to use them on other sites
 
 #### Impersonation
-* attacker pretends to be someone else bu stealing someone's login credentials
+* attacker pretends to be someone else by stealing someone's login credentials
+
+
+### Exploits
+#### Impersonation
+* attacker pretends to be someone else by stealing someone's login credentials
+
+#### Man-in-the-Middle Attack (MITM)
+* impersonation attacks that face both the client and the server
+* the attacker faces the client pretending to be the sever and the attacker faces the server pretending to be the client
+
+#### Session Hijacking
+* type of an attack where an attacker eakes advantage of valid session information
+* usually while acting as a proxy and then replaying the authenticated request(s)
+
+#### Cross-Site Scripting (XSS)
+* type of attack that leverages the user's computer to execute malicious code on behalf of the attacker
+#### Two Forms of XSS
+##### Stored (Persistent)
+* malicous code is stored on a site and gets executed when an authorized users downloads/access the site with malicious code
+
+##### Reflective (Non-Persistent)
+* attacker takes advantage of a flaw in the server software and gets the user's browser to execute the code
+
+#### Privilege Escalation
+* any techniwue that allows an attacker to do something that they normally aren't allowed to do
+* can occur either vertically or horizontally
+
+
+### Application Vulnerabilities: Part 1
+#### Improper Error Handling
+* provide enough information to correct what error has occured for the user
+* keep any information about the server/software/application/network from being sent to the user
+* do not send error messages and crash the program/application
+
+#### Dereferencing
+* pointer attempts to access some value in the memory that is no longer there
+* following the pointer can cause an operational error
+* never follow a pointer until you verify it's validity
+* fail gracefully
+
+#### Insecure Object Referencing
+* make sure access controls operate at all levels
+* direct record ID used to access unauthorized data
+* always authenticate every request
+
+#### Race Condition
+* time difference between checking the permissions of a subject requesting a resource and allowing access to the resource
+* **TOCTOU**: time-of-check to time-of-use
+* never allow access after authentication but before use
+* never provide acces to data without checking identity
+
+#### Broken Authentication
+* should be aggressive and proactive
+* do not authenticate, assign a session ID, and assume from then on it's always the same user if it's the same session ID
+
+#### Sensitive Data Exposure
+* application's responsibility to protect the data and only allow authenticated authorized access to any data
+
+
+### Application Vulnerabilities: Part 2
+#### Insecure Components
+* insecure parts of applications
+* all applications are modular, they rely on libraries, external functions, or interactions with other components
+
+#### Defualt Configurations
+* vendors try to set them appropriately
+* common to have to change the settings
+* default user IDs are a vulnerability
+* change default configurations to the mnost secure settings
+* remove/disable unused user IDs
+
+#### Insecure Fucntions
+* example is *strcpy* from the **C Language**
+* use proper software developement standards
+* make sure developers understand what not to do
+* provide sufficient feedback
+
+
+## Section 9: Chapter 8: Security Solutions fro Infrastucture Management
+### Network Architecture & Assent Management
+#### Physical Connections
+* wired networks, star, bus, mesh, ring
+
+#### Software-Defined
+* may have a traditional physical connections but has a logical layout
+* control layer (routing)
+* data layer (moving packets)
+
+#### Virtual Private Cloud (VPC)
+* private resources in a public cloud environment
+* use encryption for security
+
+#### Virtual Private Network (VPN)
+* secure tunnel between two end points
+* almost always encrypted
+
+#### Serverless
+* deploy software network components withour a server
+* FaaS
+* use other peoples' services instead of hosting your own
+
+### IT Asset Management (ITAM)
+#### Asset Lifecycle
+* acquisition
+* deployment
+* maintenance
+* retirement
+* disposal
+* must always have approval to move any asset(s) from one stage to another
+* must always document any approved movements of asset(s)
+
+#### Maintaining Inventory and Configuration
+* asset tagging to be able to uniquely identify any asset
+
+
+### Protecting Your Territory
+#### 
+
 
 
 
