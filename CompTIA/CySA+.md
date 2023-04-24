@@ -1149,6 +1149,8 @@
 #### OWASP Secure Coding Practices
 
 
+## Section 11: Chapter 10: Hardware Assurance Best Practices
+### Trusted Hardware
 
 
 
