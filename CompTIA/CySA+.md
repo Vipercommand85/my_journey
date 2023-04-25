@@ -1151,7 +1151,21 @@
 
 ## Section 11: Chapter 10: Hardware Assurance Best Practices
 ### Trusted Hardware
-
+#### Trusted Platform Module (TPM)
+* SoC
+* stores cryptographic keys and the functionality to deal with them
+##### Endorement Key (EK)
+* stored in persistent memory that cannot be changed which identifies that specific motherboard
+##### Storage Root Key (SRK)
+* a master wrapping key used to wrap the other keys that are store on the TPM
+##### Versatile Memory 
+* platform configuration registers (PCR)
+* Attestation Identity Keys (AIK)
+* general storage keys
+#### Hardware Security Module (HSM)
+* secure stoage area that is not bound to a motherboard
+* removable card/device
+* 
 
 
 
