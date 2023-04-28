@@ -1165,7 +1165,89 @@
 #### Hardware Security Module (HSM)
 * secure stoage area that is not bound to a motherboard
 * removable card/device
-* 
+#### eFuse
+* **nonvolatile bit**: once set to 1, cannot be changed
+* useful to permanently disable functionality
+* manufacturing tests
+* useful to permantently store data, i.e. cryptographic keys
+#### Firmware
+* software that is burned into hardware (chip)
+* difficult to change
+##### Unified Extensible Firmware Interface (UEFI)
+* Security Phase (SEC)
+* Pre-EFI Initialization (PEI)
+* Driver Execution Environment (DXE)
+* Boot Device Select (BDS)
+* Transient System Load (TSL)
+* Runtime (RT)
+#### Firemware Security
+* measured boot and attestation
+* calculate and securely sends hashes of known good programs to a management station
+* use this method instead of verifying digital signitures of code
+* trusted firmware updates
+* built-in capability to download, verify, and swap firmware images
+* avoids overwrite failures that result in unbootable devices
+
+### Hardware Encryption
+#### Full-Disk Encryption
+* software or hardware
+##### Self-Encrypting Drive (SED)
+* user provides password
+* password gets used to encrypt key
+* encrypted key is stored in nonvolitile memory of the disk controller
+##### Bus Encryption
+* SED still exposes plaintext once data get read from disk
+* moving crypto module from the disk controller to the CPU keeps data on the bus as ciphertext
+* this requires a dedicated cryptoprocessor
+* great for very high security solutions but not cost effective for general purposes
+
+### Hardware Security
+#### Trusted Execution Environment (TEE)
+* rigorous assessment prior to certification
+* **secure enclave**: runtime environment that limits how programs interact with one another and the outside world
+
+### Secure Processing
+#### Atomic Execution
+* anti-interruption guarantee
+* helps to protect from **TOCTOU** attacks
+
+### Trusted Foundry
+#### US Dod Program
+* ensures that the supply chain for all DoD mission-critical systems is hardened
+* fewer than 100 companies have passed the rigorous certification process to be designated as trusted foundaries
+
+### Anti-Tamper Techniques
+#### Chip Attacks
+* **micoprobing**: apply voltage to various conductors and recording the results
+* **visual analysis**: carefully removing the chip's covering, layer by layer
+* chip manufacturers enmploy random signlas to confuse mircoprobing
+* chip casing compromise detection will place zeros in nonvolatile memory
+
+## Section 12: Chapter 11: Data Analysis in Security Monitoring Activities
+### Data Analysis
+#### Trend Analysis
+* baseline is required
+* looking for devations from baselines (spikes and valleies in graphs)
+#### Historical Analysis
+* past behavior used to gain perspective
+
+### Syslog
+#### Value
+* **Level 7**: debug level messages that contain information normally of use when debugging a program
+* **Level 6**: Informational messages
+* **Level 5**: normal but significant conditions, may require sepcail handling
+* **Level 4**: warning conditions 
+* **Level 3**: error conditions
+* **Level 2**: critical conditions such as hard device errors
+* **Level 1**: alert, action must be taken immediately
+* **Level 0**: emergency condition, system is unusable (panic condition)
+#### Syslogd Service
+* daemin in Linux
+* collect & records messages from the machine
+* can be found in embedded systems such as router, switches, access points, and firewalls
+* can point to a central server for aggreation and analysis
+
+### 
 
 
 
