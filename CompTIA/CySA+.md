@@ -1381,9 +1381,9 @@ nmap -O [host address]
 * Files
 * Resources
 
-#### Blacklistin
+#### Blacklisting
 * deny specific traffic or applications
-#### Whitelist
+#### Whitelisting
 * can use Windows GPE
 * disable everything except those explicitly listed
 
