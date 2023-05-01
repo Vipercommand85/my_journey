@@ -1224,7 +1224,7 @@
 * chip casing compromise detection will place zeros in nonvolatile memory
 
 ## Section 12: Chapter 11: Data Analysis in Security Monitoring Activities
-### Data Analysis
+### Data Analytics
 #### Trend Analysis
 * baseline is required
 * looking for devations from baselines (spikes and valleies in graphs)
@@ -1242,12 +1242,261 @@
 * **Level 1**: alert, action must be taken immediately
 * **Level 0**: emergency condition, system is unusable (panic condition)
 #### Syslogd Service
-* daemin in Linux
+* daemon in Linux
 * collect & records messages from the machine
 * can be found in embedded systems such as router, switches, access points, and firewalls
 * can point to a central server for aggreation and analysis
 
-### 
+### Endpoint Security
+#### Malware
+* record it through fingerprinting/hashing so that it can be caught if seen again
+* decompose (reverse engineering) the payload to understand how it operates
+* protecting against it by detecting and blocking
+* not all malware is an executable, fileless malware
+* these are loaded into memeory i.e. rootkits
+* test via sandbox
+#### User and Entity Behavior Analystics (UEBA)
+* create a baseline of normal behavior (known good behavior)
+* make anomalous/abnormal behavior easier to detect
+
+### Recon Results 1
+#### Point-in-Time Analysis
+* best for single events
+#### Tools
+* packet capture
+* protocol analysis
+* network analysis
+#### Wireshark
+* connection-oriented
+* cross-platform
+* TCP/IP packet sniffer
+* captures & analyzes packets
+* reconstructs network traffic
+#### Netflow
+* developed by Cisco
+* tack source & destination events
+* groups packets into "flows"
+* can also use **ntop**
+
+#### Correlation Analysis
+* larger volumes of data
+* looks at trends across a network
+
+#### Security Inforation Event Management (SEIM)
+* collects telemetry from all network nodes into a single point for analysis
+
+### Recon Results 2
+#### Heuristic Analysis
+* uses experience over fixed models
+* imperfect craft
+* conastantly evolving field
+* best for malware detection
+
+### Impact Analysis
+#### Pre-Emptive
+* estimate possible impact of ant future successful attack
+#### Post-mortem
+* determines immediate and ongoing impact of a threat that has already been realized
+#### Immediate (localized) Impact
+* a server(s) that has been taken down
+#### Long-Term Impact
+* how long will this sustain a negative affect on systems and business plan
+#### Availability Analysis
+* tends to have immediate impact
+* secure systems guarantee confidentiality, integrity, and availability
+* use resource monitoring tools to analyze to identify an early indicator of attack
+
+### Collective Tools
+#### SIEM
+* collect, store, analyze & report data
+* attempt to normalize data from various logs & compare
+* Ex. ArcSight, QRadar, Splunk, Alienvault, OSSIM, Kiwi Syslog, ELK
+#### Nmap
+##### Finger printing a host
+```bash
+nmap -O [host address]
+```
+
+### Query Writing
+#### SQL (Structure Query Language)
+* most common
+* Splunk uses SPL
+#### Simple Queries
+##### grep
+* stand for get regular expression
+* search text files, fetch data, pipe out data however you want
+* can use in scripts to help eleviate tedious repetative typing
+
+### E-mail Analysis Part 1
+#### Malicious Payload
+* an executable that does something bad
+* malware often embedded in attachments, i.e. XML files
+* trick user to open the e-mail attachment
+#### DomainKeys Identified Mail (DKIM)
+* helps to detect spoofing
+* messages include a digital signature of the sender
+#### Sender Policy Framework (SPF)
+* rotection against spoofing
+* sender's IP address is checked against DNS-authorized IPs
+#### Domain-based Message Authentication, Reporting, and Conformance (MARC)
+* e-mail authentication protocol to help combat spoofing
+* uses (and extends) DKIM and SPF to verify message authenticity and specifies an action of authentication fails
+
+### E-mail Analysis Part 2
+#### Phishing
+* human is always the weakest link
+* combination of techincal and nontechnical (**social engineering**) attack
+* properly train personnel
+* e-mail is a popular attack vector
+#### Forwarding
+* if users recognize a potential scam, they should forward to a dedicated security e-mail account
+* analysis of these forwarded e-mails helps define e-mail policy and training
+#### Digital Signatures & Encryption
+* used to verify message integrity and enforce message confindentiality
+* sender ecrypts message with their private key
+* recipinet can look up sender's public key to decrypt and verify signature
+* used to gaurantee confidentiality of the message
+* sender encrypts message
+* recipient decrypts message if they have the key
+* keys must be securely transmitted
+#### E-mail Authentication
+##### Secure/Multipurpose Internet Mail Extension (S/MIME)
+##### Pretty Good Privacy (PGP)
+
+#### Embedded Links
+* never follow a link that doesn't come from a trusted source
+* expand shortened links to see what the actual URL is
+* used to mislead users
+
+#### E-mail Signature Block
+* different than digital signature
+* place at the end of the e-mail message to put your contact information
+
+## Section 13: Chapter 12: Implement Configuration Changes to Existing Controls to Improve Security
+### Permissions
+#### Identify:
+* Users
+* Groups
+#### Set Permissions for:
+* Files
+* Resources
+
+#### Blacklistin
+* deny specific traffic or applications
+#### Whitelist
+* can use Windows GPE
+* disable everything except those explicitly listed
+
+### Firewalls
+* OS come with firewall built in
+* includes default rules
+* simple firewalls look at protocol, port, source, destination
+* uses this information to decide if a rule exist to allow/deny the traffic
+* define higher level rules and then the exception comes after that
+* rules are enforced in the order they are listed in the firewall table
+
+#### Web Proxies
+* sit between web servers and web clients
+#### Web Application Firewalls
+* used for web traffic
+* can make decisions based on the context of the data in the packets
+
+### Intrusion Prevention Rules
+#### IPS/IDS
+* like a firewall that takes an action against threats
+* filters traffic, compares to rules, then acts
+* i.e. **Snort**
+
+#### Snort Rule Building
+##### Syntax
+* Snort action
+* Protocol
+* Source IP address
+* Source Port
+* Direction
+* Example: **alert tcp any any -> any 80 (msg:"A web connection was made!";flow;stateless;rev;1;)**
+
+#### Zeek Logs
+* logs events based on rules
+* run scripts to anayze events
+* looks for anomalies and correlates data
+
+#### Suricata
+* free, open-source threat detection engnie
+* IDS, IPS, and network monitoring tool
+
+### DLP & Endpoint Detection
+* similar to IDS
+* inspects traffic of data movement
+* goal is to limit unauthorized data transfers
+* some SaaS solutions provider DLP options
+
+#### Endpoint Detection & Response (EDR)
+* part of a full-scale security solution
+* endpoint is any device that is connected to a network to utilize a resource(s)
+* endpoint compromise can lead to internal compromise
+* structured extension to traditional malware detection
+##### Primary Capabilities
+* Monitor
+* Detect
+* Repsond
+* main difference from standard antimalware approach
+
+
+## Section 14: Chapter 13: The Importance of Proactive Threat Hunting
+### Threat Hunting and the Hypothesis
+* proactively searching environment for threats
+
+### Threat Hunting Process
+* Define the purpose of the hunt
+* Where will it be conducted? (internal/external/both)
+* What resources do I need to conduct the hunt?
+* Who are the key stakeholders?
+* What is the desired outcome of the hunt?
+
+#### Threat Hunting Process Cycle
+##### Generate Hypothesis
+* statment of expectation based on information
+* analytics-driven 
+* situational-driven 
+* intelligence-driven 
+* experience-driven that is based on familiarity with your environment
+##### Investigate via Tools
+##### Discover Patterns
+##### Inform Operations
+* and the cycle repeats as many times as needed
+* **MITRE ATT&CK Framework** is a good resource to model when threat hunting
+
+### Results & Benefits
+#### Delivering Results
+* document the entire process
+* used to reduce the attack surface area
+* bundle critical assets
+* explore various attack vectors
+* use integrated intelligence
+
+#### Improving Detection Capabilities
+* how do you convince stakeholders and finacial departments
+* update firewall and IDP/IPS rules
+* updated alert logic for SIEM platforms
+* updated alert logic for EDR platforms
+* improvements to sensor placement across the network
+* improvements to asset visibility
+* help motivate changes in your organization's develeopment process
+* help motivate changes to security training across the organization
+* help motivate changes to quality assurance and quality control process
+
+## Section 15: Chapter 14: Compare and Contrast Automation Concepts and Techniques
+### Workflow and Scripting
+#### Security Orchestration Automation and Response (SOAR) Platforms
+* automate common tasks
+* standardize incident reponse
+* organize flow to help catch mistakes and repeat processes easily
+* i.e. Splunk Phantom
+
+#### Data Enrichment
+* transforms raw data into actionable information
+* 
 
 
 
