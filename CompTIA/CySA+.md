@@ -1496,7 +1496,179 @@ nmap -O [host address]
 
 #### Data Enrichment
 * transforms raw data into actionable information
-* 
+* enrichment leads to additional insights
+* process is to correlate known data with additional details
+
+#### Scripting
+* automate the repetitive stuff
+* great for standardizing any mundane tasks
+* **Python/Violent Python** **PowerShell**
+
+### API & Malware Signature Creation
+* API gives the ability to reach out and consume services created by others
+#### REST
+* is the most common method using web request
+* entire architecture is client/server
+* stateless
+* cacheable
+* uniform interface
+* layered system
+* code on demand
+* embed in any language
+* call from cli using **curl** command
+```bash
+curl --request GET\ --url https://www.virustotal.com/api/v3/domains/[DOMAIN]\ --header 'x-apikey:<your api key>'
+```
+
+### Automated Malware Signature Creation
+* useful to keep up with rapidly changing malware threat
+#### [YARA](https://virustotal.github.io/yara/)
+* identify and classify malware samples
+
+### Threat Feeds & Machine Learning
+* aggregrating disparate data streams is always difficult
+* threat feeds may provide data in different formats
+* scripting can help automate transforming data into a single format
+
+### Machine Learning
+* field of computer science
+* collection algorithms that examine extremely large datasets to reveal trends and indicators that can predict future behavior
+* alogrithms learns by using historical data to make predictions
+* useful in security analysis
+* based on the natural tendency to stabilize
+#### Similar Fields
+##### Machine Learning
+* looking for trends
+##### Data Mining
+* looking at large data sets to extract previosly unidentified valuable data
+##### Data Science
+#### Two Types of Machine Learning
+##### Supervised
+* grouping techniques by defining groups to store and analyze data
+* let the machine learning set baseline activities for the defined groups
+##### Unsupervised
+* a cluster approach that will aggregrate all traffic and group like patterns together
+* Ex. neural networks, decision trees, SVM, regression, etc.
+
+### Protocols, Standarads, & Software Engineering
+#### Security Content Automation Protocol (SCAP)
+* great place to start to automate cybersecurity analysis tasks
+* defines languages
+* reporting formats
+* identification schemes
+* measurement & scoring systems
+* integrity
+* [**OpenSCAP**](https://open-scap.org)
+
+#### Software Engineering
+* continuous integration allows for new code to be automatically integrated into a quality assurance environment
+* continuous delivery allows for new code to be automatically integrated into a development/test environment
+* continuous deployment allows for new code to be automatically integrated into a production evnironment
+
+
+### Section 16: Chapter 15: The Importance of the Incident Response Process
+#### IR Roles & Responsibilities
+#### Team Composition
+* depends on the nature of the incident itself
+* bring the right knowledge & experience to meet the problem
+* outside resources will need coordination, communication, & pre-set parameters
+#### Escalated IR
+* involve law enforcement
+* may be subject to penalties or legal ramifications
+#### Key Roles
+##### Senior Leaders
+* include in decision-making process
+* visibility & support
+* address regulatory issues
+* buffer between IR team & personnel/leaders
+#### IR Team
+##### HR
+* disciplinary measures
+* overtime/hours
+* involve early & often
+##### Legal
+* regulatory requirements
+##### Marketing
+* manage communication
+* inform about progress
+##### Customers
+* problem resolution
+* return business is important
+##### Business Collaborators/Shareholders/Investors
+* impact to the bottom line
+* assure them that issues will be resolved in a timely secure manner
+
+#### Team Structure
+##### Central Reponse Team
+* organic
+* address incidents as they come up
+##### Distributed Response Team
+* larger organizations
+* geographically separate teams that address incidents
+##### Outsourced Response Team
+* outside of the organization
+* repsonds to incidents as a service
+
+#### Commincations Process
+##### Circle of trust
+* key staff, internal, & external partners
+##### Disclosure
+* based on regulatory or legislative requirements
+* need-to-know
+##### Damage Control
+* let employees know about incident
+* policy of talking about the icident
+##### Secure Communications
+* avoid leaks
+
+### IR Active Preparation
+#### Active Security Measures
+* know your attack surface
+* identify key parts of systems to test for vulnerabilities
+* help security team prepare for attacks & protect assets
+* help developers make products better
+#### Attack Surface Analysis
+* conducted by security architects & pen testers
+* helps to identify parts of a system to review & test for vulnerabilities
+* helps to identify high risk areas that need to be defended
+* helps to identify when you have changed the attack surface
+#### Indicators of Compromise (IOC)
+* unusual outbound traffic
+* anomalous admin account activity
+* geographic irregularities
+* login irregularities
+* high database read volume
+* HTML response size
+* high requests on the same file
+* mismatched port application traffic
+* suspicious regisrty & system file changes
+* DNS request anomalies
+#### Determing Severity
+##### Scope of Impact
+* downtime, what is the maximum tolerable downtime?
+* recovery time, time is money
+* data integrity, tampering/deleting data
+* economic, value & cost
+* business process criticality
+#### Types of Data
+##### PHI
+##### PII
+##### Corporate secrets & intellectual property
+* patents 
+* trademarks & copyrights
+* mergers & acquisitions
+* accounting
+* trade secrets
+##### PCI
+#### Know Your Threat
+* know vulnerabilities
+* what type of data?
+* what do systems look like?
+* what are the threat actors that are likely to attack?
+
+### Section 17: Chapter 16: Appropriate Incident Response Procedures
+#### Incident Response Process
+
 
 
 
