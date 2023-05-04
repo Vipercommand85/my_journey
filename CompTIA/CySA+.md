@@ -1668,6 +1668,92 @@ curl --request GET\ --url https://www.virustotal.com/api/v3/domains/[DOMAIN]\ --
 
 ### Section 17: Chapter 16: Appropriate Incident Response Procedures
 #### Incident Response Process
+#### NIST Special Publication 800-61
+* National Institute of Standards and Technology
+* provides publications & guideline on technology standards
+
+##### Phase 1: Preparation
+* proactive measures i.e. network segementation & host hardening
+* formal risk assessment process that includes
+  - Vulberabilities
+  - Action Steps
+  - Communications
+  - Activity & Reporting
+##### Phase 2: Containment
+* quartining hosts
+* stop all damage
+* prevent or reduce spread of infection
+##### Phase 3: Eradication
+* return to known good state
+* **Document Carefully**
+##### Phase 4: Validation
+* identify threat & attack vector
+* identify prevative measures
+  - change controls
+  - update software/patches
+##### Phase 5: Corrective Actions
+* Implement Patches
+* Update PPPs
+* Organizational Policies & Procedures
+  - Network Systems Access
+  - Authentication
+##### Phase 6: Reporting
+* Take thorough notes throughout
+* compare with best practices 
+* look for ways to improve
+* report to senior management
+
+#### IR Process Elements
+##### Communication
+* important throughout IR process
+* get everyone invovled in the process espescially senior management
+##### Analysis
+* technical techniques
+##### Reporting
+* documentation is critical
+
+
+### Section 18: Chapter 17: Analyze Potential IOCs
+#### Network Symptoms
+* unusual traffic
+* unusual bandwidth changes
+* unusual connections
+* Beaconing
+* Peer-to-peer Communications
+* rouge devices
+* scan sweeps
+#### Host Symptoms
+* connections
+* processes & applications
+* memory consumption
+* disk consumption
+* processor consumption
+* unathorized application or processes
+* unauthorized privilege escalation
+* data exfiltration
+#### Application Symptoms
+* what are processes doing?
+* unauthorized system usage
+* anomalous activity
+* unexpected error messages
+* out of memory alerts
+* unexpected outbound transmissions
+
+
+### Section 19: Chapter 18: Utilize Basic Digital Forensics Techniques
+#### Digital Forensics
+
+#### Seizure & Acquisitions
+
+#### Forensics Acquisition Tools
+
+#### Mobile, Virtualization, & Cloud
+
+#### Forensics Analysis, Part1
+
+#### Forensics Analysis, Part2
+
+#### Packet Capture 
 
 
 
