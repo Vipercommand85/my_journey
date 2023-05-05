@@ -1742,11 +1742,87 @@ curl --request GET\ --url https://www.virustotal.com/api/v3/domains/[DOMAIN]\ --
 
 ### Section 19: Chapter 18: Utilize Basic Digital Forensics Techniques
 #### Digital Forensics
+* Network Forensics
+* Mobile Fornesics
+* Computer Fornesics
+* Code Analysis
+#### Principles of Forensics
+##### Do No Harm
+* don't affect data integrity
+##### Train
+* forensics examiners & professionals
+* requirements & regulations
+* provide evidence on why they did what they did
+##### Keep Good Notes
+* collection, inspection, storage of evidence
+* audit trail for 3rd party inspection
+
+#### Phases of a Forensics Investigation
+##### Seizure
+* ensure data isn't tampered with
+##### Aquisitions
+* extracting data from the scene
+* work from forensic image
+##### Analysis
+* make sense of the data
+##### Reporting
+* prepare all our findings in a way that can be presented to any audience 
+* important to know your audience
+
+#### Preparing Forensics Jump Bag
+* laptop with lots of RAM
+* lots of storage (HDD,SSD)
+* USB Hub
+* lots of cables and adapters
+* hard drive enclosure
+* Toolkit
+* Camera
+* Wireless Spectrum Analyzer
+* crime scene tape & seals
+* Documentation
+  - IR plan & log
+  - chain of custody forms
+  - contact list
 
 #### Seizure & Acquisitions
+##### Control Access
+* create access list
+* who, where, when
+##### Trained & Certified Personnel
+##### Document
+* visitors
+* access to systems
+* contamination
+##### Maintain Chain-of-Custody
+##### Leave the Power on
+* unless malware is destroying evidence
+* running memory can give clues
+* advanced malware might not write to disk
+#### Acuisition Process
+##### Prepare the Destination Media
+* securely store data
+* removable hard drive or network-based option
+* make sure destination media is clean
+##### Prevent Changes
+* forensic station
+  - special set-ups
+  - allows you to securely copy from source to destination
+  - often have write blockers
+  - mouse jiggler prevents workstation from going into sleep
+##### Hash the source
+* fixed snapshot of evidence
+##### Image the Source
+* open source options like **dd**
+##### Verify the Acquisition
+* hash the copy to verify that the data wasn't modified in any way during the imaging phase
+##### Protect the Acquisition
 
 #### Forensics Acquisition Tools
-
+##### SHA-1
+* industry standard that is used for generating hashes for digital signatures and file integrity verification
+* **-a** option allows you to change the bits used, default is 1, 224,256, 512, 512224, 512256
+* used to protect finacial transactions and provide verification of software downloads
+*  
 #### Mobile, Virtualization, & Cloud
 
 #### Forensics Analysis, Part1
