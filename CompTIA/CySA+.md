@@ -1813,6 +1813,16 @@ curl --request GET\ --url https://www.virustotal.com/api/v3/domains/[DOMAIN]\ --
 * fixed snapshot of evidence
 ##### Image the Source
 * open source options like **dd**
+```bash
+dd if=/dev/sda of=/dev/sdb bs=64K conv=noerror,sync status=progress
+```
+* **if**: input file full path
+* **of**: output file full path
+* **bs**: block size, default is 512bytes
+* **conv**:
+  - **noerror**: will continue its operations even if read errors are encountered
+  - **sync**: will fill any read errors with 0's to keep the data offset the same in the destination file as was in the input file
+* **status=progress**: will be show a status of the process to the terminal
 ##### Verify the Acquisition
 * hash the copy to verify that the data wasn't modified in any way during the imaging phase
 ##### Protect the Acquisition
@@ -1822,13 +1832,99 @@ curl --request GET\ --url https://www.virustotal.com/api/v3/domains/[DOMAIN]\ --
 * industry standard that is used for generating hashes for digital signatures and file integrity verification
 * **-a** option allows you to change the bits used, default is 1, 224,256, 512, 512224, 512256
 * used to protect finacial transactions and provide verification of software downloads
-*  
+#### Password Cracking
+##### Hashcat
+* over 200 hash types
+* oclhascat - GPU acceleration
+##### Commercial Options
+* ElcomSoft
+* Passware
+  - Passware Kit Forensic
+  - can operate individually or with EnCase suite
+  - GPU acceleration
+
 #### Mobile, Virtualization, & Cloud
+##### Mobile Device Forensics
+* can be difficult because
+  - OS is closed
+  - was meant to communicate easily with outside world
+* remote access can alter evidence
+* faraday device
+* typically will need special mobile forensics software & hardware
+##### Virtualization & Cloud Forensics
+* SLAs may limit forensic activities
+* snapshots are very useful
+  - forensically-sound evidence preservation
+
+##### Legal Hold
+* is required by the court to retain evidence
+* in a court of law, admissible evidence must be in original state
+* verified images can suffice as forensically-sound
 
 #### Forensics Analysis, Part1
-
+#### Windows Clue Locations
+* Event Viewer
+* Regedit
+* Desktop
+* User Folders
+* Documents Folder
+* Network Shortcuts
+* Recently opened files & folders
+* System temp folders
+* Browser temp folders
+* System Folders (malware)
+* Auto run
+##### Registry Are (Windows ONly)
+* OS version (Software)
+* las failed logon (SAM)
+* Username & SID (SAM)
+*  Shutdown (System)
+*  Timezone (System)
+*  drives mounted by user (Ntuser.dat)
+*  files ext associations (Ntuser.dat)
+*  installed application list (Software)
+*  search history (Software)
+##### System Artifacts
+* backups (RP, VSC, others)
+* jump litsts
+* misc. logs (Firewall, AV, Apps, etc)
+* removable media connections
+* prefetch
+* pagefile
+##### Internet
+* parse internet history files (index.dat, SQLite, etc.)
+* check temp folders
+* parse cookies
+* cached pages
+* form history/auto comlete files
+* favorites/bookmarks
+* toolbars
+* browser plug-ins
+* carve unallocated areas for deleted history artifacts
 #### Forensics Analysis, Part2
-
+#### Linux Clue Areas
+* /etc/ contains config files for most applications/packages
+* /var/log/ contains log files of most applications
+```bash
+uname -a
+```
+* this command will give information about the current system
+* the order is as follows
+  - kernel name
+  - node name
+  - kernel release
+  - kernel version
+  - machine name
+  - operating system
+```bash
+ps -aux
+```
+* this command will list all running processes on the system
+```bash
+top
+```
+* this command will give a real time list of running processes
+* 
 #### Packet Capture 
 
 
