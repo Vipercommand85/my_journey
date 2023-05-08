@@ -1924,9 +1924,110 @@ ps -aux
 top
 ```
 * this command will give a real time list of running processes
-* 
-#### Packet Capture 
+##### /etc/password
+* this file contains basic user information
+* a UID/GID of **0** indicates admin/root privileges
+##### /etc/shadow
+* this file contains user password information
+* this passwords are stored an encrypted and hashed values
+##### last Command
+* will show the login history of the currently logged in user
+##### /var/log/auth.log
+* shows all authentication for the current system/box
+#### Time Line Analysis
+* search log files, artifacts to create a single correlated timeline
+* easily analyzed by investigators
+#### Plaso
+* utility used to create "super timelines"
+* exact time of incident is unknown so you look to get as much data before and after incident was noticed
+##### Targeted Timeline
+* time of incident is known
+* can take snippets of pre & post incident to see how the incident affected the system
+#### Packet Capture
+#### Wired Tools
+#### tshark (onion)
+* a command line tool
+* works very similar to tcpdump
 
+#### WireShark
+* GUI option to tshark
+
+#### Wireless Tools
+#### airmon-ng
+* this utility will show the various interfaces available
+* will need to have a wireless card that supports monitor mode
+```bash
+airmon-ng start wlan0
+```
+* this command will place an interface in monitor mode
+#### airodump-ng
+* this command will show any SSIDs in range of the wireless card
+* command will shows BSSID, power, and data about channels and speed
+* important to capture 4 way handshake with wireless connctions in order to capture the hash of the password
+```bash
+airodump-ng -c 6 --bssid [TARGET BSSID] -w target wlan0mon
+```
+* **-c**: specifies channel
+* **-w**: writes output to a capture file
+#### aircrack-ng
+```bash
+aircrack-ng -w somanywords.txt target.01.cap
+```
+* **-w**: specifies a wordlist to be used
+
+
+### Section 20: Chapter 19: The Importance of Data Privacy & Protection
+#### Data Privacy & Security
+##### Privacy vs Security
+* Privacy is about the individual
+* security is about the data
+##### Privacy vs Confidentiality
+* confidentiality is enusuring no unauthorized individuals can access specific data
+* privacy is about keeping an individual's identity secure
+* data security is protected through controls
+* privacy has to do with data usage
+#### Data of Interest
+* personal (PII)
+* personal health (HIPAA)
+* financial
+* copyrighted
+
+#### Nontechnical Controls
+##### Data Ownership
+* is the notion of who has responsibility of data
+* most likely a management function
+##### Data Classification
+* the ability to discern sensitive data from non-sensitive data
+* most organizations have data classificatio scheme, but the policy is most important
+##### Data Confidentiality
+* is the notion of what data should be shared with other parties
+* how the data should and can be used
+* NDA
+##### Data Sovereignty
+* Principle behind the GDPR
+* organization that at the point data was collected or data was rendered has ownership of that data
+##### Data Minimization
+* another core principle of the GDPR
+* regulation/requirement to collect the minimum amount of data needed to satisfy a service
+* keeps any organization from collecting more than is needed PII on their customers/users
+##### Data Purpose Limitation
+* limits how you can actually use data (GDPR)
+* must communicate with the data owner on how you plan to use the collected data and that you will not use it in any other way than specified
+#### Data Retention
+* what data you keep
+* how long the data is kept
+* where the data is stored
+* how the data is deleted
+* GDPR states that any individual that has given data has the right to ask that that data be removed from any and all records the data storage entity has of them
+##### Taxonomy 
+* is how data is stored & organized for future recall
+##### Normalization
+* makes it possible to relate data & extract meaningful reports
+##### Indexing
+* way of organizing data for searchability & rapid recall
+
+### Technical Controls
+#### 
 
 
 
