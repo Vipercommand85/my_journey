@@ -2027,36 +2027,279 @@ aircrack-ng -w somanywords.txt target.01.cap
 * way of organizing data for searchability & rapid recall
 
 ### Technical Controls
-#### 
+#### Access Controls
+* limit access to certain resources
+* identification, authentication, authorization
+#### Encyption
+* protects confidentiality
+#### Sharing Data While Preserving Privacy
+* data masking
+* deidentification
+* tokenization
+#### Digital Rights Management (DRM)
+* watermarking
+* geopraphic access requirements (geoblocking)
+#### Data Loss Prevention (DLP)
+##### Process
+1. create data inventories
+2. monitor data flows
+3. Implement, test, tune
+##### DLP Solution Placement
+* Network DLP (NDLP)
+* Endpoint DLP
+* Hybrid DLP, combination of NDLP and EDLP
 
 
+## Section 21: Chapter 20: Security Concepts in Support of Organizational Risk Mitigation
+### Business Impact Analysis
+* study of what is important to a business & what critical functions must be sustained
+* calculate the maximum tolerable downtime & distruption for activities
+* operational disruption & productivity
+* financial considerations
+* regulatory responsibilities
+* reputation
+#### BIA Steps
+1. Select individuals to interview for data gathering
+* people from all levels 
+2. Create data-gathering techiques
+* surveys, questionaires, & qualitative & quantitative approaches 
+3. Identify the company's critical business functions
+4. Identify the resources these functions depend on
+5. Calculate how long critical functions can survive without these resources
+6. Identify vulnerabilities & threats to critical business functions
+7. calculate the risk for each critical business function
+8. document findings, report them to managemenr, make recommendations
+
+### Risk Identification
+#### Main Goals
+* identifying vulnerabilities
+* determine probability that a threat will exploit a vulnerability
+* determine potential business impact of each threat
+* provide an economic balance between impact of the threat & cost of the countermeasure
+* evaluate cyber threat intelligence
+* conduct vulnerability assessment
+* observe cybersecurity operations
+* organize brainstorming session
+#### Ask the right questions
+* what event could occur?
+* what could be the potential impact?
+* how likely is it to happen?
+* what level of confidence do we have in the answers to three first thre questions?
+#### Risk Register
+* unique identifier
+* short name
+* description
+* owner
+* probability
+* magnitude
+* risk value/rating
+* 
+### Risk Calculation & Communication
+* can use either or combination of qualitative and quantitative assessments
+#### Delphi Technique
+* is a technique to perform an assessment wihtout intimidation becoming a factor in the decisions made
+* each person anonymously lists risks
+* each person anonymously comments on the list of risks
+#### Communication of Risk Factors
+* presentation to multiple audiences
+* must be tailored for each audience
+
+### Training
+* technical training
+* real life experience
+* active member of the community
+* tabletop exercises (TTXs)
+* live-fire exercises i.e. cyber range
+* separate training teams
+### Supply Chain Assessment
+#### Vendor Due Dilligence
+* review references & communication with former & existing customers
+* review BBB reports
+* ensure that contracts/agreements include requirements for adequate security controls
+* ensure that SLAs are in place
+* review vendor's security program
+* review internal & external reports & third-party review
+* conduct onsite inspection & interview after signing the agreement
+* ensure the vendor has a business continuity plan
+* implement a NDA
+#### Supply Chain Risk Assessment
+* hardware source authenticity, Trusted Foundry (DoD)
 
 
+## Section 22: Chapter 21: The Imprtance of Frameworks, Policies, Procedures, & Controls
+### Frameworks
+#### NIST SP 800-53
+* recommend security controls for federal information systems
+* controls to be compliant with Federal Information Processing Standards (FIPS)
+* FIPS is used in government or military data processing
+#### FIPS Controls
+* can be found in the Security Control Catalog (NIST 800-53, Appendix F)
+* controls are management, operational, techincal safeguards
+* countermeausres to protect **CIA**
+#### Cybersecurity Framework (CSF)
+#### Goals
+* flexible
+* scalable
+* repeatable
+* cost-effective
+* prioritize
+#### Key Parts
+##### Framework Core
+* common activities, outcome, & references
+* 5 functions, 22 categories, 98 subcategories
+##### Implementation Tiers
+* catergorize rigor & sophistication of cyber security practices
+##### Tiers
+1. Partial
+2. Risk Informed
+3. Repeatable
+4. Adaptive
+##### Framework Profile
+* state of an organization concerning CSF categories
+* see where they are vs. where they can be
 
+#### Standardize Security Standards
+##### International Organization for Standardization (ISO)
+* largest developer of international standards
+* standards range from scientific, food technology, argiculture, space engineering, mining, etc.
+##### International Electrotechnical Commission (IEC)
+* standards for any electrical & electronic technologies
+##### ISO & IEC create global Information Security Management System (ISMS) standards
+* ISO/IEC 27000-series
+* responsible for security implementation across netwrok
+* ISO 27001 certification available but not required
+* certification helps assure customer/users that you are adhering to industry standards
+#### Control Objectives for Information & Related Technology (COBIT)
+* framework & control objectives
+* developed by ISACA in collaberation with IT Governacne Institute (ITGI)
+* defines control goals for IT & IS system management
+* framework allows focus on enterprise goals by aligning IT and IS with the business
+* define common language
+* helps work within regulatory requirements by intergrating IT governance
+* highlights organizational pain points
+##### Domains
+1. Plan & Organize
+2. Acquire & Implement
+3. Deliver & Support
+4. Monitor & Evaluate
 
+#### Shwerwood Applied Business Security Architecture (SABS)
+##### Lifecycle
+1. Strategic
+2. Conceptual
+3. Design
+4. Implementation
+5. Metric
+6. Auditing
 
+#### The Open Group Architecture Framework (TOGAF)
+* provides an approach to designing, implementing, and governing an enterprise system
+##### Architecture Development Method (ADM)
+* interative & cyclic process
+* keeps focus on requirements
+* allows technology architecture to understand enteprise from four different views
+  - Business Architecture
+  - Data Architecture
+  - Application Architecture
+  - Technology Architecture
 
+#### Information Technology Infrastructure Library (ITIL)
+* was created as a way to standardize information technology practice across an organization
+##### 5 Core Elements
+1. ITIL Service Stategy
+2. ITIL Service Design
+3. ITIL Service Transition
+4. ITIL Service Operation
+5. ITIL Continual Process Improvement
 
+### Policies & Procedures
+* ethics & code of conduct
+* Acceptable Use Policy (AUP)
+* Password Policy
+* Data Ownership
+* Data Retention
+* Work Product Retention
 
+### Controls & Procedures
+#### Administrative
+* implemented by management via policies or procedures
+#### Logical/Technical
+* software/hardware tools to restrict network or system access
+* goal is to maintain resources' CIA
+### Physical
+* used to deter or delay an attacker
+### Comtrol Types
+#### Preventative
+* aims to prevent an incident from happening
+#### Detective
+* hopes to be able to detect suspicious activity on the network
+#### Corrective
+* correct an identified vulnerability
+### Selection Criteria
+#### Driven by risk assessment
+* looks to up hold the CIA triad
+* based on the organization's risk appetite
+### Procedure Overview
+#### Continuous Monitoring
+* all about gaining awareness of information security, vulnerability, threats, network trends
+* purpose is to inform organizational risk decisions
+#### Evidence Production
+* legal request for documents
+* EDRM (Electronic Discovery Reference Model)
+#### Patching
+* identify & fix vulnerabilities
+* Task:
+  - Identification
+  - Testing
+  - Application
+  - Validation
+  - Documentation
+#### Compensating Control Development
+* alternative control to substitute for control that's too costly
+#### Control Testing Procedure
+* ensures the control won't break the system
+#### Exception Management
+* how to decide on compensating or technical controls
+* who granted the exception? Trace back for audit
+* describe the process for determining this exception
+#### Remediation Plans
+* Plan B if all the above fails
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Verification
+#### Audits
+* systematic inspection of a system's complaince to a policy
+##### External Audit
+* conducted by independent 3rd party
+* guided by regulatory compliance requirements
+##### Internal Audit
+* internal auditors should also be guided by regulatory compliance requirements
+#### Assessments & Evaluations
+##### Vulnerability Assessments
+* gather exhuastive info on vulnerabilities
+* open vulnerabilities
+* remediated vulnerabilities
+* vulnerability trends on the network
+##### Penetration Test
+* test to acheive a specific goal
+##### Red Team Assessment
+* Pen testing is discreet
+* is ongoing
+* actively probinf & testing to reveal vulnerabilities 
+##### Risk Assessment
+* acceptable risk level
+* determine how to can bring the risk level down
+##### Threat Modeling
+* determine attacker trends
+* make security changes accordingly
+* accurately informs about threats & how to place countermeasures
+##### Tabletop Exercises
+* get senior & technical leaders involved
+* everyone knows their role in an emergency
+#### Maturity Models
+* way to get a sense of how selfaware am organization is with regard to their security posture 
+#### Certification
+* technical assessment of a component to assre it's ready for a system
+* checked against internal standard or outside regulatory requirement
+#### Accreditation
+* managerial assessment & acceptance of a component
+* verifies against business model
