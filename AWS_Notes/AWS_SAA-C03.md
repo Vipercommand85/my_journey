@@ -111,30 +111,71 @@
   - must be logged in as root user
 * 
 #### AWS Access Keys, CLI, SDK
+##### Access Options
+* AWS Management Console (protected by password + MFA)
+* AWS CLI: protect by access keys
+* AWS SDK: for code and is also protected by access keys
+* access keys are generated through the AWS Console
+* users manage their own access keys
+* **Access Keys are secret, just like a password. DO NOT SHARE THEM**
+* Access Key ID ~/= username
+* Secret Access Key ~/= password
+#### AWS CLI
+* enables you to interact with AWS services using commands in your command-line shell
+* direct access to the public APIs of AWS services
+* can develop scripts to manage your resources
+* alternative to using AWS Management Console
+#### AWS SDK
+* language specific APIs (set of libraries)
+* enables you to access & manage AWS services programmatically
+* embedded within your application
+* supports many languages
 
 #### AWS CLI Setup on Windows
+* install version 2
+* update/upgrade but redownloading the same link and running the installer wizard
 
 #### AWS CLI Setup on Mac OS X
+* install version 2
+* update/upgrade but redownloading the same link and running the installer wizard
 
 #### AWS CLI Setup on Linux
+* see AWS documentation
 
 #### AWS CLI Hands On
-
-#### AWS CloudShell: Region Availability
-
-#### AWS CloudShell
+* generate access based on desired fuctionality
+* in a terminal enter **aws configure** to set up the AWS CLI
+* make sure you have your AWS Access Key ID and Secret Access Key available
+* you can choose the default region as desired
 
 #### IAM Roles for AWS Service
-
-#### IAM Roles Hands On
+* some AWS services will need to perform actions on our behalf
+* to acheive this, create **IAM Roles** with specific permissions to the desired AWS services
+##### Common Roles
+* EC2 Instance Roles
+* Lambda Function Roles
+* Roles for CloudFormation
 
 #### IAM Security Tools
-
-#### IAM Security Tools Hands On
+##### IAM Credentials Report (account-level)
+* a report that lists all your account's users and the status of their various credentials
+##### IAM Access Advisor (ucer-level)
+* shows the service permissions granted to a user and when those services were last accessed
 
 #### IAM Best Practices
+* do not use root account except for AWS account setup
+* One physical user = One AWS user
+* assign users to groups & assign permissions to groups
+* create a strong password policy
+* use & enforce the use of MFA
+* create & use Roles for giving permissions to AWS services
+* use access keys for Programmatic Access (CLI/SDK)
+* audit permissions of your account using IAM Credentials Report & IAM Access Advisor
+* NEVER SHARE IAM users & ACCESS KEYS
 
-#### IAM Summary
+
+## Section 5: EC2 Fundamentals
+### EC2 Basics
 
 
 
