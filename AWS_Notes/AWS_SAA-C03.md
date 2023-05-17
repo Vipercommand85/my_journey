@@ -36,15 +36,80 @@
 * apply **least privilege principle**: only give a user enough permissions to effectively peform their duties
 
 #### IAM Users & Groups Hands On
+* good practice to create admin user instead of using root account user
+##### User Details (admin account user)
+* username
+* create an IM user
+* autogenerate/create custom password
+* add user to a group if it already exist or create a new group; can also add a policy directly to the user
+  - admin group
+  - one policy attached (**AdministratorAccess**)
+* Review settings and add tags before creating user and group
 
 #### IAM Policies
-
-#### IAM Policies Hands On
-
+##### Inline Policy
+* this type of policy is only attached to a single user
+##### IAM Policies Structure
+* version number is always included: "2012-10-17"
+* ID: an indentifier for the policy (optional)
+* Statement: one or more individaul statements (required)
+  - Sid: an identifier for the statement (optional)
+  - Effect: whether the statement allows or denies access ("Allows/Deny")
+  - Principal: account/user/role to which this policy applies to
+  - Action: list of actions this policy allows or denies
+  - Resource: list of resources to which the actions applies to
+  - Condition" conditions for when this policy is in effect (optional)
+```bash
+{
+  "Version": "2012-10-17",
+  "Id": "S3-Account-Permissions",
+  "Statement": [
+    {
+      "Sid": "1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": ["arn:aws:iam::123456789012:root"]
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PitObject"
+      ],
+      "Resource": ["arn:aws:s3:::mybucket/*"]
+    }
+  ]
+}
+```
 #### IAM MFA Overview
+##### Password Policy
+* strong passwords = higher security for you accounts
+* set a min length
+* require specific characters types:
+  - uppercase letters
+  - lowercase letters
+  - numbers
+  - non-alphanumeric characters
+* allow or deny all IAM users to change their own passwords
+* require users to change their passwords periodically
+* prevent password re-use
+#### Multi Factor Authentication - MFA
+* combination of a password *you know* + security device *you own*
+##### Virtual MFA device
+* Google Authenticator used for a single device (phone)
+* Authy used for multiple devices
+* Authy has support for mutiple tokens on a single device
+##### Universal 2nd Factor (U2F) Security Key
+* YubiKey by Yubico (3rd Party)
+* supports multiple users/accounts with a single security key
+##### Hardware Key Fob MFA Device
+* provided by Gemalto (3rd party)
+##### Hardware Key Fob MFA Device for AWS GovCloud(US)
+* provided by SecurePassID (3rd Party)
 
 #### IAM MFA Hands On
-
+##### Setting MFA for Root User
+* under username drop down menu select security credentials
+  - must be logged in as root user
+* 
 #### AWS Access Keys, CLI, SDK
 
 #### AWS CLI Setup on Windows
