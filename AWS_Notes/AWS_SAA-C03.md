@@ -177,6 +177,89 @@
 
 ## Section 5: EC2 Fundamentals
 ### EC2 Basics
+* one if the most popular of AWS's offering
+* EC2: Elastic Cloud Computing = Infrastructure as a Service
+* renting virtual machines (EC2)
+* storing data on virtual drives (EBS)
+* distributing load across machines (ELB)
+* scaling the services using an auto-scaling group (ASG)
+### EC2 Sizing & Configuration Options
+* OS: Linux, Windows, Mac OS
+* how much compute power & cores (CPU)
+* how much RAM
+* how much storage
+  - network-attached (EBS & EFS)
+  - hardware (EC2 Instance Store)
+* network card: speed of the card, Public IP address
+* firewalls rules: security group
+* bootstrap script (configure at first launch): EC2 User data
+#### EC2 User Data
+* possible to bootstrap our instance using an *EC2 User Data* script
+* **bootstrapping**: launching commands when a machine starts
+* that script is *only run once* at the instance's *first start*
+* used to automate boot tasks such as:
+  - installing updates
+  - installing software
+  - downloading common files from the internet
+  - anything you can think of
+* EC2 User Data runs with root privileges
+
+### EC2 Instance Types
+* different types are optimized for different use cases
+* naming convention **m5.2xlarge**
+  - _m_: instance class
+  - _5_: generation of the instance, will change overtime
+  - _2xlarge_: size within the instance class
+#### General Purpose
+* great for diverse workloads
+* good balance between compute memory and networking
+#### Compute Optimized
+* great for compute-intensive tasks that require hihg performance
+  - batch processing
+  - media transcoding
+  - high performance web servers
+  - HPC
+  - scientific modeling & machine learning
+  - dedicated gaming servers
+#### Memory Optimized
+* fast performacne for workloads that process large data sets in memory
+  - high performance, relational/non-relational databases
+  - distributed web scale cache stores
+  - in-memory database optimized for BI
+  - applications performing real-time processing of big unstructured data
+#### Storage Optimized
+* great for storage-intensive tasks that require high, sequential read & write access to large data sets on local storage
+  - high frequency online transaction processing (OLTP) systems
+  - relational & NoSQL databases
+  - cache for in-memory databases (Redis)
+  - data warehousing applications
+  - distributed file systems
+
+### Security Groups & Classic Ports Overview
+#### Security Groups
+* are the fundamental of networking security in AWS
+* control how traffic is allowed into or out of our EC2 instances
+* **ONLY** contain allow rules
+* rules can reference IP or security group
+* act as a firewall on the EC2 instance
+* regulate:
+  - access to ports
+  - authorized IP ranges - IPV4/IPv6
+  - control if inbound network traffic as well
+* can be attached to multiple instances
+* locked down to a region/VPC combination
+* it is good to maitain one seperate security group for SSH access
+* if your application is not accessible (time out), then it's a security group issue
+* **_connection refused_** error is an application error or it's not launched
+* by default all inbound traffic is **_blocked_** and all outbound traffic is **_authorized_**
+#### Classic Ports to Know
+* 22 = SSH log into a Linux instance
+* 21 = FTP upload files into a file share
+* 22 = SFTP upload files using SSH
+* 80 = HTTP access unsecured websites
+* 443 = HTTPS access secured websites
+* 3389 = RDP for Windows instances
+
 
 
 
