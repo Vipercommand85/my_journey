@@ -260,7 +260,47 @@
 * 443 = HTTPS access secured websites
 * 3389 = RDP for Windows instances
 
+## Section 6: EC2 - Solutions Architect Associate Level
+### Private vs Public vs Elastic IP
+#### Private vs Public IP (IPv4)
+* two types if IPs: **_IPv4 & IPv6_**
+  - IPv4: 192.156.95.2
+  - IPv6: 3ffe:1900:4545:2255:3366:5:6:8800
+* IPv4 is most commonly used
+* IPv6 is newer and solves problems for IoT devices
+#### Elastic IPs
+* a public IPv4 address that will not change when you start & stop an EC2 instance
+* can only be attached to one instance at a time
+* is available as long as you do not delete it
+* you can mask the failure of an instance or software by rapidly remapping the address to another instance in your account
+* by default you can only have 5 Elastic IPs in your account (can ask Amazon to increase this)
+* should be avoided & instead use a random public IP & register a DNS name to it
 
+### EC2 Placement Groups
+#### Cluster
+* cluster instance into a low-latency group in a single AZ
+* single point of failure since all instances are on a single machine
+* will have high network throughput
+#### Spread
+* spread instances across underlying hardware (max 7 instances per group per AZ) critical applications
+* reduce risk of simultaneous failure
+#### Parition
+* spreads instances across many different partitions (which rely on different sets of racks) within an AZ
+* can span multiple AZs in the same region
+* up to 100s of EC2 instances
+* partition failure can affect many EC2 but won't affect other partitions
+* partition information is accessed as metadata
+
+### Elastic Network Interface (ENI) - Overview
+* logical component in a VPC that represents a VNIC
+* each ENI can have the following attributes:
+  - primary private IPv4, one or more secondary IPv4
+  - one elastic IP (IPv4) per private IPv4
+  - one public IPv4
+  - one or more security groups
+  - a MAC address
+* you can create ENI independently & attach them on the fly (move them) on EC2 instances for failover
+* bound to a specific AZ
 
 
 
