@@ -409,14 +409,132 @@
 * achieve higher application availability in clustered Linux applications (ex. Teredata)
 * applications must manage concurrent write operations
 ### EBS Encryption
+* data at rest is encrypted inside the volume
+* all the dat in flight/moving between instance & the volume is encrypted
+* all snapshots are encrypted
+* all volumes created from a snapshot are encrypted
+* encryption/decryption are handled transparently
+* has minimal impact on latency
+* EBS encryption leverages keys from KMS (AES-256)
+* can encrypt an unencrypted volume
+### Encrypting an unencrypted EBS Volume
+* create an EBS snapshot of the desired volume
+* encrypt the EBS snapshot
+* create new EBS volume from the snapshot that will use encryption
+* now attach the encrypted volume to the original instance
+* 
+### Amazon EFS (Elastic File System)
+* managed NFS that can be mounted on many EC2
+* EFS works with EC2 instances in multi-AZ
+* highly available, scalable (automatically), expensive (3X gp2), pay per use
+* used NFSv4.1 protocol internally
+* uses security group to control access to share
+* **only compatible with Linux based AMI**
+* encryption at rest using KMS
+* POSIZ file system that has a standard file API
+#### Use Cases
+* Content Management
+* Web Serving
+* Data Sharing
+* Wordpress
+### Performance & Storage Classes
+#### EFS Scale
+* 1K of concurrent NFS clients, 10GB+/s throughput
+* grow to petabyte-scale network file system, automatically
+#### Perfomance Mode (set at creation)
+##### Geneal Purpose (default)
+* latency sensitive 
+##### Max I/O
+* higher latency, throughput, highly parallel
+#### Throughput Mode
+##### Bursting
+* 1 TB = 50MiB/s + burst of up to 100MiB/s
+###### Provisioned
+* set your throughput regardless of storage size, 1 GiB/s for 1 TB storage
+######  Elastic 
+* automatically scales throughput up or down based on your workloads
+  - up to 3GiB/s for reads & 1 GiB/s for writes
+  - used for unpredictable workloads
+#### Storage Classes
+##### Standard
+* for frequently accessed files
+#####  Infrequent Access (EFS-IA)
+* cost to retrive files, lower prove to store
+  - enabled with Lifecycle Policy
+#### Availability & Durability
+##### Standard
+* Multi-AZ, great for production
+##### One Zone
+* great for dev
+* backup enabled by default
+* compatible with IA
 
-### Amazon EFS
 
-### EFS vs EBS
+## Section 8: High Availability & Scalability: ELB & ASG
+### High Availability & Scalability
+* scalability mean that an application/system can handle greater loads by adapting
+* 2 kinds of scalability: Vertical and Horizontal/Elasticity
+* scalability is linked but different to High Availability
+#### Vertical Scalability
+* means the increasing the size of the instance
+* moving from a t2.micro to t2.large
+* very common for non distributed systems such as a database
+* RDS/ElastiCach are services that can scale vertically
+* usually a hardware limit to how much vertical scaling is available
+#### Horizontal Scalability
+* means increasing the number of instances/systems for your applications
+* scaling implies distributed systems
+* this is very common for web applications/modern applications
+#### High Availability
+* usually goes hand in hand with horizontal scaling
+* means running your application/system in at least 2 data centers (AZ)
+* goal is to survive a data center loss
+### HA&S for EC2
+#### Vertical Scaling
+* scale up/down
+* from t2.nano - .5G of RAM/1 vCPU to u-12tb1.metal - 12.3 TB of RAM/448 vCPUs
+#### Horizontal Scaling
+* scale out/in
+* auto scaling group
+#### High Availability
+* auto scaling group in multi AZ
+* load balancer in multi AZ
 
-### Section Cleanup
-
-
+### Elastic Load Balancing (ELB) Overview
+* server(s) that foward traffic to multiple servers downstream
+* spread load across multiple downstream instances
+* expose a single point of access (DNS) to your application
+* seamlessly handle failures of downstream instances
+* do regular health checks to your instances
+* provide SSL termination for youe websites
+* enforce stickiness with cookies
+* high availability across zones
+* seperate public traffic from private traffic
+* is a managed load balancer
+* AWS guarantees that it will be working
+* AWS takes care of upgrades, maintenance, high availability
+* AWS provides only a few configuration knobs
+* intergrated with many AWS offering/services
+#### HEalth Checks
+* crucial for load balancers
+* they enable the load balancer to know if instances it forwards traffic to are available to reply to requests
+* is done on a port & route
+* if response is **not 200**, then the instance is unhealthy
+### Types of LB on AWS
+* overall recommened to use the newer generation load balancers as they provide more features
+* can be setup as internal/private or external/public
+#### Classic LD - CLB
+* supports HTTPS, HTTPS, TCP, SSL
+* deprecated
+#### Application Load Balancer - ALB
+* supports HTTPS, HTTPS, WebSocket
+#### Network Load Balancer - NLB
+* supports TCP, TLS, UDP
+#### Gateway Load Balancer - GWLB
+* operates at layer 3 - IP Protocol
+### LB Security Groups
+* only allows users to access the load balancer through specified ports
+* only allows traffic to your instances from your load balancer(s) on specified ports
 
 
 
