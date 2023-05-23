@@ -515,7 +515,7 @@
 * AWS takes care of upgrades, maintenance, high availability
 * AWS provides only a few configuration knobs
 * intergrated with many AWS offering/services
-#### HEalth Checks
+#### Health Checks
 * crucial for load balancers
 * they enable the load balancer to know if instances it forwards traffic to are available to reply to requests
 * is done on a port & route
@@ -536,7 +536,33 @@
 * only allows users to access the load balancer through specified ports
 * only allows traffic to your instances from your load balancer(s) on specified ports
 
-
+### Application Load Balancer (ALB)
+* layer 7 load balancer
+* load balancing to multiple applications ascross machines (target groups)
+* load balancing to multiple applications on the same machine (containers)
+* support for HTTP/2 & WebSocket
+* supports HTTPS redirect to HTTPS
+* routing tables to different target groups
+  - path in URL
+  - hostname in URL
+  - based on query string/headers
+* ALB are great for micro services & container-based application (Docker & Amazon ECS)
+* has port mapping feature to redirect to a dynamic port in ECS
+#### Target Groups
+* EC2 instances (can be managed by an Auto Scaling Group) - HTTP
+* ECS taks (managed by ECS itself) - HTTP
+* Lambda functions - HTTP request is translated into a JSON event
+* IP Address - must be private IP
+* ALB can route to multiple target groups
+* health checks are conducted at the target group level
+#### Good to Know
+* fixed hostname (XXX.region.elb.amazonaws.com)
+* the application servers don't see the IP of the client directly
+  - the tru IP of the client is inserted in the header **X-Forwarded-For**
+  - we can also get the Port (**X-Forwarded-Port**) and protocol ( **X-Forwarded-Port**)
+* client connects to ALB via its public IP address 
+* the ALB will perform a connection termination
+* ALB connects directly to application instance with private IP address 
 
 
 
