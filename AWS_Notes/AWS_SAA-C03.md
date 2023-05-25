@@ -565,6 +565,22 @@
 * ALB connects directly to application instance with private IP address 
 
 
+### Network Load Balancer (v2)
+* works at layer 4 of the TCP/IP stack
+* allows you to forward TCP & UDP traffic to your instances
+* provides extreme performance for  TCP & UDP traffic
+* able to handle millions of requests per second
+* less latency ~100 ms (vs 400ms for ALB)
+* **NLB has one static IP per AZ** and supports assigning Elastic IP
+  - helpful for whitelisting specific IPs
+* not included in the AWS free tier
+#### Target Groups
+* can be EC2 instances
+* can specific **_Private_** IPs only
+  - can be useful to front private servers in your physical data center
+* ALB
+* Health Checks support **_TCP, HTTP, HTTPS Protocols_**
+
 
 
 
