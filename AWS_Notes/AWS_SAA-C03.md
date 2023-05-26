@@ -431,7 +431,7 @@
 * uses security group to control access to share
 * **only compatible with Linux based AMI**
 * encryption at rest using KMS
-* POSIZ file system that has a standard file API
+* POSIX file system that has a standard file API
 #### Use Cases
 * Content Management
 * Web Serving
@@ -582,7 +582,20 @@
 * Health Checks support **_TCP, HTTP, HTTPS Protocols_**
 
 
+### Gateway Load Balancer
+* deploy, scale, & manage a fleet of 3rd part network virtual appliances in AWS
+* i.e. firewalls, IDS/IPS, payload manipulation
+* operates at layer 3 of the TCP/IP model
+* **Transparent Network Gateway** - single entry/exit for all traffic
+* **Load Balancer** - distributes traffic to your virtual appliances
+* uses the **GENEVE** protocol on port **6081**
+#### Target Groups
+* EC2 instances
+* Private IP Addresses
 
+### ELB - Sticky Sessions (Session Affinity)
+* it is possible to implentment stickiness so that the same client is always directed to the same instance behind a load balancer
+* 
 
 
 
