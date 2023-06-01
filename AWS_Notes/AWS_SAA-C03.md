@@ -621,6 +621,45 @@
 * cross-zone load balancing disabled by default
 * will incur charges for this service if enabled
 
+### ELB - SSL/TLS Cetificates Basics
+* SSL Certificate allows traffic between your clients & your load balancer to be encrypted in transit
+* **SSL** refers to Secure Sockets Layer, used to encrypt connections
+* **TLS** refers to Transport Layer Security, which is newer version
+* TLS certs are mainly used but are still refered to as SSL
+* Public SSL Certificates are issued by **Certificate Authorities (CA)**
+* SSL Certificates have an expiration date that you set and must be renewed
+### Load Balancer - SSL Certificate
+* uses an X.509 certificate
+* can use **ACM (AWS Certificate Manager)** to manage certificates
+* you can create and upload your own certificates
+#### HTTPS Listener
+* you must specify a default certificate
+* you can add an optional list of certificates to support multiple domains
+* clients can use **SNI (Server Name Indication)** to specify the hostname they reach
+* ability to specify a security policy to support older version of SSL/TLS
+### SSL - Server Name Indication
+* solves the problem of loading multiple SSL certificates onto one web sever (allows you to serve multiple websited)
+* newer protocol that requires the client to _indicate_ the hostname of the target server in the intial SSL handshake
+* the server will then find the correct certificate or return the default certificate
+* only works for **ALB & NLB** or **CloudFront**
+#### CLB (v1)
+* supports only **ONE** SSL certificate
+* must use multiple CLB's for multiple hostnames with multiple SSL certificates
+#### ALB (v2)
+* supports multiple listeners with multiple SSL certificates
+* uses SNI to support this feature
+#### NLB (v2)
+* supports multiple listeners with multiple SSL certificates
+* uses SNI to support this feature
+
+### ELB - Connection Draining
+* Connection Draining - for CLB
+* Deregistration Delay - ALB & NLB
+* time to complete "in-flight requests" while the instance is de-registering or unhealthy
+* stops sending new requests to the EC2 instance which is de-registering
+* can set this time out between 1 - 3600 seconds (1hr)
+  - default time: 300 seconds (5 mins)
+
 
 
 
