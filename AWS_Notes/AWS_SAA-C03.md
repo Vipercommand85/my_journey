@@ -659,6 +659,58 @@
 * stops sending new requests to the EC2 instance which is de-registering
 * can set this time out between 1 - 3600 seconds (1hr)
   - default time: 300 seconds (5 mins)
+  - can also be disabled by setting the value to **0**
+  - set to a low value if your requests are short
+
+
+### Auto Scaling Group (ASG)
+* in production environments the load on a website/application can change rapidly so you are able to create/remove servers very quickly to accomadate this
+* goal is to scale out or scale in to match the load
+* we can specify a minimum/maximum number of instances to be running
+* will automatically register new instances to a load balancer
+* can re-create an EC2 instances in case a previous one is terminated (ex. unhealthy)
+* ASG are a free service
+#### Launch Template
+* AMI + Instance Type
+* EC2 User Data
+* EBS Volume
+* Security Groups
+* SSH Key Pair
+* IAM Roles for your EC2 Instances
+* Network + Subnets Information
+* Load Balancer Information
+* and more if desired/needed
+* Min Size/ Max Size/ Initial Capacity
+* Scaling Policies
+#### CloudWatch Alarms & Scaling
+* it is possible to scale an ASG based on CloudWatch Alarms
+* an alarm monitors a metric such as Average CPU Usages or custom metric
+
+### Auto Scaling Policies
+### Dynamic Scaling Policies
+#### Target Tracking Scaling
+* most simple & easy to set-up 
+* Ex. I want the average ASG CPU to stay at around 40%
+#### Simple/Step Scaling
+* when a CloudWatch alarm is triggered (ex. CPU > 70%), then add 2 units
+* when a CloudWatch alarm is triggered (ex. CPU < 30%), then remove 1 units
+#### Scheduled Actions
+* anticipate a scaling situation based on known usage patterns
+* Ex. increase the min capacity to 10 @ 5:00PM on Fridays
+### Predictive Scaling
+* continuously forecast load & schedule scaling ahead of time
+### Good metrics to Scale on
+* **CPUUtilization** - average CPU utilization across your instances
+* **RequestCountPerTarget** - to make sure the number of requests per EC2 instances is stable
+* **AverageNetworkIn/out** - this only applies if your application is network bound
+* any custome metric that you push to say CloudWatch
+### Scaling Cooldowns
+* after a scaling activity happens, you are in the cooldown period (default 300 seconds)
+* during the cooldown period, the ASG will not launch or terminate additional instances (toall allow for metrics to stabilize)
+* use a ready-to-use AMU to reduce configuration time in order to be serving requests faster & reduce the cooldown period
+
+
+## Section 9: AWS Fundamentals: RDS + Aurora + ElastiCache
 
 
 
