@@ -711,6 +711,75 @@
 
 
 ## Section 9: AWS Fundamentals: RDS + Aurora + ElastiCache
+### Amazon RDS Overview
+* RDS - Relational Database Service
+* service used to manage databases that use SQL
+* allows you to create databases in the cloud that are managed by AWS
+* Postgres/MySQL/MariaDB/Oracle/Microsoft SQL Server/ Aurora (AWS Proprietary Databases)
+### Advantages of using RDS
+* is a managed service
+* can automate provising, OS Patching
+* continous backups & restore to specific timestamps
+* monitoring dashboards
+* read replicas for improved read performance
+* Multi AZ setup for DR
+* maintenance windows upgrades
+* scaling capability (vertically & horizontally)
+* storage backed by EBS
+* **CANNOT SSH INTO INSTANCE**
+### RDS - Storage Auto Scaling
+* helps you to increase storage on your RDS DB instance dynamically
+* automatically scales when low free space is detected
+* **MAX Storage Threshold** must be set at creation of instance
+* usefule for applications with unpredictable workloads
+### RDS Read Replicas vs Multi AZ
+### RDS Read Replicas
+* can create up to 15 Read Replicas
+* can be with the same AZ, cross AZ's, or cross region
+* replicas can be promoted to their own DB
+* applications must update the connection string to leverage read replicas
+### RDS Read Replicas - Use Case
+* you have production database that is taking on normal load
+* you want to run a reporting applicatrion to run some analytics
+* you create a Read Replica to run the new workload there
+* the production application is unaffected
+* Read Replicas are used for SELECT (=read) only kind of statements (not INSERT, UPDATE, DELETE)
+### RDS Read Replicas - Network Cost
+* normally there is a network cost when data goes form one AZ to another
+* Read Replicas within the same region, there is no fee
+### RDS Multi AZ (DR)
+* SYNC replication
+* one DNS name - automatic app failover to standby
+* increases availability
+* failover case of loss of AZ, loss of network, instance or storage failure
+* no manual intervention in apps
+* not used for scaling
+* can setup read replicas as Multi AZ for DR
+### RDS - From Single-AZ to Multi-AZ
+* zero downtime operation
+* just click on "modify" for the database
+#### Internal Steps
+* a snapshot is taken of the original database
+* a new DB is restored from the snapshot in a new AZ
+* synchronization is established between the two databases
+### RDS Custom for Oracle & Microsoft SQL Server
+* 
+
+### Amazon Aurora
+
+### Amazon Aurora - Advanced Concepts
+
+### RDS & Aurora - Backup & Monitoring
+
+### RDS Security
+
+### RDS Proxy
+
+### ElastiCache Overview
+
+### ElastiCache for Solution Architects
+
+### List of Ports to be Familiar With
 
 
 
