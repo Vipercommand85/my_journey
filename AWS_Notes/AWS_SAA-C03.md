@@ -762,23 +762,166 @@
 * a snapshot is taken of the original database
 * a new DB is restored from the snapshot in a new AZ
 * synchronization is established between the two databases
-### RDS Custom for Oracle & Microsoft SQL Server
-* 
-
+### RDS Custom
+* for Oracle & Microsoft SQL Server only
+* allows access to the underlying database & OS
+  - configure settings
+  - install patches
+  - enable native features
+  - access the underlying EC2 Instance using SSH or SSH Session Manager
+* recommended De-activate Automation Mode so that RDS doesn't perform any automated task or updates
 ### Amazon Aurora
-
+* compatible with Prostgres & MySQL
+* AWS cloud optimized & claims 5X performance improvement over MySQL on RDS, over 3X of Postgres on RDS
+* storage grows automatically in increments of 10GD up to 128TB
+* can have up to 15 read replicas & the replication process is faster than MyQSL
+* failover is instantaneous, HA native
+* about 20% more expensive than RDS but is more efficient
+#### HA & Read Scaling
+* 6 copies of your data across 3 AZ
+* 4 copies of 6 needed for writes
+* 3 copies of 6 needed for reads
+* self healing with peer-to-peer replication
+* storaged is striped across 100s of volumes
+* one master instance (master)
+* automated failover for master in less than 30 seconds
+* master + up to 15 Aurora Read Replicas serve reads
+* supports cross region replication
+#### Clustering
+* **Writer Endpoint** points to the master
+* **Reader Endpoint** connection to a load balancer
+#### Features
+* automatic fail-over
+* backup & recovery
+* isolation & security
+* push-button scaling
+* automated patching with zero downtime
+* advanced monitoring
+* routine maitenance
+* backtrack: restore data at any point of time without using backups
 ### Amazon Aurora - Advanced Concepts
-
+#### Replicas - Auto Scaling
+* if the current read replicas start to expierence high CPU usage, Aurora will automatically create more read replicas and extend the **Reader Endpoint**
+* can define a subset of Aurora Instances as a Custom Endpoint
+  - useful to run analytical queries these custom endpoints that will not affect the performance of the other read end points
+  - Reader Endpoint is generally not used after defining Custom Endpoints
+#### Aurora Serverless
+* automated database instantiation & autoscaling based on actual usage
+* good for infrequent, intermittent, ir unpredictable workloads
+* no capacity planning needed
+* pay per second can be more cost effective
+* utlizes a Proxy Fleet managed by Aurora
+#### Aurora Multi-Master
+* allows for **continuous write availability** for writer nodes
+* every node does R/W vs promoting a Read Replica as the new master
+#### Global Aurora
+#### Aurora Cross Region Read Replicas
+* useful for disaster recovery
+* simple to put in place
+##### Aurora Global Database (recommended)
+* 1 Primary Region (read/write)
+* up to 5 secondary (read-only) regions
+  - replication lag is less than 1 second
+* up to 16 Read Replicas per secondary region
+* helps to decrease latency
+* Promoting another region (for disaster recovery) has an RTO of < 1 minute
+* typcial cross-region replication takes less than 1 second
+#### Aurora Machine Learning
+* enables you to add ML-based predictions to your applications via SQL
+* simple, optimized, & secure integration between Aurora & AWS ML services
+* supports **Amazon SageMaker (use with any ML model) Amazon Comprehend (for setiment analysis)
+##### Use cases
+* fraud detection
+* ads targeting
+* setiment analysid
+* product recommendations
 ### RDS & Aurora - Backup & Monitoring
+### RDS Automated Backups
+* daily full backup of the database (during the backup window)
+* transaction logs are backed up by RDS every 5 minutes
+  - gives the ability to restore to any point in time
+* 1 to 35 days of retention, set 0 to disable automated backups
+### RDS Manual DB Snapshots
+* manually triggered by the user
+* retention of backup for as long as you want
 
+**if you plan on stopping an RDS for a long time, you should snapshot & restore instead as you will be charged for storage of a stopped RDS**
+
+### Aurora Backups
+### Automated Backups
+* 1 to 35 days (cannot be disabled)
+* point-in-time recovery in that timeframe
+### Aurora Manual DB Snapshot
+* mannualy triggerd by the user
+* retention of backup for as long as you want
+### RDS & Aurora Restore Options
+* restoring a RDS/Aurora backup or snapshot creates a new database
+### Restoring MySQL RDS database from S3
+* create a backup of your on-premises database
+* store it on Amazon S3 (object storage)
+* restore the backed up files onto a new RDS instance running MySQL
+### Restoring MySQL Aurora cluster from S3
+* create a backup of your on-premises database using Percona XtraBackup
+* store the backup file on Amazon S3
+* restore the backup file onto a new Aurora cluster running MySQL
+### Aurora Database Cloning
+* create new Aurora DB Cluster from an existing one
+* faster than snapshot & restore
+* uses **_copy-on-write_** protocol
+  - initially the new DB cluster uses the same data volume as the original DB cluster (fast & efficient - no copying needed)
+  - when updates are made to the new DB cluster additional storage is allocated & data is copied to be separated
+* very fast & cost effective
+* useful because you can create a staging database that will contain the same data as the production database but will not impact the production database
 ### RDS Security
+* no SSH available except on RDS Custom
+* audit logs can be enabled & senti to CloudWatch Logs for longer retention
+### At-rest Encryption
+* database master & replicas encryption using AWS KMS must be defined at launch time
+* if the master is not ecnrypted, the read replicas cannot be encrypted
+* to encrypt an un-encrytped database, go through a DB snapshot & restore as ecrytped
+### In-flight Ecncryption
+* TLS-ready by default, use the AWS TLS root certificates client-side
+### IAM Authentication
+* IAM roles to connect to your database (instead of username/password)
+### Security Groups
+* control network access to your RDS/Aurora DB
 
 ### RDS Proxy
-
+* fully managed database proxy for RDS
+* allows apps to pool & share DB connection established with the database
+* improves database efficiency by reducing the stress on database resources & minimize open connections (& timeouts)
+* serverless, autoscaling, highly available (multi-AZ)
+* reduced RDS & Aurora failover time by up to 66%
+* supports RDS ( MySQL, PostgreSQL, MariaDB, MS SQL Server) and Aurora (MySQL, PostgreSQL)
+* no code changes required for most apps
+* enforce IAM Authentication for DB & securely store credentials in AWS Secrets Manager
+* RDS Proxy is never publicly accessible
 ### ElastiCache Overview
-
-### ElastiCache for Solution Architects
-
+* helps to manage Redis or Memcached
+* caches are in-memory database with really high performance, low latency
+* helps reduce load off database for read intensive workloads
+* helps make your application stateless
+* AWS takes care of OS maintenance/patching, optimizations, setup, configuration, monitoring, failure recovery, & backups
+* **using ElastiCache involves heavy application code changes**
+### ElastiCache for Solution Architects - DB Cache
+* applications queries ElastiCache, if not available, get from RDS & store in ElastiCache
+* Cache must have an invalidation strategy to make sure only the most current data is used
+### ElastiCache for Solution Architects - User Session Store
+* user logs into any of the application
+* application writes the session data into ElastiCache
+* user hit another instance of our application, instance retrievs the data from ElastiCache and verfies the user
+#### REDIS
+* multi AZ with Auto-Failover
+* Read Replicas to scale reads & have high availability
+* data durability using AOF persistence
+* Backup & restore features
+* **supports Sets & Sorted Set**
+#### MEMCACHED
+* multi-node for partitioning of data (sharing)
+* no high availability (replication)
+* non persistent
+* no backup & restore
+* multi-threaded architecture
 ### List of Ports to be Familiar With
 
 
