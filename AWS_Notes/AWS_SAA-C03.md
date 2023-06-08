@@ -922,7 +922,80 @@
 * non persistent
 * no backup & restore
 * multi-threaded architecture
+### ElastiCache Security
+* supports IAM Authentication for Redis
+* IAM policies on ElastiCache are only used for AWS API-level security
+#### Redis AUTH
+* you can set a "password/token" when you create a Redis cluster
+* this is an extra level of security for your cache
+* support for SSL in flight encryption
+#### Memcached
+* supports SASL-based authentication (advanced)
+### ElasiCache Patterns
+* **Lazy Loading**: all the read data is cached, data can become stale in cache
+* **Write Through**: adds or updates data in the cache when written to a DB (no stale data)
+* **Session Store**: store temporary session data in a cache (using TTL features)
+### Redis Use Case
+* centered around creating a gaming leaderboards
+* **Redis Sorted Sets**: guarantee both uniqueness & element ordering
+* each time a new element is added, it's ranked in real time, then added in the correct order
 ### List of Ports to be Familiar With
+#### RDS Database Ports
+* PostgeSQL: 5432
+* MySQL/MariaDB: 3306
+* Oracle RDS: 1521
+* MSSQL Server: 1433
+* Aurora: 5432, if PostgreSQL compatible or 3306, if MySQL compatible
+
+
+## Section 10: Route 53
+### DNS Overview
+* Domain Name System which translate the human friendly hostnames into the machine IP address
+* DNS is the backbone of the internet
+* uses a hierarchical naming structure
+  - .com
+  - **example**.com
+  - **www**.example.com
+  - **api**.example.com
+### DNA Terminology
+* **Domain Registrar**: Amazom Route 53, GoDaddy, Namecheap
+* **DNA Records**: A, AAAA, CNAME, NS
+* **Zone File**: contains DNS records
+* **Name Server**: resolves DNS queries (Authoritative/Non-Authoritative)
+* **Top Level Domain**: .com, .us, .in, .gov, .org, etc
+* **Second Level Domain**: **amazon**.com, **google**.com, etc
+* **Fully Qualified Domain Name (FQDN)**: api.www.example.com
+* **URL**: http://api.www.example.com
+
+### Amazon Route 53
+* highly available, scalable, fully managed and **_Authoritative_** DNS
+  - Authoritative: the cusotmer (you) can update the DNS records
+* is also a Domain Registrar
+* ability to check the health of your resouces
+* only AWS servive which provides 100% availability SLA
+### Route 53 Records
+* define how you want to route traffic for a domain
+* each records contains the following:
+  - Domain/Subdomain Name - example.com
+  - Record Type -  A or AAAA
+  - Value - IP Address
+  - Routing Policy - how Route 53 responds to queries
+  - TTL - amount of time the record is caches at DNS Resolvers
+* supports **A/AAAA/CNAME/NS**/CAA/DS/MX/NAPTR/PTR/SOA/TXT/SPF/SRV record types
+### Record Types
+* **A** - maps a hostname to IPv4
+* **AAAA** - maps a hostname to IPv6
+* **CNAME** - maps a hostname to another hostname
+  - the target is a domain name which must have an A or AAAA record
+  - cannot create a CNAME record for the top node of a DNS namespace (Zone Apex)
+* **NS** - Name Servers for the Hosted Zone
+  - controls how traffic is routed for a domain
+### Hosted Zones
+* a conatiner for records that define how to route traffic to a domain & its subdomains
+* **Public Hosted Zones** - contains records that specify how to route traffic on the Internet (Public Domain Names)
+* **Private Hosted Zones** - conatin records that specify how you route traffic within one or more VPC (Private Domain Names)
+* will cost $.50/month/hosted zone
+
 
 
 
