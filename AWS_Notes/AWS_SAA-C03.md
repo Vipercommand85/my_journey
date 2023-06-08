@@ -996,6 +996,8 @@
 * **Private Hosted Zones** - conatin records that specify how you route traffic within one or more VPC (Private Domain Names)
 * will cost $.50/month/hosted zone
 
+### Creating Records
+
 
 
 
