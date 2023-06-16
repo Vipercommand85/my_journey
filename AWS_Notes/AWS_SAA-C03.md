@@ -999,6 +999,74 @@
 ### Creating Records
 
 ### Route 53 TTL ( Time to Live) Records
+* the amount of time that the client will cache the results of DNS resolution
+* **High TTL** - will create less traffic to DNS servers but might result in outdated records
+* **Low TTL** - more traffic on Route 53 ($$) but more up to date records and easy to change records
+* all DNS records except Alias records must have a TTL
+
+### CNAME vs Alias
+* AWS Resource (Load Balancer, CloudFront) exposes an AWS hostname:
+  - **_lb 1-1234.us-east-2b.elb.amazonaws.com_** and you want **_myapp.mydomain.com_**
+#### CNAME
+* points a hostname to any other hostname (_app.mydomain.com => blahblah.anything.com_)
+* **ONLY FOR NON ROOT DOMAIN (aka something.mydomain.com)**
+#### Alias
+* specific to Route 53
+* points a hostname to a AWS Resource
+* will work for root domains and non root domains
+* is an extension of DNS functionality
+* automatically recognizes changes in the resource's IP addresses
+* always of type **A/AAAA** record
+* cannot set TTL in Route 53
+#### Alias Targets
+* Elastic Load Balancers
+* CloudFront Distributions
+* API Gateway
+* Elastic Beanstalk Environments
+* S3 Websites
+* VPC Interface Endpoints
+* Global Accelerator 
+* Route 53 record in the same hosted zone
+* **CANNOT SET AN ALIAS RECORD FOR AN EC2 DNS NAME**
+
+### Routing Policies
+* defines how Route 53 responds to DNS queries
+* DNS does not route any traffic, it only responds to the DNS queries
+* supports there Routing Policies:
+  - simple
+  - weighted
+  - failover
+  - latency based
+  - geolocation
+  - multi-value answer
+  - geoproximity (using Route 53 Traffic Flow feature)
+
+### Simple
+* typically route traffic to a single resource
+* can specify multiple values in the same record
+* cleint will choose at random one of the multi values that are returned
+* when Alias enabled, you can only specify one AWS resource
+* can't be associated iwth Health Checks
+
+### Weighted
+* controls the % of the requests that go to each specific resource
+* weights do not need to sum up to 100%
+* DNS records must have the same name & type
+* can be associated with Health Checks
+* use cases: load balancing between regions, testing new application versions, etc
+* assign a weight of 0 to a record to stop sending traffic to a resource
+* if all records have weight of 0, then all records will be returned equally
+
+### Failover
+
+### Latency Based
+
+### Geolocation
+
+### Multi-Value Answer
+
+### Geoproximity
+
 
 
 
