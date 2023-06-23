@@ -1057,10 +1057,17 @@
 * assign a weight of 0 to a record to stop sending traffic to a resource
 * if all records have weight of 0, then all records will be returned equally
 
+### Health Checks
+* HTTP Health Checks are only for **_public resources_**
+* 
 ### Failover
 
 ### Latency Based
-
+* redirect to the resource that has the least latency
+* very helpful when latency for users is a priority
+* Latency is based on traffic between users and AWS Regions
+* can be associated with Health Checks (has a failover capability)
+* 
 ### Geolocation
 
 ### Multi-Value Answer
