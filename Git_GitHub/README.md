@@ -18,7 +18,7 @@
 * **git config --gloabal user.email [YOUR EMAIL]** : configures your email for the repo for alerts on any changes
 * **git config --gloabal core.editor "[NAME OF EDITOR] --wait" : configures the default editor to use for the git as well as telling git to wait until the commit message has been added to the file with the editor  	
 
-## Pushing Local Reop to GIthub
+## Pushing Local Repo to Github
 * **git remote add origin [ URL TO GITHUB REPO]** : adds remote repo path to the local machine
 * **git push origin master** : will send the master branch to the origin branch on github
 	-- may be asked for credentials, GitHub credentials
@@ -33,7 +33,37 @@
 
 ## Undoing Changes and Reverting Commits
 * **git reset HEAD .** : will unstage all files in the current branch
-	
+
+
+# Section 3: Fork & Clone
+## Intro to Forking GitHub Repo
+* only exist in GitHub, there are no Git Forks
+### GitHub Fork
+* copies a remote repo in another GitHub account to your own GitHub account
+* any changes made to either repo will not be reflected in the other
+
+## Forking a Repository
+* in GitHub use the **Fork** button at the top right of a repo
+* GItHub will make a copy of the repo that will be stored in your GitHub account
+
+## Clone a Repository
+* on GitHub click on **_Clone/Download_** button and copy the url that is listed
+* open a terminal on the local machine
+* create a directory where you want to have this new clone exist
+* now enter the following command
+```bash
+git clone [copied URL]
+```
+* no need to add the location of the remote repository as the act of cloning it a remote repo does this for you
+* can be confirmed with the following command
+```bash
+git remote
+```
+* any changes made localy still need to be **pushed** to the remote repo
+
+## Exploring Git Logs
+
+ 
 # Section4: Working with Branches
 * **git branch [NAME OF BRANCH]** : creates a new branch with the name supplied
 * **git branch** : will list all branches
