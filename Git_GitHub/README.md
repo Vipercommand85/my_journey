@@ -47,7 +47,7 @@
 * GItHub will make a copy of the repo that will be stored in your GitHub account
 
 ## Clone a Repository
-* on GitHub click on **_Clone/Download_** button and copy the url that is listed
+* on GitHub click on **_Clone/Download_** button and copy the url when cloning with **HTTPS** that is listed
 * open a terminal on the local machine
 * create a directory where you want to have this new clone exist
 * now enter the following command
