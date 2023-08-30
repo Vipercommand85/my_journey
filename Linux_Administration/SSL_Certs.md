@@ -88,23 +88,3 @@ crontab -e
 @monthly  /usr/bin/certbot renew &>/var/log/certbot.cronlog
 ```
 * **&>/var/log/certbot.cronlog** will hold all output created by the commnad
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
