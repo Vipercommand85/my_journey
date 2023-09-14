@@ -1,6 +1,6 @@
-### Need to install neovim
+### Need to install neovim from PPA
 ```bash
-sudo apt install neovim
+sudo add-apt-repository ppa:neovim-ppa/stable
 ```
 ### When installing telescope you will need to update the version of neovim
 
