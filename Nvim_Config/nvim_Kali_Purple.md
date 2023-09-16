@@ -1,5 +1,5 @@
 ## With Kali Purple 2023 you will need Neovim 0.9.1
-* you can find this at the [Neovim}(https://github.com/neovim/neovim/releases/tag/v0.9.0) offical doucmentation
+* you can find this at the [Neovim](https://github.com/neovim/neovim/releases/tag/v0.9.0) offical doucmentation
 * follow the provided instructions
 
 ## Will need to add a few utilities and add from a PPA in order to get TREESITTER to function properly
