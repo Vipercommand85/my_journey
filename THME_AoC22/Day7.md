@@ -1,6 +1,6 @@
 # CyberChef Maldocs roasting on an open fire
 
-* **CyberChef** is a web-based application used to slice, dice, encode, decode, parse and analyze data or files
+* ** CyberChef** is a web-based application used to slice, dice, encode, decode, parse and analyze data or files
 
 ### Using CyberChef for mal doc analysis
 1. **Add the file to CyberChef** either by dragging and dropping the file into the input text pane or opening the file within **CyberChef**'s page

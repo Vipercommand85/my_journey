@@ -22,7 +22,16 @@
 * **git remote add origin [ URL TO GITHUB REPO]** : adds remote repo path to the local machine
 * **git push origin master** : will send the master branch to the origin branch on github
 	-- may be asked for credentials, GitHub credentials
-
+### Pushing Local Repo to Github via Personal Access Token
+* first step is to create an access token on GitHub per their [documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+* next using the URL for the desired repo issue this commnad with your username of the token and the access token that was just generated
+```bash
+git remote set-url origin https://[USERNAME]:[ACCESS TOKEN]@github.com/[USERNAME]/[REPO NAME].git
+```
+* next set that the push functions as desired
+```bash
+git push origin main
+```
 ## Pulling from GitHub
 * **git pull origin master** : will pull all commits and chnages from the remote repo to a local machine
 * **git branch --set-upstream-to=origin/master master** : will create a tracker on the local master branch for the remote repo, origin, and branch, master
