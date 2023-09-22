@@ -72,4 +72,71 @@ Mulit-Factor Authentication
 
 
 ## Task 5: Authorisation & Access Control
+* **Authorisation** specifies what the **Authenticated** user is allowed to access and/or do
+* **Access Control** mechanisms should ensure that the proper **Authorisation** is enforced
+
+### The new policy states that the secretary should be able to send an email on the manager's behalf, what is this policy dictating?
+```bash
+Authorisation
+```
+
+### You shared a document with your colleague & gave them view permissions without making changes.
+### What would ensure that your file won't change?
+```bash
+Access Control
+```
+
+### The hotel management decided that the cleaning staff needed access to all the hotel rooms to do their work, what phase is this decision part of?
+```bash
+Authorisation
+```
+
+## Task 6: Accountability & Logging
+* **Accountability** ensures that users are accountable for the actions they perform on a system
+* **Logging** is the processs of recording events that occur within a system
+* **Logging** is a critical aspect of accountability
+* these records of user actions is vital for regulatory compliance, incident reponse, & forensic investigations
+* also helps organisations detect & respond to security incidents
+* **Logging** servers should be on a seperate network & should be receive logs for other end points in the environment
+* **Log Forwarding** is the process of sending log data from one system to another
+* this log server(s) should be securely managed and protected
+
+## Security Information & Event Management (SIEM)
+* is a technology that aggregates log data from multiple sources & analyses the data collected for signs of security threats
+* allows organisations to better understand their systems & network
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
