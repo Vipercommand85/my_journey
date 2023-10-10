@@ -184,21 +184,21 @@ NIST SP 800-30
 
 ### Risk Management Exercises
 #### Question 1
-**Asset**: Laptop
-**Risk**: Malware
-**Asses Value**: $2,000
-**EF**: 50%
-**ARO**: 2
+* **Asset**: Laptop
+* **Risk**: Malware
+* **Asses Value**: $2,000
+* **EF**: 50%
+* **ARO**: 2
 
-**Safeguard**: Antivirus License
-**Cost of Safeguard**: $20
-**EF after Safeguard**: 10%
+* **Safeguard**: Antivirus License
+* **Cost of Safeguard**: $20
+* **EF after Safeguard**: 10%
 
-**SLEbeforeSafeguard**: $2,000 X .5 = $1,000
-**ALEbeforeSafeguard**: $1,000 X 2 = $2,000
-**SLEafterSafeguard**: $2,000 X .1 = $200
-**ALEafterSafegaurd**: $200 X 2 = $400
-**ValueofSafeguard**: $1,000 - $200 - $20 = $780
+* **SLEbeforeSafeguard**: $2,000 X .5 = $1,000
+* **ALEbeforeSafeguard**: $1,000 X 2 = $2,000
+* **SLEafterSafeguard**: $2,000 X .1 = $200
+* **ALEafterSafegaurd**: $200 X 2 = $400
+* **ValueofSafeguard**: $1,000 - $200 - $20 = $780
 
 **Implement Safeguard**
 
