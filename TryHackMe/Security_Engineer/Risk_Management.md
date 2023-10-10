@@ -155,13 +155,13 @@ NIST SP 800-30
   - **Annual Rate of Occurance (ARO)**: the expected number of times this threat is realised yearly/frequency per year
 
 ### Annual Loss Expectancy before Safeguard
-**ALEbeforeSafegaurd = _SLEbeforeSafeguard_ X _ARObeforeSafeguard_**
+* ALEbeforeSafegaurd = _SLEbeforeSafeguard_ X _ARObeforeSafeguard_
 ### Annual Loss Expectancy after Safeguard
-**ALEafterSafeguard = _SLEafterSafeguard_ X AROafterSafeguard_**
+* ALEafterSafeguard = _SLEafterSafeguard_ X AROafterSafeguard_
 ### Single Loss Expectancy after Safeguard
-**SLEafterSafeguard = _AssetValue_ X _EFafterSafeguard_**
+* SLEafterSafeguard = _AssetValue_ X _EFafterSafeguard_
 ### Value of Safeguard
-**ValueofSafeguard = _ALEbeforeSafeguard_ - _ALEafterSafeguard_ - _CostofSafeguard_**
+* ValueofSafeguard = _ALEbeforeSafeguard_ - _ALEafterSafeguard_ - _CostofSafeguard_
 
 
 ## Task 7: Respond to Risk
