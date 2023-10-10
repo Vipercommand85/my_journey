@@ -122,8 +122,18 @@ NIST SP 800-30
 * what are the trade-offs among the different types of faced risks?
 
 
+## Task 5: Assess Risk
+* is the second step of risk mangement
+* in this step you look to answer the following questions:
+    - **Threats**: what are the threats that you need to consider?
+    - **Vulnerabilities**: what are the vulnerabilities that you have to deal with?
+    - **Impact**: what would be the impact if a threat exploited a vulnerability?
+    - **Likelihood**: what is the likelihood of this vulnerability being exploited?
 
-
+### Threats
+* **Physical Damage**: from natural causes to human-made
+* **Outsider Threat**: actors that are not part of your organization looking to do harm to your systems 
+* **Insider Threat**:  actors that are part of your organization looking to do harm to your systems  
 
 
 
