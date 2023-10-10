@@ -136,6 +136,14 @@ NIST SP 800-30
 * **Insider Threat**:  actors that are part of your organization looking to do harm to your systems  
 
 
+## Task 6: Risk Analysis
+* **Qualitative Risk Analysis**: is where we assiggn ratings to risk such as **_high_**, **_medium_**, & **_low_** or can be colored coordinated
+* **Quantitative Risk Analysis**: is where we assign monetary values & use that as a basis for decision-making
+[Qualitative Risk Analysis](https://tryhackme-images.s3.amazonaws.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/c2cab5ae8c38c4c5b827374692534b35.png)
+ 
+
+
+
 
 
 
