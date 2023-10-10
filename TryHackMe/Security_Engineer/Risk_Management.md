@@ -125,7 +125,8 @@ NIST SP 800-30
 ## Task 5: Assess Risk
 * is the second step of risk mangement
 * in this step you look to answer the following questions:
-    - **Threats**: what are the threats that you need to consider?
+    - **Threats**: what are the threats that you need to cons![c2cab5ae8c38c4c5b827374692534b35](https://github.com/Vipercommand85/my_journey/assets/65506052/f6ae9f4a-26cc-4783-98e1-8f1b37aa84dc)
+ider?
     - **Vulnerabilities**: what are the vulnerabilities that you have to deal with?
     - **Impact**: what would be the impact if a threat exploited a vulnerability?
     - **Likelihood**: what is the likelihood of this vulnerability being exploited?
@@ -139,8 +140,8 @@ NIST SP 800-30
 ## Task 6: Risk Analysis
 * **Qualitative Risk Analysis**: is where we assiggn ratings to risk such as **_high_**, **_medium_**, & **_low_** or can be colored coordinated
 * **Quantitative Risk Analysis**: is where we assign monetary values & use that as a basis for decision-making
-![Alt Qualitative Risk Analysis](https://tryhackme-images.s3.amazonaws.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/c2cab5ae8c38c4c5b827374692534b35.png)
- 
+![c2cab5ae8c38c4c5b827374692534b35](https://github.com/Vipercommand85/my_journey/assets/65506052/44773791-f6c9-4c63-9e61-0389c5c75c01) 
+
 
 
 
