@@ -125,8 +125,7 @@ NIST SP 800-30
 ## Task 5: Assess Risk
 * is the second step of risk mangement
 * in this step you look to answer the following questions:
-    - **Threats**: what are the threats that you need to cons![c2cab5ae8c38c4c5b827374692534b35](https://github.com/Vipercommand85/my_journey/assets/65506052/f6ae9f4a-26cc-4783-98e1-8f1b37aa84dc)
-ider?
+    - **Threats**: what are the threats that you need to consider?
     - **Vulnerabilities**: what are the vulnerabilities that you have to deal with?
     - **Impact**: what would be the impact if a threat exploited a vulnerability?
     - **Likelihood**: what is the likelihood of this vulnerability being exploited?
@@ -138,9 +137,71 @@ ider?
 
 
 ## Task 6: Risk Analysis
-* **Qualitative Risk Analysis**: is where we assiggn ratings to risk such as **_high_**, **_medium_**, & **_low_** or can be colored coordinated
-* **Quantitative Risk Analysis**: is where we assign monetary values & use that as a basis for decision-making
+### Qualitative Risk Analysis
+* is where we assiggn ratings to risk such as **_high_**, **_medium_**, & **_low_** or can be colored coordinated
 ![c2cab5ae8c38c4c5b827374692534b35](https://github.com/Vipercommand85/my_journey/assets/65506052/44773791-f6c9-4c63-9e61-0389c5c75c01) 
+
+### Quantitative Risk Analysis
+* is where we assign monetary values & use that as a basis for decision-making
+
+### Single Loss Expectancy
+* **SLE = AssestValue X EF**
+  - **Sinlge Loss Expactancy**: the loss incurred due to the realisation fo a threat represented as a monetary value
+  - **Asset Value**: the monetary valuation of an asset
+  - **Exposure Factor**: the percentage of loss a realised threat can cause to an asset
+### Annual Loss Expectancy
+* **ALE = SLE X ARO**
+  - **Annual Loss Expectancy (ALE)**: the loss the company expects to lose per year due to the threat
+  - **Annual Rate of Occurance (ARO)**: the expected number of times this threat is realised yearly/frequency per year
+
+### Annual Loss Expectancy before Safeguard
+**ALEbeforeSafegaurd = _SLEbeforeSafeguard_ X _ARObeforeSafeguard_**
+### Annual Loss Expectancy after Safeguard
+**ALEafterSafeguard = _SLEafterSafeguard_ X AROafterSafeguard_**
+### Single Loss Expectancy after Safeguard
+**SLEafterSafeguard = _AssetValue_ X _EFafterSafeguard_**
+### Value of Safeguard
+**ValueofSafeguard = _ALEbeforeSafeguard_ - _ALEafterSafeguard_ - _CostofSafeguard_**
+
+
+## Task 7: Respond to Risk
+### Risk Avoidance
+* is when a company decides to eliminate the activity that leads to the risk
+#### Examples
+* a bank might decide that all employees computers cannot access the internet to protect its systems against all online threats
+* an organization might instruct its employees to work exclusively using workstations on its premises to prevent data from being stolen
+
+### Risk Transferance
+* a company might consider the risk too high to handle, so it decided to purchase insurance
+* also referred to as **Risk Sharing**
+
+### Risk Mitigation
+* a company might invest in countermeasures to reduce risk to an acceptable level
+* an example is installing antivirus software on endpoints
+
+### Risk Acceptance
+* knowingly allows risk to remain present since the costs of countermeasures would exceed the loss incurred if that risk is exploited
+
+### Risk Management Exercises
+#### Question 1
+**Asset**: Laptop
+**Risk**: Malware
+**Asses Value**: $2,000
+**EF**: 50%
+**ARO**: 2
+
+**Safeguard**: Antivirus License
+**Cost of Safeguard**: $20
+**EF after Safeguard**: 10%
+
+**SLEbeforeSafeguard**: $2,000 X .5 = $1,000
+**ALEbeforeSafeguard**: $1,000 X 2 = $2,000
+**SLEafterSafeguard**: $2,000 X .1 = $200
+**ALEafterSafegaurd**: $200 X 2 = $400
+**ValueofSafeguard**: $1,000 - $200 - $20 = $780
+
+**Implement Safeguard**
+
 
 
 
