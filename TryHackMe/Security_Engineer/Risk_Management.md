@@ -300,7 +300,7 @@ Compliance Monitoring
 
 
 ## Task 10: Putting it All Together
-
+### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 * **Asset**: Laptop
 * **Risk**: Theft from Office
 * **Asses Value**: $2,500
@@ -319,7 +319,6 @@ Compliance Monitoring
 * **ValueofSafeguard**: $125 - $9 - $45 = $71
 
 ### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
-
 * **Asset**: Workstation
 * **Risk**: Disk Failure
 * **Asses Value**: $3,000
@@ -338,7 +337,6 @@ Compliance Monitoring
 * **ValueofSafeguard**: $420 - $0 - $200 = $220
 
 ### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
-
 * **Asset**: Smartphone
 * **Risk**: Theft
 * **Asses Value**: $1,250
@@ -356,9 +354,8 @@ Compliance Monitoring
 * **ALEafterSafegaurd**: $500 X .35 = $175
 * **ValueofSafeguard**: $437.5 - $175 - $10 = $252.5
 
-### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 
-
+### _Reject Safeguard_ because _ValueofSafeguard_ is more than _ALEbeforeSafeguard_
 * **Asset**: Workstation
 * **Risk**: Screen Failure
 * **Asses Value**: $3,000
@@ -374,11 +371,9 @@ Compliance Monitoring
 * **ALEbeforeSafeguard**: $300 X .05 = $15
 * **SLEafterSafeguard**: $3,000 X 0 = $0
 * **ALEafterSafegaurd**: $0 X .05 = $0
-* **ValueofSafeguard**: $15 - $0 - $250 = $-235
+* **ValueofSafeguard**: $15 - $0 - $250 = $ - 235
 
-### _Reject Safeguard_ because _ValueofSafeguard_ is more than _ALEbeforeSafeguard_
-
-
+### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 * **Asset**: Workstation
 * **Risk**: Malware
 * **Asses Value**: $3,000
@@ -397,8 +392,6 @@ Compliance Monitoring
 * **ValueofSafeguard**: $892.5 - $52.50 - $75 = $764.7
 
 ### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
-
-
 * **Asset**: Laptop
 * **Risk**: Theft Outside Office
 * **Asses Value**: $2,500
@@ -417,8 +410,6 @@ Compliance Monitoring
 * **ValueofSafeguard**: $500 - $120 - $75 = $310
 
 ### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
-
-
 * **Asset**: Office
 * **Risk**: Intrusion & Theft
 * **Asses Value**: $20,000
@@ -435,8 +426,6 @@ Compliance Monitoring
 * **SLEafterSafeguard**: $20,000 X .15 = $3,000
 * **ALEafterSafegaurd**: $3,000X .1 = $300
 * **ValueofSafeguard**: $2,000 - $300 - $750 = $950
-
-### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 
 
 ### Flag from this section
