@@ -318,7 +318,7 @@ Compliance Monitoring
 * **ALEafterSafegaurd**: $150 X .06 = $9
 * **ValueofSafeguard**: $125 - $9 - $45 = $71
 
-**Implement Safeguard** because **ValueofSafeguard** is less than **ALEbeforeSafeguard**
+### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 
 * **Asset**: Workstation
 * **Risk**: Disk Failure
@@ -337,7 +337,7 @@ Compliance Monitoring
 * **ALEafterSafegaurd**: $0 X .2 = $0
 * **ValueofSafeguard**: $420 - $0 - $200 = $220
 
-**Implement Safeguard** because **ValueofSafeguard** is less than **ALEbeforeSafeguard**
+### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 
 * **Asset**: Smartphone
 * **Risk**: Theft
@@ -356,7 +356,7 @@ Compliance Monitoring
 * **ALEafterSafegaurd**: $500 X .35 = $175
 * **ValueofSafeguard**: $437.5 - $175 - $10 = $252.5
 
-**Implement Safeguard** because **ValueofSafeguard** is less than **ALEbeforeSafeguard**
+### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 
 
 * **Asset**: Workstation
@@ -376,7 +376,7 @@ Compliance Monitoring
 * **ALEafterSafegaurd**: $0 X .05 = $0
 * **ValueofSafeguard**: $15 - $0 - $250 = $-235
 
-**Reject Safeguard** because **ValueofSafeguard** is more than **ALEbeforeSafeguard**
+### _Reject Safeguard_ because _ValueofSafeguard_ is more than _ALEbeforeSafeguard_
 
 
 * **Asset**: Workstation
@@ -396,7 +396,7 @@ Compliance Monitoring
 * **ALEafterSafegaurd**: $150 X .35 = $52.5
 * **ValueofSafeguard**: $892.5 - $52.50 - $75 = $764.7
 
-**Implement Safeguard** because **ValueofSafeguard** is less than **ALEbeforeSafeguard**
+### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 
 
 * **Asset**: Laptop
@@ -416,7 +416,7 @@ Compliance Monitoring
 * **ALEafterSafegaurd**: $600 X .2 = $120
 * **ValueofSafeguard**: $500 - $120 - $75 = $310
 
-**Implement Safeguard** because **ValueofSafeguard** is less than **ALEbeforeSafeguard**
+### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 
 
 * **Asset**: Office
@@ -436,7 +436,7 @@ Compliance Monitoring
 * **ALEafterSafegaurd**: $3,000X .1 = $300
 * **ValueofSafeguard**: $2,000 - $300 - $750 = $950
 
-**Implement Safeguard** because **ValueofSafeguard** is less than **ALEbeforeSafeguard**
+### _Implement Safeguard_ because _ValueofSafeguard_ is less than _ALEbeforeSafeguard_
 
 
 ### Flag from this section
