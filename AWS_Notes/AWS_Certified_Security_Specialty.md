@@ -289,8 +289,152 @@
 * you can create Key Pairs outside of AWS and upload them
 * **ED22519** & **2048-bit SSH-2 RSA** keys are supported
 * key pairs do not get deleted from EC instance's root volumes when the Private Key is removed from the EC2 Console
-* 
+* launching an EC2 instance with prebuilt AMI, the old Pub Key will exist alongside a new Pub Key if selected
 
+#### Remediatin Exposed EC2 Key Pairs
+* remove all the public keys in *_~/.ssh/authorized_keys_* file on all EC2 instances that have this/these exposed key(s)
+* create a new key pair & add its Pub Key to the *_~/.ssh/authorized_keys_* file on all EC2 instances
+* to automate this task use **SSM Run Command**
+
+
+### EC2 Serial Console
+* used to troubleshoot boot, network configuration, analyze reboot issues, etc.
+* allows you to directly access your EC2 instance as if they was a cable connected directly into the serial port physically
+* does not require any network capabilities
+* use with supported Nitro-based EC2 instances
+* **Must setup OS User & Password**
+* only one active session per EC2 instance
+* is disabled by default
+
+
+### Connect to Windows EC2 Instance with a Lost Password - Using EC2Launch V2
+1. verify EC2Launch v2 service is running (Windows AMIs with the EC2Launch v2 service)
+2. detach the EBS root volume
+3. attach the volume to a temporary instance as a secondary volume
+4. Delete file *_%ProgramData%/Amazon/EC2Launch/state/.run-once*_
+5. re-attach the volume to the original instance, then restart the instace
+  - instacne will think that this is first time that it is booting
+  - will ask for a new passowrd once it has booted
+
+
+### EC2 Rescue Tool for Linux
+* can diagnosis & troubleshoot common issues
+* gather syslog logs, diagnosis problematic kernel parameters, diagnosis common OpenSSH issues, etc
+* supports over 100 modules
+* Amazon Linux 2, Ubuntu, RHEL, SUSE Linux
+* install manually or using **AWSSupport-TroubleshootSSH** Automation Documentation
+* upload the results directly to AWS Support or an S3 bucket
+
+#### Use Cases
+* collect system utilization reports
+  - vmstate, iostat, mpstat, etc
+* collect logs & details
+  - syslog, dmesg, application error logs, & SSM logs
+* detect system problems
+  - asymmetric routing or duplicate root device lables
+* automatically remediate system problems
+  - correcting OpenSSH file permissions
+  - disabling known problematic kernel problems
+* can create a custom module
+
+### EC2 Rescue Tool for Windows
+* diagnose & troubleshoot common issues
+* collect log files, troubleshoot issues, provide suggestions
+* supports 2 modules (data collector, analyzer)
+* Windows Server 2008 R2 or later
+* install manually or using **AWSSupport-RunEC2RescueforWindows Tool**
+  - Commands: **CollectLogs, FixAll, ResetAccess**
+* use **AWSSupport-ExecuteEC2Rescue** automation documentation to troubleshoot connectivity issues
+* upload the results directly to an S3 bucket
+
+
+### IAM Security Tools
+#### IAM Credentials Report (account-level)
+* a report that lists all your account's users & the status of their various credentials
+
+#### IAM Access Advisor (user-level)
+* shows the service permissions granted to a user & when those services were last accessed
+* can you this information to revise policies to ensure users have least privilege access
+
+
+### IAM Access Analyzer
+* find out which resources are shared externally
+  - S3 Buckets
+  - IAM Roles
+  - KMS Keys
+  - Lambda Fucntions & Layers
+  - SQS Queues
+  - Secrets Manager Secrets
+* define **Zone of Trust** = AWS Account or AWS Organization
+* access outside zone of trust => *_findings_*
+
+#### IAM Access Analyzer Policy Validation
+* validates your policy against IAM policy grammar & best practices
+* general warnings, security warnings, errors, suggestions
+* provides actionable recommendations
+
+ #### IAM Access Analyzer Policy Generation
+ * generates IAM policy vased on access activity
+ * **CloudTrail** logs is reviewed to generate the policy with the *_fine-grained permissions & the appropriate Actions & Services_*
+ * reviews **CLoudTrail** logs for up to 90 days
+
+
+## Seection 4: Domain 2 - Security Logging & Monitoring
+### Amazon Inspector
+#### Automated Security Assements
+* for EC2 instances
+  - leverage the **AWS System Manager (SSM)** agent
+  - analyze against unintended network accessiblity
+  - analyze the running OS against known vulverabilities
+* for Container Images push to Amazon ECR
+  - assessment of Conatiner Images as they are pushed
+* for Lambda Functions
+  - identifies software vulnerabilities in fucntion code & package dependencies
+  - assessment of functions as they are deployed
+* Reporting & integration with **AWS Security Hub**
+* send findings to **Amazon Event Bridge**
+* contious scanning of the infrastructure only when needed
+* package vulnerabilities (EC2,ECR, Lambda) - database of CVE
+* network reachability (EC2)
+*  a risk scire is associated with all vulberabilities for prioritization
+
+
+### Logging in AWS
+#### Security & Compliance
+* help compliance requirements, AWS provides many service-specific security & audit logs
+
+**Service Logs**
+* **CloudTrail** - trace all API calls
+* **Config Rules** - for config & compliance over time
+* **CloudWatch Logs** - for full data retention
+* **VPC Flow Logs** - IP traffic within your VPC
+* **ELB Access Logs** - metadata of requests made to your load balancer(s)
+* **CloudFront Logs** - web distribution access logs
+* **WAF Logs** - full logging of all requests analyzed by the service
+
+* logs can be analyzed using **AWS Athena** if they are stored in **S3**
+* you should ecrypt logs in S3, control access using IAM & Bucket Policies, MFA
+* move logs to **Glacier** for cost savings if you need to retain a lot of old data
+
+### Systems Manager - Overview 
+* helps you to manage your EC2 & On-Premises systems at scale
+* get optional insights about the state of you infrastructure
+* easily detect problems
+* patching automation for enhanced compliance
+* works for both Windows & Linux OS
+* integrated with **CloudWatch** metrics/dashboards
+* integrated with AWS Config
+* free service (only acrue charges for resoucres that it uses or creates)
+
+#### Features
+* Resource Groups
+* Operations Management
+  - Explorer
+  - OpsCenter
+  - CloudWatch Dashboard
+  - PHD
+  - Incident Manager
+  - 
 
 
 
