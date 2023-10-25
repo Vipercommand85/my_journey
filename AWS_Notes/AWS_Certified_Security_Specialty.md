@@ -427,14 +427,81 @@
 * free service (only acrue charges for resoucres that it uses or creates)
 
 #### Features
-* Resource Groups
+* **Resource Groups**
 * Operations Management
   - Explorer
   - OpsCenter
   - CloudWatch Dashboard
   - PHD
   - Incident Manager
-  - 
+
+* Shared Resources
+  - **Documents**
+
+* Change Management
+  - Change Manager
+  - **Automation**
+  - Change Calendar
+  - **Maintenance Windows**
+
+* Application Management
+  - Application Manager
+  - AppConfig
+  - **Parameter Store**
+
+* Node Management
+  - Fleet Manager
+  - Compliance
+  - **Inventory**
+  - Hybrid Activations
+  - **Session Manager**
+  - **Run Command**
+  - **State Manager**
+  - **Patch Manager**
+  - Distributer
+
+#### How Systems Manager Works
+* need to install the SSM agent onto the systems we control
+  - installed by default on Amazon Linux 2 AMI & some Ubuntu AMIs
+* If instance cannot be controlled by SSM, there is likely an issue with the SSM agent
+* make sure the EC2 instances have a proper IAM role to allow SSM actions
+
+
+### AWS Tags & SSM Resource Groups
+#### AWS Tags
+* you can add text key-value pairs called **Tags** to many AWS resources
+* commonly used in EC2
+* free naming, common tags are Name, Evironment, Team, etc
+* used for
+  - resource grouping
+  - automation
+  - cost allocation
+* better to have too many tags than few
+
+#### Resource Groups
+*  create, view, or manage a logical group of resources via **Tags**
+*  allows creation of logical groups of:
+  - applications
+  - different layers of an application stack
+  - production vs development environment
+* regional service
+* works with EC2, S3, DynamoDB, Lambda, etc.
+
+
+### SSM Documents & SSM Run Command
+* documents can be in **JSON** or **YAML**
+* you define parameters and actions
+
+### SSM - Run Command
+* execute a document (= script) or just run a command
+* run commands across multiple instances (using resource groups)
+* Rate Control/Error Control
+* integrated with IAM & CloudTrail
+* no need for SSH
+* command output can be shown in the console, sent to **S3 bucket(s)**, or **CloudWatch Logs**
+* send notifications to SNS about command status
+* can be invoke using **EventBridge**
+
 
 
 
