@@ -502,9 +502,76 @@
 * send notifications to SNS about command status
 * can be invoke using **EventBridge**
 
+### SSM - Automation
+* simplifies common maintenance & deployment tasks
+  - such as restart instances, create an AMI, EBS snapshot
+* **Automation Runbook** is the documentation for SSM Automation
+  - defines actions preformed on your EC2 instances or AWS resources
+  - can create custom runbooks
+  - can be manually triggered with AWS Console, AWS CLI, SDK, or EventBridge
+  - can be triggered on a schedule using **Maintenance Windows**
+  - can be triggered by AWS Config for rules remediations
 
 
+### SSM Parameter Store
+* secure storage for configuration & secrets
+* Optional Seamless Encryption using KMS
+* serverless, scalable, durable, easy SDK
+* version tracking of configurations/secrets
+* security through IAM
+* notifications with Amazon EventBridge
+* integration with **CluodFormation**
 
+#### SSM Parameter Store Hierarchy
+* /my-department/
+  - my-app/
+    * dev/
+      - db-url
+      - db-password
+
+* *_/aws/reference/secretsmanager/secret_ID_in_Secrets_Manager_*
+* *_/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2_* (public)
+
+#### Parameters Policies (for advanced parameters)
+* allows you to assign a TTL to a parameter to force updating or deleting sensitive data such as passwords
+* can assign multiple policies at a time
+
+
+### SSM - Inventory
+* used to collect metadata from your managed instances (EC2/On-premises)
+  - can inlcude installed software, OS drivers, configurations, installed updates, running services, etc.
+* view data in AWS Console or store in S3 bucket & query & analyze using Athena & QuickSight
+* can specify metadata collection interval (minutes, hours, days)
+* can query data from multiple AWS accounts & regions
+* can Create Custom Inventory for your custome metadata (i.e. rack location of each manged instance) 
+
+### State Manager
+* automate the process of keeping your managed instances (EC2/On-premises) in a state that you define
+* **Use Cases**: bootstrap intances with software, patch OS/software updates on a schedule
+#### State Manager Association
+* defines the state that you want to maintain on your managed instances
+  - port 22 must be closed
+  - antivirus must be installed
+  - specify a schedule when this configuration is applied
+* uses **SSM Documentation** to create an **Association** (i.e. SSM Documentation to configure CW Agent)
+
+
+### SSM - Patch Manager
+* automates the process of patching managed instances
+* OS updates, application updates, security updates, etc
+* supports both EC2 instances and on-premises servers
+* supports Linux, macOS, Windows
+* pact on-demand or on a schedule using Maintenance Windows
+* scan instances & generate a patch compliance report (missing patches)
+* report can sent to an S3 bucket
+
+### SSM - Patch Manager
+#### Patch Baseline
+* defines which patches should & should not be installed on your instances
+* ability to create custom Patch Baseline (specify approved/rejected patches)
+* patches can be auto-approved within days of their release
+* by default install only critical patches & patches related to security
+*  
 
 
 
