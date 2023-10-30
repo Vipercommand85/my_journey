@@ -571,7 +571,59 @@
 * ability to create custom Patch Baseline (specify approved/rejected patches)
 * patches can be auto-approved within days of their release
 * by default install only critical patches & patches related to security
-*  
+
+#### Pre-Defined Patch Baseline
+* managed by AWS for different OS (*_CANNOT BE MODIFIED*_)
+* *_AWS-RunPatchBaseline (SSM Document)*_ applies both OS & application patches (Linux, macOS, Windows Server)
+
+#### Custom Patch Baseline
+* create your own *_Patch Baseline_* & choose which patches to auto-approve
+* OS, allowed patches, reject patches, etc.
+* ability to specify custom & alternative patch repositiories
+
+#### Patch Group
+* associate a set of instances with a specific **Patch Baseline**
+* instances should be defined wiht the tag key **Patch Group**
+* an instance can only be in one **Patch Group**
+* **Patch Group** can only be registered wiht one **Patch Baseline**
+
+
+### SSM - Session Manager
+* allows you to start a secure shell on your EC2 & on-premises servers
+* access through *_AWS Console, AWS CLI, or Session Manager SDK_*
+* **does not need SSH access, bastion host, or SSH keys**
+* supports Linux, macOS, & Windows
+* logs connections to your instances & executed commands
+* session log data can be sent to *_S3 Bucket_* or *_CloudWatch Logs_*
+* *_CloudTrail_* can intercept **StartSession** events
+
+#### IAM Permissions
+* controls which users/groups can access *_Session Manager_* & which instances
+* use tags to restrict access to only specific EC2 instances
+* access *_SSM_* + write to *_S3_* + write to *_CloudWatch_*
+* optionally, you can restrict commands a user can run in a session
+
+
+### Unified CloudWatch Agent
+* for virtual servers ( EC2 instances, on-prem, etc)
+* collects additionall system level metrics such as RAM, processes, used disk space, etc.
+* collected logs are sent to *_CloudWatch Logs_*
+  - no logs from inside your EC2 instance will be sent to *_CloudWatch Logs_* without using an agent
+* centralized configuration using *_SSM Parameter Store_*
+* **make sure IAM permissions are correct**
+* default namespace for metrics collected by the **UCW** is *_CWAgent_* (can be changed if desired)
+
+#### procstat Plugin
+* collect metrics & monitor system utilization of individual prcocesses
+* suppports both Linux & Windows servers
+* select which processes to monitor by
+  - *_pid_file_*: name of process identification number files they create
+  - *_exe_*: process name that matches string you specify (RegEx)
+  - *_pattern_*: commnad lines used to start the process (RegEx)
+* metrics collected by *_procstat_* plugin begins with *_"procstat"_* prefix (i.e. *_procstat_cpu_time, procstat_cpu_usage_*)
+
+
+### 
 
 
 
