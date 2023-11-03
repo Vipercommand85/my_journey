@@ -623,7 +623,56 @@
 * metrics collected by *_procstat_* plugin begins with *_"procstat"_* prefix (i.e. *_procstat_cpu_time, procstat_cpu_usage_*)
 
 
-### 
+### CloudWatch Agent - Troubleshooting
+* CloudWatch Agent fails to start
+  - might be an issue with the configuration file
+  - check config file logs on the EC2 instance at *_/opt/aws/amazon-cloudwatchagent/logs/configuration-validation.log_*
+* cant find metrics collected by the agent
+  - check you're using the correct namespace (default: **CWAgent**)
+  - check configuration file *_amazon-cloudwatch-agent.json_*
+* CloudWatch Agent not pushing log events
+  - update to the latest CloudWatch Agent version
+  - test conectivity to the CloudWatch Logs endpoint *_logs.<region>.amazonaws.com*_
+  - review account, region, & log group configurations
+  - check IAM Permissions
+  - verify the system time on the instance is correctly configured
+
+
+### CloudWatch Logs
+* **Log Groups** arbitrary name, usually representing an application
+* **Log Stream** instance within application/ log files/ contatiners
+* can define log expiration policies
+* logs can be sent to:
+  - Amazon S# (exports)
+  - Kinesis Data Streams
+  - Kinesis Data Firehose
+  - AWS Lambda
+  - OpenSearch
+* logs are encrypted by default
+* can setup KMS-based encryption with your own keys
+
+#### Sources
+* **SDK, CloudWatch Log Agent, CloudWatch Unified Agent**
+* **Elastic Beanstalk**: Collection of logs from application
+* **ECS**: collection from containers
+* **AWS Lambda**: collection from function logs
+* **VPC Flows Logs**: VPC specific logs
+* **API Gateway**
+* **CloudTrail** based on filter
+* **Route53**: Log DNS queries
+
+#### CloudWatch Logs Insights
+* utilized to query the logs collected by **CloudWatch**
+* uses basic SQL syntax
+* can query multiple log groups in different AWS accounts
+* is a query engine, not a real-time engine
+
+#### CloudWatch Logs Subscriptions
+* get a real-time log event from **CloudWatch Logs** for processing $ analysis
+* send to **Kinesis Data Streams, Firehose, or Lambda**
+* **Subscription Filter** filter which logs eventsare are delivered to your destination
+* can aggregate logs from multiple accounts and/or regions to a single destination
+* 
 
 
 
