@@ -672,7 +672,39 @@
 * send to **Kinesis Data Streams, Firehose, or Lambda**
 * **Subscription Filter** filter which logs eventsare are delivered to your destination
 * can aggregate logs from multiple accounts and/or regions to a single destination
-* 
+
+
+### CloudWatch - Alarms
+* are used to trigger notifications for any metric
+* has 3 states:
+  - **OK**: means the alarm is not triggered
+  - **INSUFFICIENT_DATA**: not enough data to determine a state
+  - **ALARM**: threshold has been breach
+* **Period**:
+  - determines the length of time in seconds to evaluate the metric
+  - high resolution custom metrics: 10 sec, 30 sec, or multiples of 60 sec
+* alarms can be created based in **CloudWatch Logs Metrics Filters**
+* to test alarms & notifications, set the alarm state to **Alarm** using the CLI
+```bash
+asw cloudwatch set-alarm-state --alarm-name "ALARM NAME" --state-value ALARM --state-reason "Testing Purposes"
+```
+
+#### Targets
+* **STOP | TERMINATE | REBOOT | RECOVER** an EC2 Instance
+* trigger an **Auto Scaling Action**
+* send notification to SNS service (form which you can do anything)
+
+#### Composite Alarms
+* monitors the state of multiple alarms
+* helpful to reduce "_alarm noise_" by creating complex composite alarms
+
+#### EC2 Instance Recovery
+* Status Check:
+  - **Instance Status** : check the EC2 VM
+  - **System Status**: check the underlying hardware
+* **Recovery**: Same Private, Public, Elastic IP, metadata, placement group
+
+
 
 
 
