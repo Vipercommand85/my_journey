@@ -67,5 +67,15 @@ exFAT
 * stored in the $LOGFILE in the volumes's root directory
 
 ### Access Controls
+* define the owner of a file/directory & permissions for each user
+
+### Volume Shadow Copy
+* NTFS keep track of changes made to a file using a feature called **Volume Shadow Copy**
+* using this feature a user can restore previos file version for recovery or system restore
+
+### Alternate Data Streams
+* a file is a stream of data organized in a file system
+* **ADS** is a feature that allows files to have multiple streams of data stored in a  single file
+* IE & other web browsers use ADS to identify files downloaded from the internet
 
 
