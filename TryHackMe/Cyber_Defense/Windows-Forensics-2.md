@@ -59,4 +59,12 @@ exFAT
 
 
 ## The NTFS File System
+* this file system added security, reliability, recovery capabilities, and broadened the file size limitations
+
+### Journaling
+* NTFS keeps a log of changes made to the metadata in the volume
+* this helps the system to recover from a crash or data movement due to defragmenation
+* stored in the $LOGFILE in the volumes's root directory
+
+### Access Controls
 
