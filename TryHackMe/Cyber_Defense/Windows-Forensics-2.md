@@ -78,4 +78,26 @@ exFAT
 * **ADS** is a feature that allows files to have multiple streams of data stored in a  single file
 * IE & other web browsers use ADS to identify files downloaded from the internet
 
+## Master File Table
+* is a structure database that tracks the objects stored in a volume
+
+### $MFT
+* first record in the volume
+* **Volume Boot Record (VBR)** pints to the cluster where it is located
+* $MFT stores information about the clusters where all other objects present on the volume are located
+* this file contains a directory of all the files present on the volume
+
+### $LOGFILE
+* stores the transactional logging of the filesystem which helps to maintain the integrity of the file system in the event of a crash
+
+### #UsnJrl
+* stands for **Update Sequence Number (USN) Journal**
+* is present in the **$Extend** record
+* contains information about all the files that were changed in the file system & the reason for the change
+* also called the change journal
+
+### MFT Explorer
+* tool used to explore MFT files
+* available as a CLI or GUI tool
+
 
