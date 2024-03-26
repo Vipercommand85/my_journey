@@ -101,3 +101,58 @@ exFAT
 * available as a CLI or GUI tool
 
 
+## Questions
+### Parse the $MFT file placed in C:\users\THM-4n6\Desktop\triage\C\ and analyze it. What is the Size of the file located at .\Windows\Security\logs\SceSetupLog.etl?
+```bash
+49,152
+```
+
+### What is the size of the cluster for the volume from whihc this triage was taken?
+**HINT** Parse the **$BOOT** file with MFTECmd.exe
+```bash
+4,096
+```
+
+
+## Task4: Recovering Deleted Files
+### Deleted Files & Data Recovery
+* when a file is deleted from the file system, the file system deletes the entries that store the file's location on disk
+* as long as the location the file was in is not overwritten with new data, it is possible to recover the date that is stil there
+
+#### Disk Image
+* is a file that contains a bit-by-bit copy of a disk drive
+* this bit-by-bit copy retains all the file metadata
+* this is helpful in 2 ways:
+    * first, the original evidence is not contaminated while performing forensiics
+    * second, the disk image file can be copied to another disk & analyzed without using specialized hardware
+
+#### Recovering Files using Autopsy
+* create a new case and supply a base directory and user type (Single or Multi-User)
+* enter information for the case file (optional but allows for organiztion)
+* follow steps presented as needed
+* notice files marked with a red X, this indicates a deleted file
+* you can right click on the file and extract the contents to the file tree in the left pane
+
+
+### Questions
+#### There is another xlsx file that was deleted, what is the fill name of that file?
+```bash
+Tryhackme.xlsx
+```
+
+#### What is the name of the TXT file that was deleted from the disk?
+```bash
+TryHackMe2.txt
+```
+
+
+
+## Task 5: Evidence of Execution
+### Windows Prefetch Files
+* when a program is run in Windows, it stores its information for future use in the **C:\Windows\Prefetch\**
+* files have an **.pdf** extension
+* file contains the last run times of the application, number of times the application was run, & any files & device handles used by the file
+* can use **Prefetch Parser (PECmd.exe)**
+
+
+
