@@ -154,5 +154,55 @@ TryHackMe2.txt
 * file contains the last run times of the application, number of times the application was run, & any files & device handles used by the file
 * can use **Prefetch Parser (PECmd.exe)**
 
+### Windows 10 Timeline
+* Windows 10 stires recently used applications & files in an SQLite database called the **Windows 10 Timeline**
+* contains the last executed programs and the focus time of the application
+* store in the following directory:
+```bash
+C:\Users|<username>\AppData\Local\ConnectedDevicesPlatform\{randomfolder}\ActivitiesCache.db
+```
+* can use **WxTCmd.exe** for parsing the data in this database file
 
+### Windows Jump Lists
+* introduced to help users go directly to their recently used files from the taskbar
+* this list can be viewed by right-clicking an application's icon in the taskbar
+* this data is stored at the following directory:
+```bash
+C:\Users\<username>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
+```
+* **JLECmd.exe** can be used to parse this file
+
+
+## Questions
+### How many time was GKAPE.EXE execute?
+```bash
+2
+```
+
+### What is the last execution time of GKAPE.EXE?
+```bash
+12/01/2021 13:04
+```
+
+### When Notepad.exe was opened on 11/30/2021 at 10:56, how long did it remain in focus?
+```bash
+
+```
+
+### What program was used to open C:\Users\THM-4n6\Desktop\KAPE\KAPE\Changelog.txt?
+```bash
+
+```
+
+
+## Task 6: File/Folder Knowledge
+
+
+## Task 7: External Devices/USB Device Forensics
+### Setupapi dev log for USB Devices
+* when any new device is connected to a system, information related to the setup of that device is stored in the follwing log:
+```bash
+C:\Windows\inf\setupapi.dev.log
+```
+* this log contains the device serial number & the first/last times the device was connected
 
