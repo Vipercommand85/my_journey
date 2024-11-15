@@ -23,7 +23,7 @@
 * refers to the data encrypted by the master key
 * the master key is saved & encrypted by the user's password in a key material section
 
-LUKS reuses existing block encryption implementations with the pseudocode to encrypt data as follows:\
+LUKS reuses existing block encryption implementations with the pseudocode to encrypt data as follows:
 ```bash
 enc_data = encrypt(cipher_name, cipher_mode, key, original, original_length)
 ```
