@@ -9,6 +9,7 @@
 * encryption makes data unreadable without the decryption key
 * modern Linux distros have **LUKS (Linux Unified Key Setup)** preinstalled
 * when a partition is encrypted with LUKS, the disk layout would look as follows:
+
 ![image](https://github.com/user-attachments/assets/bc0671ba-1ea9-4a0d-b1a7-cb8e568dc467)
 ## LUKS phdr
 * stands for **_LUKS Partition Header_**
