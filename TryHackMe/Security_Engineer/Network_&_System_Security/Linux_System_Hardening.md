@@ -85,6 +85,83 @@ iptables -A INPUT -p tcp --dport 22 -J ACCEPT
 ```bash
 iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
 ```
+* ```-A OUTPUT``` append to the **_OUTPUT_** chain, i.e., packets leaving the system
+* ```-p tcp --sport 22``` applies to TCP protocol with _source port_ 22
+
+* let's say you only want to allow traffic to the local SSH serer & block everything else:
+* ```iptables -A INPUT -j DROP``` to block all incoming traffic not allowed by previous rules
+* ```iptables -A OUTPUT -j DROP``` to block all outgoing traffic not allowed in previos rules
+
+* in practice you should flush (delete) previous rules before appluing new ones with:
+```bash
+iptables -F
+```
+
+### nftables
+* is supported in **_Kernel 3.13_** and later, addin various improvements over iptables, particularly in scalability & performance
+* unlike _iptables_ _nftables_ starts with no tables or chains which you will need to add before adding any rules
+```fwfilter``` will create a table
+```bash
+nft add table fwfilter
+```
+```add``` is used to add a table
+* other commands include
+ * ```delete``` to delete a table
+ * ```list``` to list the chains & rules in a table
+ * ```flush``` tp clear all chains & rules from a table
+``` table TABLE_NAME``` used to specify the name of the table we want to create or work on
+* will add an _input_ & _output_ chain
+```nft add chain fwfilter fwinput { tyoe filter hook input priority 0 \; }```
+```nft add chain fwfilter fwoutput { tyoe filter hook output priority 0 \; }```
+* ```fwinput``` the input chain of type ```filter``` & applies to the input hook
+* ```fwouput``` the output chain of type ```filter``` & applies to the output hook
+```bash
+nft list table fwfilter
+```
+* this will list out the current rules in the specified table
+```bash
+root@AttackBox# sudo nft list table fwfilter
+table ip fwfilter {
+    chain fwinput {
+        type filter hook input priority filter;
+        tcp dport 22 accept
+    }
+
+    chain fwoutput {
+        type filter hook output priority filter;
+        tcp sport 22 accept
+    }
+}
+```
+
+### UFW
+* stands for **_Uncomplicated Firewall_**
+* provides a front-end to iptables to the front-end of netfitler
+![image](https://github.com/user-attachments/assets/a94d5064-bcc6-4d4b-a1b5-a5be7ab966a9)
+
+```bash
+ufw allow 22/tcp
+```
+* ```allow``` will allow traffic through _TPC port_ 22
+* ```ufw status``` will show all the current rules in order they are processed
+
+
+ ### What other TCP port is the attched VM allowing besides 22 TCP?
+ ```
+12526
+```
+### What is the allowed UDP port?
+```
+14298
+```
+
+
+## Task 5: Remore Access
+### Protecting Against Password Sniffing
+* remote access can be achieved through many different protocols & services
+* some older systems use cleartext protocols such as Telnet, SSH or any other encrypted protocol should always be used instead
+
+### Protecting Against Password Guessing
 * 
 
 
