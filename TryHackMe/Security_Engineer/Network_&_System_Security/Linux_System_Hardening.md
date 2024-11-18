@@ -162,7 +162,120 @@ ufw allow 22/tcp
 * some older systems use cleartext protocols such as Telnet, SSH or any other encrypted protocol should always be used instead
 
 ### Protecting Against Password Guessing
-* 
+* when you set up your Linux system with _SSH_ for remote administration, you make your Linux box available for all interested parties
+* some guidelines to secure you box:
+ * disable ```root``` login to force login as non-root users
+ * disable password authentication; force public key authentication instead
+ * configuration of the **_OpenSSH_** server can be controlled via the ```sshd_config``` file usually located at ```/etc/ssh/sshd_config```
+ * it is a good idea to ensure you have access to the physical terminal before you disable password authentication to avoid locking yourself out
+ * you can disable root long by adding the following line:
+```bash
+PermitRootLogin no
+```
+* ensure that the following 2 lines are present & set accordingly in your ```sshd_config``` file:
+```bash
+PubkeyAuthentication yes
+PasswordAuthentication no
+```
+* to create an SSH key pair, use the following command:
+```bash
+ssh-keygen -t rsa
+```
+ * will generate a private key saved as ```id_rsa``` & a public key saved as ```id_rsa.pub```
+* you will need to securely copy your public key to the target SSH server, you can use the following command:
+```bash
+ssh-copy-id [username]@[target_server]
+```
+
+### What flag is hidden in the ```sshd_config``` file?
+```
+THM{secure_SEA_shell}
+```
+
+## Task 6: Securing User Accounts
+* ```root``` account carries a tremendous power & hence risk
+* using a non-root account is recommended for everyday work to avoid sabotaging your system
+
+### Use sudo
+* a best practice is to create a user account for administrative tasks that is added to the **_sudoers_** group
+* users will prepend any command run with ```sudo``` so that they can run commands with **_root user priviledges_**
+* stands for **_Super User Do_**
+```bash
+usermod -aG sudo [USERNAME]
+```
+* ```usermod``` modifies the specified user account
+* ```-aG``` appends user to the group
+* ```sudo``` name of the group of users who can use ```sudo```(Debian-based distros)
+ * RHEL/Fedora will use the ```wheel``` group for sudo users
+
+### Disable root
+* once you have a created an account for administrative purposes, you might want to consider disabling the ```root``` account
+* straightfoward way is to modify the root account entry in the ```/etc/passwd``` file as follow from:
+```bash
+root:x:0:0:root:/root:/bin/bash
+```
+TO:
+```bash
+root:x:0:0:root:/root:/sbin/nologin
+```
+
+### Enforce a Strong Password Policy
+* ```libpwdquality``` library provides many options for password constratints
+* config file can be found at:
+```/etc/security/pwdquality.conf``` on RHEL/Fedora distros
+```/etc/pam.d/common-password``` on Debian/Ubuntu distros
+ * you can install this library with the following command:
+```bash
+apt-get install libpam-pwdquality
+```
+* some example options are as follows:
+```difok``` allows you to specify the number of characters in the new password that weren't present in the old password
+```minlen``` sets the minimum length for new passwords
+```minclass``` specifies the minimum number of required classes of characters, i.e., uppercase, lowercases, digits, etc.
+```badwords``` provides a space-seperated list of words that must not be contained in a chosen password
+```retry=N``` prompts the user ```N``` times before returning an error
+
+* example config file:
+```bash
+difok=5
+minlen=10
+minclass=3
+retry=2
+```
+
+### Disable Unused Accounts
+* it is vital to disable unused user accounts that are no longer active/needed to access the system(s)
+* you can disable user accounts the same as stated above with the ```/sbin/nolongin``` set as the default user's login shell in the ```/etc/passwd``` file
+* this should also be done for service accounts such as ```www-data``` for webservers, ```mongo``` for database servers among other
+* anyone these services could have an **RCE** discovered in the future and by giving them all a default no longin shell, you can prevent any attackers from having an interactive shell if a system(s) were to be compromised
+
+### Software & Services
+* every peice of software you install on your system also increases the number of potential vulnerabilities
+* here are some guidelines to help you reduce the attack surface
+
+### Disable Unnecessary Services
+* removing or disabling unneeded service and packages is an easy way to improve your security posture
+* this will minimize the attack vector that you give adversaries
+
+### Block Unneeded Network Ports
+* after removing/disabling any unneeded packages, it is best to update your firewall rules accordingly
+
+### Avoid Legacy Protocols
+* to be sure to use protocols that encrypt traffic, i.e., **_SSH_**, **_SFTP_**
+
+### Remove Identification Strings
+* when ever you connect to a remote server, it usually replies with its version number
+* this would give adversaries a huge amount of knowledge on how to attack the box
+
+#### Besides FTPS, what is another secure replacement for TFTP & FTP?
+```
+SFTP
+```
+
+## Task 8: Update & Upgrade Policies
+
+
+
 
 
 
