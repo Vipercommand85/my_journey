@@ -273,7 +273,87 @@ SFTP
 ```
 
 ## Task 8: Update & Upgrade Policies
+* to update your system on _Ubuntu/Debian_ systems you can use the following commands:
+```bash
+apt update
+apt upgrade
+apt update && apt upgrade -y
+```
+```apt update``` will download package information form the configured sources
+```apt upgrade``` will install all available upgrades for all packages from the configured sources
+```-y``` will install all the available upgrades without prompting for approval
+* to updae your system on _RHEL/Fedora_ systems use the following commands:
+```dnf update``` on newer releases (i.e. RHEL 8 and later)
+```yum update``` on older releases (i.e. RHEL 7 and older)
 
+### Ubuntu LTS Release
+* is released every 2 years
+* will grant you 5 years of security updates for the base OS without a subscription
+* you can get another 5 years with an **_Extended Security Maintenance (ESM)_**
+
+### RedHat Releases
+* RHEL 8 & 9 offer 12 years of support in three phases:
+ * Full support for 5 years
+ * maintenance suppoer for 5 years
+ * extended life phase for 2 years
+
+### Kernel Updates
+* updating should not be limited to the installed software
+* **_Dirty Cow_** was a vulnerability that affected the linux kernel giving a root attack root access to a system
+
+#### What command would you use to update an older RedHat system?
+```
+yum update
+```
+#### What command would you use to update a modern Fedora system?
+```
+dnf update
+```
+#### What 2 commands are required to update an Debian system?
+```
+apt update && apt upgrade
+```
+#### What does ```yum``` stand for?
+```
+Yellowdog Updater, Modified
+```
+#### What does ```dnf``` stand for?
+```
+Dandified YUM
+```
+#### What flag is hidden in the ```sources.list``` file?
+```
+THM{not_Advanced_Persistent_Threat}
+```
+
+## Task 9: Audit & Log Configuration
+* most log files on Linux systems are stored in the ```/var/log``` directory
+* ```/var/log/messages``` general log for Linux systems
+* ```/var/log/auth.log``` lists all authentication attempts (debian-based)
+* ```/var/log/secure``` lists all authentication attempts (RHEL-based)
+* ```/var/log/utmp``` access log that contains information regarding users that are currenlty logged into the system
+* ```/var/log/wtmp``` access log that contains information for all users that have logged in & out of the system
+* ```/var/log/kern.log``` contains messages from the kernel
+* ```/var/log.boot.log``` contains messages from start-up & boot information
+
+ ```tail -n 12 boot.log```
+ * ```tail``` command used to show the last lines of a file (defualt is 10)
+ * ```-n``` specifies the number of lines to present
+ * ```boot.log``` the file that you want to view
+
+```grep FAILED boot.log```
+* ```grep``` used to find line(s) with the specified key word in a text file
+* ```FAILED``` the key word to search the text file for
+* ```boot.log``` the file that you want to search through
+
+#### What command can you use to display the last 15 lines of ```kern.log```?
+```
+tail -n 15 kern.log
+```
+#### WHat command can you use to display the lines containing the word ```denied``` in the ```secure``` file?
+```
+grep denied secure
+```
 
 
 
