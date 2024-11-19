@@ -124,7 +124,7 @@ How many standard accounts are created in the VM?
   * ```arp -d``` command will clear the **_ARP Cache_**
  
 ### Preventing Remote Access to Machines
-* **_Remote Desktop Protocol_** was developed by Microsoft and has been exploited in the past by threat actors, i.e., ![Blue Keep Vulnerabilit](https://en.wikipedia.org/wiki/BlueKeep)
+* **_Remote Desktop Protocol_** was developed by Microsoft and has been exploited in the past by threat actors, i.e., [Blue Keep Vulnerabilit](https://en.wikipedia.org/wiki/BlueKeep)
 * this should be disabled and a more secure remote management application be utilized instead.
 ![image](https://github.com/user-attachments/assets/4fde19d5-4419-4075-ad0d-f162dca1b00c)
 
