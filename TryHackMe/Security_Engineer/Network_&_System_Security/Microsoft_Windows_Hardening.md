@@ -13,7 +13,9 @@
   * Network
   * System
 * type ```services.msc``` in the _run_ application to access the Windows services
+
 ![image](https://github.com/user-attachments/assets/7202a568-bba6-4275-81ec-3f3ea77bd02d)
+
 
 ### Windows Registry
 * is a unified container database that stores configurational settings, essential keys, & shared preferences for Windows & third-party applications
@@ -96,11 +98,14 @@ How many standard accounts are created in the VM?
 ### Windows Defender Firewall
 * built-in application that protect computers from malicious attacks and unauthorised traffic through inbound & outbound rules/filters
 * you can access **_Windows Defender Firewall_** by using the ```WF.msc``` in the ```run``` application
+
 ![image](https://github.com/user-attachments/assets/f9c32836-eab0-4bf8-baa4-c5ce38150d8c)
+
+
 * has three main profiles
- * **Domain**
- * **Public**
- * **Private**
+  * **Domain**
+  * **Public**
+  * **Private**
   * the private profile **must** be activated with _"Blocking Incoming Connections"_ while using the computer at home
 * when configuring the firewall, always configure a **_default deny_** rule before making an exception rule that allows more specific traffic
 
@@ -126,7 +131,9 @@ How many standard accounts are created in the VM?
 ### Preventing Remote Access to Machines
 * **_Remote Desktop Protocol_** was developed by Microsoft and has been exploited in the past by threat actors, i.e., [Blue Keep Vulnerability](https://en.wikipedia.org/wiki/BlueKeep)
 * this should be disabled and a more secure remote management application be utilized instead.
+
 ![image](https://github.com/user-attachments/assets/4fde19d5-4419-4075-ad0d-f162dca1b00c)
+
 
 #### Open Windows Firewall & click on Monitoring in the left pane - which profile is active?
 ```
