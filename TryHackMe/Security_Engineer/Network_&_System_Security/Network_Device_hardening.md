@@ -18,7 +18,7 @@
 ### Common Threat & Attack Vectors of Network Devices
 | **Threat** | Description | Attack Vector |
 |------------|-------------|-----------------------|
-| **Unauthorized Access** | gain unauthorized control of a network device & then the complete network | * password attacks (brute force, dictionary & hybrid)<br>* exploit known vulnerabilities , i.e. **RCE**<br>* social engineering/Phishing attacks |
+| **Unauthorized Access** | gain unauthorized control of a network device & then the complete network | * password attacks<br>* exploit known vulnerabilities , i.e. **RCE**<br>* social engineering/Phishing attacks |
 |   |   |  |
 |   |   |  |
 
