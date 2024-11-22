@@ -143,24 +143,117 @@ Password Policy
 7
 ```
 
-Task 4: Implementing Least Privilege Model
+## Task 4: Implementing Least Privilege Model
+* requires limiting the user or application access to minimise security risks & attack surface
+* users & applications should only be given the needed permissions to carry out tasks though authorised access per current conditions
+
+![image](https://github.com/user-attachments/assets/bcc967a1-8b50-4ab0-9e0d-94ca8835676c)
 
 
+### Creating the Right Type of Accounts
+* **User Accounts**: promote using regular user accounts for most people in the network to perform regular duties
+* **Privilege Accounts**: accounts with elevated privileges that are classified as **First** & **Second** privilege accounts
+* **Shared Accounts**: are shared amongst a group of people, i.e. visitors with bare minimum privileges
+     * are not recommended and should only be utilised in limited scenarios
+
+### Role-Based Access Control on Hosts
+* allows you to indicate access privileges at different levels
+* includes DNS zone, server, or resource record level & specifies who has access control over createing, editiing, & deleting operations of various resources in AD
+
+### Tiered Access Model (TAM)
+* comprises of technical controls that reduce the privilege escalation risks
+* consists of a logical structure that seperates AD's assets by creating boundaries for security purposes
+* primary goal is the protection of AD's top-valued identities (**_Tier 0_**)
+* comprised of 3 tiers:
+     * **Tier 0**: top level & includes all the admin accounts, DC, & groups
+     * **Tier 1**: domain member applications & servers
+     * **Tier 2**: end-user devices like HR & sales staff (non-IT personnel)
+
+![image](https://github.com/user-attachments/assets/3807fc49-3939-48e7-bd35-b235fdaebb1e)
 
 
+### Implementation of Tiered Acces Model
+* **_"Prevention of privileged credentials from crossing boundaries, either accidentally or intentionally"_** is the critical implementation of this model
+* implementing technical controls via **GPOs** is crucial to avoid such scenarios
+
+### Auditing Accounts
+* is a crucial task mainly carried out by setting up the correct account, assinging privilegesm & applying restrictions
+* there are 3 audit types related to accounts must be done periodically
+     * **Usage**: allow monitoring of each account's specific tasks, & validating their access rights
+     * **Privilege**: allows you to check if every account in the system has the least privilege
+     * **Change**: allows you to look for any improper changes to account permissions, passwords, or settings
 
 
+#### Computers & Printers must be added to Tier ) - yay/nay?
+```
+nay
+```
+
+#### Should you create a high privilege account for a system administrator from a vendor that is coming to the facility for a 2 week duration task?
+```
+nay
+```
 
 
+## Task 5: Microsoft Security Compliance Toolkit
+* is an officail toolkit provided by Micorsoft to implement & manage local & domain-level policies
+* the toolkit provides pre-developed security baselines per the end user environment
+* download link [**MSCT**](https://www.microsoft.com/en-us/download/details.aspx?id=55319)
+
+### Installing Security Baselines
+* can be easily downloaded as a zip file and extracted
+```
+Open Microsoft Security Compliance Website >
+click Download >
+click Windows Servers Security Baseline.zip >
+Download >
+Extract contents to desire folder
+```
+```
+Open extracted folder >
+select desired baseline & execute with PowerShell
+```
+
+### Polciy Analyser
+* allows comparison of group policies to quickly check for inconsistencies, redundant settings, & the alterations that need to be made between them
+* these baselines should only be downloaded from the official **Microsoft** website
 
 
+#### Can you find the flag in the BaseLineLocalInstall?
+```
+THN{00001}
+```
+
+#### Can you find the flag in the MergePolicyRule (Polciy Analyser) script?
+```
+{THM00191}
+```
 
 
+## Taks 6: Protecting Against Known Attacks
+### Kerboroasting
+* is a common & successful post-exploitation technique for attackers to get privileged access to AD
+* attacker exploits **Kerboros Ticker Granting Service (TGS)** to request an encrypted password that is then cracked offline
+* difficult to detect as the request is made through an approved user so there is no unusual traffic
+* you can mitigate this by adding **MFA** or frequent & periodic **Kerberos Key Distribution Center (KDC)** service account password reset
 
+### Weak & Easy-to-Guess Passwords
+* easiest target for an adversay is cracking easy-to-guess passwords
+* enforce strict and strong password policy
 
+### Brute Forcing Remote Desktop Protocol (RDP)
+* never expose **RDP** to the public without additional security controls
+* perform continuous audits for scanning attacks & brute-force attempts
 
+### Publically Accessible Share
+* use ```Get-SmbOpenFile``` cmdlet in **PowerShell** to look for any undesired shares on the network & configure access accordingly
 
+#### Does Kerboroasting utilise an offline-attack scheme for cracking encrytped passwords - yay/nay?
+```
+yay
+```
 
-
-
-
+#### How many users have the same password as aaron.booth in the generated report?
+```
+186
+```
