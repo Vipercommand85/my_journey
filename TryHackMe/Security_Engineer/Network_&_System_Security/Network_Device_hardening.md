@@ -36,7 +36,46 @@ Denial of Service
 
 
 ## Task 3: Common Harden Techniques
+### General Techniques
+* **Update & Patching**: ensuring the latest version of the OS & underlying applications are being used as well as installing security patches as needed
+* **Diabling unnecessary Servies & Ports**: will help to reduce the attack surface to adversaries
+* **Principle of Least Privilege (POLP)**: restrict users & processes to only the minimum necessary permissions required to perform their functions
+* **Log Monitoring**: implement a log monitoring system to monitor for unusal activity or security events
+* **Backup Regularly**: take routine backups of systems & configurations as they can help recover from a security incident or system failure
+* **Enforcing Strong Passwords**: change default login passwords & use strong passwords that are at least **10** characters long with a combination of special characters
+* **Multi-Factor Authentication (MFA)**: is an additional security layer requiring 2 or more types of identification before accessing accounts or systems
 
+### Importance of Secure Protocols
+* ensures that data, sensitive or not, is transmitted between devices is encrypted 
+* help to prevent **MiTM** attacks and other network based exploits
+
+### Removal/Blocking of Insecure Protocols
+* help to ensure that secure protocols are being used for tasks
+
+### implementing of Monitoring & Logging Controls
+* is essential for detecting & investigating security incidents, identifying performance issues, & complying with regulatory requirements
+* **Syslog**: a protocol that standardises the transfer of log messages, with the purpose of storing & analysing to a central server
+* **SNMP**: traps a notification sent by a network device to a management system when a predefined event occurs
+* **NetFlow**: a protocol used to collect & analyse network traffic data for monitoring & security analysis
+* **Packet Captures**: by using tools like **Wireshark** to capture and store network traffic
+
+#### What protocol for transfering files would be an insecure protocol?
+```
+B: FTP
+```
+
+#### The protocol for sending log messages to a centralized server for storage & analysis is called?
+```
+Syslog
+```
+
+
+## Task 4: Hardening Virtual Private Networks
+
+```
+```
+```
+```
 
 
 
