@@ -71,8 +71,49 @@ Syslog
 
 
 ## Task 4: Hardening Virtual Private Networks
+* **VPNs** are needed in the age of remote work & online communications to protect sensitive data & preserve privacy
+* Hardening **VPNs** is crucial to ensure their efficiency which includes **MFA**
+
+### Standard Hardening Practices
+* all **VPN** servers consist of a server-side & client-side configurations through a standard config file
+* for **OpenVPN** config file is located at ```/etc/openvpn/server/server.conf```
+* **Use Strong Encryption Algorithm**: the **cipher** directive can be used to select the encryption scheme
+  * possible options for **cipher** include AES, Blowfish, Camellia, etc.
+* **Keep VPN Gateway Software Up-to-Date**: ensure the latest security patches & updates have been applied
+* **Implement Strong Authentication**: use **TLS** & a secure hashing alogrithm
+  * the ```auth``` directive can be used to set the specific hashing alogrithm
+  * some options are **SHA1, SHA128, SHA256, SHA512, MD5**
+* **Change Default Settings**: be sure the change default **username** & **password**
+* **Enable Perfect Forward Secrecy (PFS)**: generates unique session keys for each session to strengthen the security of the VPN connection
+  * ```tls-crypt``` directive can be used to enable **PFS**
+  * this requires a key that can be generated using ```sudo openvpn --genkey --secret my.key```
+  * this key should be placed on the server
+
+#### What is the flag value linked with the cipher directive?
+  ```
+THM{CIPHER_UPDATED_1101}
+```
+
+#### What is the flag value linked with the auth directive?
+```
+THM{AUTH_UPDATED_123}
+```
+
+#### As per the config file, what is the port number for the OpenVPN server?
+```
+1194
+```
+
+
+
+## Task 5: Hardening Routers, Switches, & Firewalls
 
 ```
+```
+```
+```
+```
+  ```
 ```
 ```
 ```
