@@ -164,7 +164,17 @@ THM{SYSTEM101}
 
 #### What is the name of the rule that accepts ICMP traffic from source zone WAN & destination zone as this device?
 ```
+Allow-Ping
+```
 
+#### What is the name of the rule that forwards data coming from WAN port 9001 to LAB port 9002?
+```
+THM_Port
+```
+
+#### What is the version number for the available APK package?
+```
+2.12.2-1
 ```
 
 
