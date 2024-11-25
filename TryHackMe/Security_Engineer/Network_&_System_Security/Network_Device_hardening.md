@@ -169,8 +169,8 @@ THM{SYSTEM101}
 
 
 ## Task 7: Important Tools for Network Monitoring
-|---------------|--------------------------------------------------------------------------------|
 | **Nagios** | popular open-source software for monitoring systems, networks, & infrastructure<br>provides real-time monitoring & alerting for various services & applications |
+|---------------|--------------------------------------------------------------------------------|
 | **SolarWinds** | comprehensive network monitoring tool that provides real-time visibility into network performance & availability<br>includes network mapping, automated network discovery, & customizable dashboards |
 | **PRTG** | all-in-one network monitoring tool that provides comprehensive performance & availability monitoring<br>includes real-time traffic analysis, custom dashboards, & customizable alerts |
 | **Zabbix** | powerful open-source network monitoring tool that provides real-time network performance & availability monitoring<br>includes features like customizable dashboards, network mapping, & alerting|
