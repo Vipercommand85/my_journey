@@ -107,15 +107,77 @@ THM{AUTH_UPDATED_123}
 
 
 ## Task 5: Hardening Routers, Switches, & Firewalls
+* must be hardened for network infrastructure to be secure and reliable
+* by hardening these devices, we can lower the possibility of unauthorized access, avoid data breaches, & ensure network service availability
+* a few advantages of this hardening include improved network performance, cyberattack resiliency, & regulatory compliance
+
+### Recommended Hardening Techniques
+* **Setting up the device**: enabling logging, setting time zone, hostname, etc.
+  * hepls to simplfy incident handling in the event of a compromise
+* **Change Default Credentials**: since these default credentials are listed in documentatin, threat actors would have little trouble logging into your itnerface and making unwanted changes
+* **Enable Secure Network Protocols**: utlizing secure protocols ensures that traffic is sent across the network encrypted preserving **CIA**
+* **Diabling Unnecessary Scripts**: diabling any unauthorized scripts from running, can help to mitigate threat actor persistence
+* **Securing WiFi**: should always enable **WPA2/WPA3**
+  * disabling **SSID** broadcasting
+  * changing default passwords
+
+#### What is the default SSH port configured for OpenWrt?
+```
+22
+```
+
+#### What is the flag that is in the Notes section of System Tab under General Settings?
+```
+THM{SYSTEM101}
+```
+
+#### What is the default system log buffer size value for the OpenWrt router?
+```
+64Kib
+```
+
+#### What is the start priority for the script uhttpd?
+```
+50
+```
+
+
+## Task 6: Hardening Router, Switches, & Firewalls - More Techniques
+### Recommended Hardening Techniques
+* **Manage Traffic Rules**: ensure that the **accept/deny** rules are configured appropriately
+* **Monitor Traffic**: helps to enable remedial measures to be taken should an unusal influx of network traffic set an alert
+  * most network devices provide real-time graphs to monitor the traffic
+* **Configure Port Forwarding**: enables internet traffic to be routed to a specific interface/endpoint
+  * will also block any other incoming traffic that doesn't match this rule
+  * should be used with care, because it could expose internal devices & services to potential security issues
+* **Monitor Scheduled Tasks**: important to monitor so that original scheduled tasks have not been tampered with
+* **Update Firmware**: essential to avoid being vulnerable to known/unkown attacks
+
+### Additional Techniques in an Enterprise Environment
+* considering an enterprise environment might have multiple different vendors, there is no **one-way-fits-all** approach, instead here are some concepts to keep in mind:
+* **Configure Port Security**: includes limiting the number of **MAC addresses** registered on a switch port
+   * taking action when unauthorized access is detected
+   * enables an admintrator to be confident that the data is coming from a valid source & will be forwarded to a legitimate receiver
+* **Preventing ARP Spoofing**: most common vectors for **MiTM** attacks
+* **Preventing Rogue DHCP Servers**: configure static DHCP binding & ensure no unknown devices are added to a network (**Shadow IT**) by utilizing network mapping tools
+* **Enabling IPv6**: has built in support for **IPsec** & provides added support for **CIA**
+
+#### What is the name of the rule that accepts ICMP traffic from source zone WAN & destination zone as this device?
+```
 
 ```
+
+
+## Task 7: Important Tools for Network Monitoring
+| **Nagios** | popular open-source software for monitoring systems, networks, & infrastructure<br>provides real-time monitoring & alerting for various services & applications |
+| **SolarWinds** | comprehensive network monitoring tool that provides real-time visibility into network performance & availability<br>includes network mapping, automated network discovery, & customizable dashboards |
+| **PRTG** | all-in-one network monitoring tool that provides comprehensive performance & availability monitoring<br>includes real-time traffic analysis, custom dashboards, & customizable alerts |
+| **Zabbix** | powerful open-source network monitoring tool that provides real-time network performance & availability monitoring<br>includes features like customizable dashboards, network mapping, & alerting|
+
+
+#### Are network monitoring tools capable of detecting bandwidth bottlenecks?
 ```
-```
-```
-```
-  ```
-```
-```
+yay
 ```
 
 
