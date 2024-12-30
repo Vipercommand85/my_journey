@@ -111,7 +111,10 @@ THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}
 
 ### Exploiting Command Injection
 
+
 ![image](https://github.com/user-attachments/assets/7882880e-a73a-496d-9542-378d9b8f20d3)
+
+
 
 ![image](https://github.com/user-attachments/assets/4f6f1b6f-a023-4927-bf9c-6187a1665829)
 
@@ -207,29 +210,28 @@ THM{Just_a_tiny_misconfiguration}
 ```
 
 ## Task 13: Vulnerable & Outdated Components
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
+* sometimes companies/entities that are being pen-tested are still using a program that has a well-known vulnerability(ies).
 
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
+## Task 14: Vulnerable & Outdated Components - Exploit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
