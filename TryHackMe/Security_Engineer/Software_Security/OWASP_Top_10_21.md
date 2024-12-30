@@ -213,6 +213,22 @@ THM{Just_a_tiny_misconfiguration}
 * sometimes companies/entities that are being pen-tested are still using a program that has a well-known vulnerability(ies).
 
 ## Task 14: Vulnerable & Outdated Components - Exploit
+* use explpoit from [Exploit-DB](https://www.exploit-db.com/raw/47887)
+```bash
+python3 [NAME OF EXPLOIT] [URL of SITE]
+
+yes to launching the shell
+
+cat /opt/flag.txt
+
+```
+
+#### What is the contents of /opt/flag.txt?
+```
+THM{But_1ts_n0t_my_f4ult!}
+```
+
+## Task 16: Identification & Authentication Failures
 
 
 
