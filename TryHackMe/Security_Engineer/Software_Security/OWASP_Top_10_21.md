@@ -77,8 +77,151 @@ THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}
 ```
 
 ## Task 9: Injection
+* **Injection flaws** occur because the application interprets user-controlled input as commands or parameters
+* **SQL Injection** occurs when user-controlled input is passed to **SQL** queries
+  * this could potentially allow the threat actor to access, modify, & delete information that they shouldn't have access to 
+  * **Command Injection** occurs when user input is passed to system commands allowing a threat actor to execute arbitrary commands on application servers 
+* main defence for preventing injection attacks is ensuring that user-controlled input is sanitized
+  * **Using an allow list** is when input is compated to a list of safe inputs or characters
+  * **Stripping Input** inspects the user input has only approved characters and any that are not approved are removed
 
+## Task 10: Command Injection
+* **Command Injection** occurs when server-side code (i.e. PHP) in a web application makes a call to a function that interacts with the server's console directly
+* this would allows threat actors to list files, read their contents, run some basic commands to do some recon
+
+### Code example
+```bash
+<?php
+    if (isset($_GET["mooing"])) {
+        $mooing = $_GET["mooing"];
+        $cow = 'default';
+
+        if(isset($_GET["cow"]))
+            $cow = $_GET["cow"];
+        
+        passthru("perl /usr/bin/cowsay -f $cow $mooing");
+    }
+?>
 ```
+* the above code does the following:
+
+  * Checking if the parameter "mooing" is set. If it is, the variable $mooing gets what was passed into the input field.
+  * Checking if the parameter "cow" is set. If it is, the variable $cow gets what was passed through the parameter.
+  * The program then executes the function passthru("perl /usr/bin/cowsay -f $cow $mooing");
+
+### Exploiting Command Injection
+[image!](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/b7158502a9799698ec0ab29a850c8840.png)
+
+[image!](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/9f657b909062ac82af12548b4f346aec.png)
+
+
+#### What strange text file is in the website's root directory?
+```
+use the command ls -a to that you can see the files in the current directory
+
+drpepper.txt 
+```
+
+#### How many non-root/non-service/non-daemon users are there?
+```
+use cd ../etc/ && cat /etc/passwd command
+
+0 users of that kind
+```
+
+#### What user is the app running as?
+```
+use whoami command
+
+apache
+```
+
+#### What is the user's shell set as?
+```
+use the same base code as question 2 but add '| grep apache'
+
+/sbin/nologin
+```
+
+#### What version of Alpine Linux is running?
+```
+use cd ../etc/ && cat /etc/alpine-release
+
+3.16.0
+```
+
+
+## Task 11: Insecure Design
+
+### Insecure Design
+* refers to vulnerabilities which are inherent to the application's architecture
+* the idea of the whole or part of the application is flawed from the start
+* can occur from various reason
+
+### Insecure Password Resets
+* A good example of such vulnerabilities occurred on Instagram a while ago, which allowed users to reset their forgotten passwords by sending them a 6-digit code to their mobile number via SMS for validation
+* If an attacker wanted to access a victim's account, he could try to brute-force the 6-digit code.
+* this was not directly possible as Instagram had rate-limiting implemented so that after 250 attempts, the user would be blocked from trying further. 
+* However, it was found that the rate-limiting only applied to code attempts made from the same IP 
+
+
+#### What is the value of the flag in joseph's account?
+```
+use forgot password link and select the favorite color question, asnwer is green
+
+THM{Not_3ven_c4tz_c0uld_sav3_U!}
+```
+
+## Task 12: Security Misconfiguration
+
+### Security Misconfiguration
+* are distinct from the other top 10 vulnerabilities because they occur when security could have been appropriately configured but was
+* security misconfigurations include:
+  * poorly configured permission on cloud service, like S3 buckets
+  * having unnecessary features enabled, like services, pages, accounts or privileges
+  * default accounts with unchanged passwords
+  * error messages that are overly detailed & allow threat actors to more information about the system
+  * not using [HTTP security headers](https://owasp.org/www-project-secure-headers/)
+
+### Debugging Interfaces
+* a common security misconfiguration concerns the exposure of debugging features in prodcution Software
+
+
+#### Navigate to http://[IP ADDRESS GIVEN]/console
+* run the following command
+```
+import os; print(os.popen("ls -l").read())
+```
+
+#### What is the database file name in the current directory?
+```
+todo.db 
+```
+
+#### Modify the permissions on app.py file to retrieve the flag.
+```
+use 'import os; print(os.popen("chmod 777 app.py && cat app.py").read())'
+
+THM{Just_a_tiny_misconfiguration}
+```
+
+## Task 13: Vulnerable & Outdated Components
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+```
+
 ```
 ```
 ```
