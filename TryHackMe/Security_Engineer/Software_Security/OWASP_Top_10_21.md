@@ -110,9 +110,10 @@ THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}
   * The program then executes the function passthru("perl /usr/bin/cowsay -f $cow $mooing");
 
 ### Exploiting Command Injection
-![image](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/b7158502a9799698ec0ab29a850c8840.png)
 
-![image](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/9f657b909062ac82af12548b4f346aec.png)
+![image](https://github.com/user-attachments/assets/7882880e-a73a-496d-9542-378d9b8f20d3)
+
+![image](https://github.com/user-attachments/assets/4f6f1b6f-a023-4927-bf9c-6187a1665829)
 
 
 #### What strange text file is in the website's root directory?
