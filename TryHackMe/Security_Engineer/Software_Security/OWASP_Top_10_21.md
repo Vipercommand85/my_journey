@@ -229,7 +229,61 @@ THM{But_1ts_n0t_my_f4ult!}
 ```
 
 ## Task 16: Identification & Authentication Failures
+* **Authentication** & session management constitute core components of modern web applications
+* most common form of authentication is using a username & password
+* **session cookie** is issued if the provided credentials are verified to be valid because HTTP(S) is a stateless protocol
+* **Brute Force Attacks**: if a username & password is being used for authentication, an attacker can try to launch attacks by using multiple username & password combinations to guess a user(s) credentials
+* **Use of Weak Credentials**: a strong password policy should be enforced so that **brute force attacks** are not successful
+* **Weak Session Cookies**: these cookies should not contain predictable values as attackers can set their own session cookies & access users' accounts
 
+### Various mitigations for broken authentication mechanisms can be implemented
+* to avoid password-guessing attacks, ensure the application enforces a strong password policy
+* to avoid brute force attacks, ensure that the application enforces an automatic lockout after a certain number of attempts
+* implement **Multi-Factor Authentication** 
+
+
+## Task 17: Identification & Authentication Failures Practical
+
+#### What is the flag that you found in darren's account?
+```
+fe86079416a21a3c99937fea8874b667
+```
+
+#### What is the flag that you found un arthur's account?
+```
+d9ac0f7db4fda460ac3edeb75d75e16e
+```
+
+
+## Task 18: Software & Data Integrity Failures
+### What is Integrity?
+* the capacity we have to ascertain that a piece of data remains unmodified
+* this is essential in cyber resiliency as we care about maintaining important data free from unwanted or malicious modifications
+* **Hashes** are often used when downloading a file to prove that what is shown on the site, is what was downloaded to your machine
+* **Hash** a number that results from applying a specific algorithm over a piece of data
+* MD5, SHA1, and others are considered to be insecure
+
+
+## Task 19: Software Integrity Failures
+* when using an external library, you should utilize a mechanism called a **SRI (Subresource Integrity)**
+* **SRI**: allows you to include a hash of the library that you want use so that the browser only downloads the library if it matches the supplied hash
+
+* Use the following [site](https://www.srihash.org/) to generate the SHA-256 hash of the library ```https://code.jquery.com/jquery-1.12.4.min.js```
+
+#### What is the hash of that the above library?
+```
+sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=
+```
+
+
+## Task 20: Data Integrity Failures
+
+```
+```
+```
+```
+```
+```
 
 
 
