@@ -278,10 +278,37 @@ sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=
 
 ## Task 20: Data Integrity Failures
 
+
+## Task 21: Security Logging & Monitoring Failures
+* **Regulatory Damage**: if an attacker has gained access to personally identifiable user information & there is no record of this, final users area affected, & the application owners may be subject to fines or more severe actions depending on regulations
+* **Risk of Further Attacks**: an attackers presence may be undetected without logging allowing the attacker to launch futher attacks against the web application and owners
+* information stored in logs should include the following:
+  * HTTP status codes
+  * Time Stamps
+  * Usernames
+  * API endpoints/page locations
+  * IP addresses
+
+#### What is IP address of the attacking user?
 ```
+49.99.13.16
 ```
+
+#### What kind of attack is being carried out?
 ```
+Brute Force 
 ```
+
+
+## Task 22: Server-Side Request Forgery (SSRF)
+### SSRF
+* this type of vulnerability occurs when an attacker can coerce a web application into sending request on their behalf to arbitrary destinations while having control of the contents of the request itself
+* arise from implementations where out web applicatoin needs to user third-party services
+
+![image](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/271d0075650cdf6499f994f99fa7eb8a.png)
+
+```
+
 ```
 ```
 
