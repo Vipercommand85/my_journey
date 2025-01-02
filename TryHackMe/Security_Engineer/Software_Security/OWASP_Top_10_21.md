@@ -277,7 +277,62 @@ sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=
 
 
 ## Task 20: Data Integrity Failures
+* when logging into a web application, a token is usually assigned so that the server knows exactly who is sending information and who to send it to 
+* these are usually in the form of a **cookie**
+* **Cookies** are key-value pairs that a web application will generate and store on the user's browser
+* **JSON Web Tokens (JWT)** are an integrity mechanism to prevent a user/adversary from altering their token 
 
+### There are 3 parts to a JWT
+  1. **Header** which contains metadata indicating this is a **JWT** and the signing algorithm in use **HS256**
+  2. **Payload** contains the key-value pairs with the data that the web application wants the client to store
+  3. **Signature** is similar to a hash, taken to verify the payload's integrity
+    * if you change the payload, the web application can verify that the signature won't match the payload & know that the **JWT** has been tampered with
+    * the **Signature** uses a secret key held only by the server which is how this is possible
+    * The signature contains binary data, so even if you decode it, you won't be able to make much sense of it anyways
+
+![imagme](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/11c86acaea05f98045cec5634e03e997.png)
+
+
+### JWT & the None Algorithm 
+* data integrity failure vulnerability was present on some libraries implementing **JWT** allowing attackers to bypass the signature validation by changing the following parameters:
+  1. modify the header section of the token so that the ```alg``` header would contain the value ```none```
+  2. remove the signature part completely
+
+![image](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/f5d1b4ef49ff4eef52e7617631225e8a.png)
+
+#### What is the guest's account password?
+```
+guest
+```
+
+#### What is the name of the website's cookie containing a JWT token?
+```
+jwt-session
+```
+
+#### What is the flag presented to admin user after manipulating the jwt-session token?
+
+use the [online tool](https://appdevtools.com/base64-encoder-decoder) to manipulate the token:
+
+```
+Header:
+{
+  "typ":"JWT",
+  "alg":"none"
+}
+
+Payload:
+{
+  "username":"admin",
+  "exp":1665076836
+}
+
+Signature:
+  Remove but be sure to keep the period after the payload string
+
+
+THM{Dont_take_cookies_from_strangers}
+```
 
 ## Task 21: Security Logging & Monitoring Failures
 * **Regulatory Damage**: if an attacker has gained access to personally identifiable user information & there is no record of this, final users area affected, & the application owners may be subject to fines or more severe actions depending on regulations
