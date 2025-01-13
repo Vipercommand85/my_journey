@@ -1,4 +1,4 @@
-# Sewcure Software Development Lifecycle (SSDLC)
+# Secure Software Development Lifecycle (SSDLC)
 ## Task 2: What is SSDLC?
 * aims to introduce security at every stage of the SDLC
 
