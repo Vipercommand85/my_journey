@@ -212,13 +212,112 @@ PASTA
 
 
 ## Task 6: Secure Coding
+### Secure Code Review & Analysis
+* **Secure Code Review** is where the code itself is verified & validated to ensure vulnerabilities that are found can be mitigated & removed
+* per **Verizon Data Breaches 2020**, **43%** of breaches were attacks on web applications and others resulted from vulnabilities in web applications
+* implementing **secure code review** early in the development process helps to increase resilience & security of the product without any additional costs from future patches
+* **code review** can be done automatically or manually
+* a combination of both methodologies is critical, as not all organizations will have a **SME** which would be needed for manual code review
 
+### Code Analysis
+#### SAST
+* **Static Application Testing** is a **white box** testing method that directly analyses the source code
+* this testing is done before the application is running
+* can be used to ensure that new features/branches of code are secure before merging with the rest of the project
+* is usually done before the code is compiled
+
+#### SCA
+* **Software Composition Analysis** is used to scan dependencies for security vulnerabilities, (**SBOMs**)
+
+#### DAST
+* **Dynamic Application Security Testing** is a **black-box** testing methodology that finds vulnerabilities at runtime
+* is a tool that can scan a web applications to find secrity vulnerabilities
+* simulates automated attacks on web applications, mimicking a threat actor
+
+#### IAST
+* **Interactive Application Security Testing** analyses the code for vulnerabilities while the app is running
+* is usually deployed side by side with the main application on the application server
+* designed for web & mobile applications
+* was developed to close the gab between **SAST & DAST**
+
+#### RASP
+* **Runtime Application Self Protection** is a runtime application integrated into an application
+* it analyses inward/outward traffic as well as end-user behavioural patterns to prevent security attacks
+* is different from **SAST/DAST/IAST** as it is deployed after the product is releases
+* once an issue is found an alert is sent to the security team & immediately blocks access to the individual making the request
+* this will secure the entire application against different attacks
+
+### Choosing Tools
+
+![image](https://github.com/user-attachments/assets/4881af96-12ea-47b6-b75f-41165d59627c)
+
+
+
+#### Is it recommened to use SAST analysis at the beginning of the SDLC?
 ```
+yes
 ```
+
+#### Which type of code analysis uses the black-box method?
 ```
+DAST
 ```
+
+#### Which type of code analysis uses the white-box method?
 ```
+SAST
 ```
+
+
+
+## Task 7: Security Assessments
+### Security Assessment
+* plays a primary role in achieving security in SDLC
+* is usually carried out at the end of the SDLC, in the **Operations & Naintenance** phase
+
+#### Vulnerability Assessment
+* focus on finding vulnerabilities but does not verify them
+* automated tools run against an organization's network & systems (i.e. **OpenVAS, Nessus, ISS Scanner**)
+* creates a report with a list of vulnerabilities usually found with an automated threat level severity classification. i.e. **High/Meduim/Low** or **CVSS score**
+
+#### Penetration Testing
+* will validate vulnerabilities, quantify risks, & attempt to penetrate systems
+* can provide a thorough report with suggested countermeasures to mitigate the vulnerabilities
+
+### Pros & Cons
+#### Vulnerability Assessment
+| Pros | Cons |
+|:--------------:|:---------------:|
+|suitable for quickly identifying potential vulns|can produce a large number of reports|
+|part of the Penetration Test|Quality depends on the tool used|
+|BEtter for budget|Real=life scanarios ofr vulns are not considered|
+|  |the low-risk vulns may be used to chain together vulns|
+
+#### Penestration Assessment
+| Pros| Cons|
+|:--------------:|:--------------:|
+|tester shows organization what an attacker could do|very expenseive|
+|how any vulns could be used by threat actors|requires extensive planning & time to carry out|
+|can be shown to the customer|  |
+
+
+
+#### Which form of assessment is more budget-friendly & takes less time?
+```
+Vulnerability Assessment
+```
+
+#### Which type of asessment identifies vulnerabilities & attempts to exploit them?
+```
+Penetration Testing
+```
+
+#### When do you typically carry out Vulnerability Assessments or Pentests?
+```
+Operations & Maintenance
+```
+
+
 
 
 
