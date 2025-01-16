@@ -142,7 +142,7 @@ Quantitative Risk Assessment
 * gaining unauthorised access by escalation privileges, violation authorisation principles
 
 
-![image](https://tryhackme-images.s3.amazonaws.com/user-uploads/61a7523c029d1c004fac97b3/room-content/a5904cf6f063a62e77df6623eb1cbd33.png)
+![image](https://github.com/user-attachments/assets/e80f8d72-3ef3-4dbb-a7ba-37cc86cac9be)
 
 
 ### DREAD
@@ -190,7 +190,7 @@ Quantitative Risk Assessment
 * document risks & propose mitigation steps
 
 
-![image](https://tryhackme-images.s3.amazonaws.com/user-uploads/61a7523c029d1c004fac97b3/room-content/8222ed08e31753d975ec3ec3aa2e43a9.png)
+![image](https://github.com/user-attachments/assets/70d87db4-4933-4796-bbb6-a17c14417ebb)
 
 
 
@@ -288,17 +288,17 @@ SAST
 #### Vulnerability Assessment
 | Pros | Cons |
 |:--------------:|:---------------:|
-|suitable for quickly identifying potential vulns|can produce a large number of reports|
-|part of the Penetration Test|Quality depends on the tool used|
-|BEtter for budget|Real=life scanarios ofr vulns are not considered|
-|  |the low-risk vulns may be used to chain together vulns|
+| Suitable for quickly identifying potential vulns | Can produce a large number of reports |
+| Part of the Penetration Test | Quality depends on the tool used |
+| Better for budget | Real-life scanarios for vulns are not considered |
+|  | Low-risk vulns may be used to chain together vulns |
 
 #### Penestration Assessment
 | Pros| Cons|
 |:--------------:|:--------------:|
-|tester shows organization what an attacker could do|very expenseive|
-|how any vulns could be used by threat actors|requires extensive planning & time to carry out|
-|can be shown to the customer|  |
+| Tester shows organization what an attacker could do | Very expenseive|
+| How any vulns could be used by threat actors | Requires extensive planning & time to carry out |
+| Can be shown to the customer|  |
 
 
 
