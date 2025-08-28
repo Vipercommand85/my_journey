@@ -27,6 +27,17 @@ test "factorial overflow" {
 	}
 }
 
+// Catch statement way that gives better clarity on the progession of checking for errors
+test "factorial overflow catch" {
+	const result = iter_recurs.factorial_iter(35) catch |err| {
+		try std.testing.expect(err == FactorialError.overflow);
+		return;
+	}
+
+// If we got here, function didn't error - fail the test
+	try std.testing.expect(false);
+}
+
 test "iterative & recursive match for small number" {
 	for ([_]u64{0, 1, 2, 3, 4, 5, 10, 20}) |num| {
 		try std.testing.expectEqual(try factorial_iter(num), try factorial_recursive(num));
